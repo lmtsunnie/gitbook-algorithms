@@ -1,0 +1,926 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>LeetCode238 Product of Array Except · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="leetcode283.html" />
+    
+    
+    <link rel="prev" href="leetcode169.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    Array
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="leetcode1.html">
+            
+                <a href="leetcode1.html">
+            
+                    
+                    LeetCode1 Two Sum
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="leetcode26.html">
+            
+                <a href="leetcode26.html">
+            
+                    
+                    LeetCode26 Remove Duplicates From Sorted Array
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="leetcode35.html">
+            
+                <a href="leetcode35.html">
+            
+                    
+                    LeetCode35 Search Insertion Position
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="leetcode39.html">
+            
+                <a href="leetcode39.html">
+            
+                    
+                    LeetCode39 Combination Sum
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="leetcode53.html">
+            
+                <a href="leetcode53.html">
+            
+                    
+                    LeetCode53 Maximum Subarray
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="leetcode64.html">
+            
+                <a href="leetcode64.html">
+            
+                    
+                    LeetCode64 Minimum Path Sum
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="leetcode75.html">
+            
+                <a href="leetcode75.html">
+            
+                    
+                    LeetCode75 SortColors
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="leetcode121.html">
+            
+                <a href="leetcode121.html">
+            
+                    
+                    LeetCode121 Best Time to Sell and Buy Stock
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="leetcode169.html">
+            
+                <a href="leetcode169.html">
+            
+                    
+                    LeetCode169 Majority Element
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.10" data-path="leetcode238.html">
+            
+                <a href="leetcode238.html">
+            
+                    
+                    LeetCode238 Product of Array Except
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.11" data-path="leetcode283.html">
+            
+                <a href="leetcode283.html">
+            
+                    
+                    LeetCode283 Move Zeroes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.12" data-path="leetcode448.html">
+            
+                <a href="leetcode448.html">
+            
+                    
+                    LeetCode448 Find All Numbers Disappeared in an Array
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.13" data-path="leetcode560.html">
+            
+                <a href="leetcode560.html">
+            
+                    
+                    LeetCode560 Subarray Sum Equals K
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.14" data-path="leetcode581.html">
+            
+                <a href="leetcode581.html">
+            
+                    
+                    LeetCode581 Shortest Unsorted Continuous Subarray
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.15" data-path="剑指offer-找出数组中重复的数字.html">
+            
+                <a href="剑指offer-找出数组中重复的数字.html">
+            
+                    
+                    剑指offer 找出数组中重复的数字
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    LinkedList
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
+                    Stack/Queue
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../Stack-Queue/栈和队列常用算法总结.html">
+            
+                <a href="../Stack-Queue/栈和队列常用算法总结.html">
+            
+                    
+                    栈和队列的转换/用数组实现栈和队列
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" >
+            
+                <span>
+            
+                    
+                    Tree
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../Tree/二叉树遍历算法总结.html">
+            
+                <a href="../Tree/二叉树遍历算法总结.html">
+            
+                    
+                    二叉树遍历算法总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" >
+            
+                <span>
+            
+                    
+                    bfs/dfs
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../bfs-dfs/bfs-dfs总结.html">
+            
+                <a href="../bfs-dfs/bfs-dfs总结.html">
+            
+                    
+                    bfs/dfs总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../bfs-dfs/leetcode40.html">
+            
+                <a href="../bfs-dfs/leetcode40.html">
+            
+                    
+                    LeetCode40 Combination Sum II
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../bfs-dfs/leetcode46.html">
+            
+                <a href="../bfs-dfs/leetcode46.html">
+            
+                    
+                    LeetCode46 Permutation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../bfs-dfs/leetcode47.html">
+            
+                <a href="../bfs-dfs/leetcode47.html">
+            
+                    
+                    LeetCode47 Permutations II
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../bfs-dfs/leetcode78.html">
+            
+                <a href="../bfs-dfs/leetcode78.html">
+            
+                    
+                    LeetCode78 Subsets
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" data-path="../bfs-dfs/leetcode90.html">
+            
+                <a href="../bfs-dfs/leetcode90.html">
+            
+                    
+                    LeetCode90 Subsets II
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.7" data-path="../bfs-dfs/leetcode386.html">
+            
+                <a href="../bfs-dfs/leetcode386.html">
+            
+                    
+                    LeetCode386 Lexicographical Numbers
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" >
+            
+                <span>
+            
+                    
+                    dp
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../dp/leetcode62.html">
+            
+                <a href="../dp/leetcode62.html">
+            
+                    
+                    LeetCode62 Unique Paths
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../dp/leetcode621.html">
+            
+                <a href="../dp/leetcode621.html">
+            
+                    
+                    LeetCode621 Task Scheduler
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" >
+            
+                <span>
+            
+                    
+                    Fast-Slow-pointers
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../Fast-Slow-pointers/leetcode142.html">
+            
+                <a href="../Fast-Slow-pointers/leetcode142.html">
+            
+                    
+                    LeetCode142 Linked List Cycle II
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../Fast-Slow-pointers/leetcode287.html">
+            
+                <a href="../Fast-Slow-pointers/leetcode287.html">
+            
+                    
+                    LeetCode287 Find the Duplicate Number
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" >
+            
+                <span>
+            
+                    
+                    Matrix
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../Matrix/leetcode48.html">
+            
+                <a href="../Matrix/leetcode48.html">
+            
+                    
+                    LeetCode48 Rotate Image
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="../Matrix/剑指offer-二维数组中的查找.html">
+            
+                <a href="../Matrix/剑指offer-二维数组中的查找.html">
+            
+                    
+                    剑指offer 二维数组中的查找
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" >
+            
+                <span>
+            
+                    
+                    Sort
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="../Sort/排序算法总结.html">
+            
+                <a href="../Sort/排序算法总结.html">
+            
+                    
+                    排序算法总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >LeetCode238 Product of Array Except</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <p><img src="http://qiniu.limengting.site/code13.jpg" alt=""></p>
+<blockquote>
+<p>Given an array nums of n integers where n &gt; 1, return an array output such that output[i] is equal to the product of all the elements of nums except nums[i].</p>
+</blockquote>
+<!-- more-->
+<blockquote>
+<p>Example:
+Input:  [1,2,3,4] 1,2,3,0
+Output: [24,12,8,6] 0,0,0,6</p>
+<p>Note: Please solve it without division and in O(n).</p>
+<p>Follow up:
+Could you solve it with constant space complexity?
+(The output array does not count as extra space for the purpose of space complexity analysis.)</p>
+</blockquote>
+<pre><code class="lang-java"><span class="hljs-keyword">package</span> array;
+
+<span class="hljs-keyword">import</span> <span class="hljs-keyword">static</span> format.PrintArray.printArray;
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">leetcode238ProductOfArrayExceptItself</span> </span>{
+ <span class="hljs-comment">/*=====================================================================================*/</span>
+    <span class="hljs-comment">/* &#x81EA;&#x60F3;1&#xFF1A;
+     * &#x904D;&#x5386;&#x4E00;&#x904D;&#xFF0C;&#x7B97;&#x51FA;&#x6240;&#x6709;&#x6570;&#x7684;&#x79EF;&#x5B58;&#x5728;allProduct&#x4E2D;
+     * &#x518D;&#x628A;allProduct/nums[i]&#x653E;&#x5728;product[i]&#x5904;
+     * &#x4F46;&#x662F;&#x8981;&#x8003;&#x8651;&#x5230;&#x6709;0&#x7684;&#x60C5;&#x51B5;&#xFF0C;&#x4E00;&#x4E2A;0&#x7684;&#x65F6;&#x5019;&#x9664;&#x4E86;&#x8FD9;&#x4E2A;0&#x4F4D;&#x7F6E;&#x7684;product&#x4E0D;&#x4E3A;0&#xFF0C;&#x5176;&#x4ED6;&#x4F4D;&#x7F6E;&#x7684;product&#x90FD;&#x4E3A;0
+     * &#x4E24;&#x4E2A;&#x4EE5;&#x53CA;&#x4EE5;&#x4E0A;&#x4E2A;0&#x7684;&#x65F6;&#x5019;product&#x5168;&#x4E3A;0
+     * &#x6CA1;&#x6709;0&#x7684;&#x65F6;&#x5019;&#x904D;&#x5386;&#x4E24;&#x904D;&#xFF0C;&#x6709;0&#x7684;&#x65F6;&#x5019;&#x904D;&#x5386;&#x4E09;&#x904D;
+     * &#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;O(n)&#xFF0C;&#x7A7A;&#x95F4;&#x590D;&#x6742;&#x5EA6;O(1)
+     * */</span>
+
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span>[] productOfArrayExceptItself1(<span class="hljs-keyword">int</span>[] nums) {
+        <span class="hljs-keyword">int</span> allProduct = <span class="hljs-number">1</span>;
+        <span class="hljs-keyword">int</span>[] product = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[nums.length];
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> num : nums) {
+            allProduct *= num;
+        }
+        <span class="hljs-keyword">if</span> (allProduct != <span class="hljs-number">0</span>) {
+            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; nums.length; i++) {
+                product[i] = allProduct / nums[i];
+            }
+        } <span class="hljs-keyword">else</span> {
+            <span class="hljs-keyword">int</span> zero = <span class="hljs-number">0</span>; <span class="hljs-comment">// &#x7EDF;&#x8BA1;0&#x7684;&#x4E2A;&#x6570;</span>
+            <span class="hljs-keyword">int</span> firstZeroIndex = <span class="hljs-number">0</span>;
+            <span class="hljs-keyword">int</span> onlyNone = <span class="hljs-number">1</span>;
+            <span class="hljs-keyword">boolean</span> flag = <span class="hljs-keyword">false</span>; <span class="hljs-comment">// &#x662F;&#x5426;&#x9047;&#x5230;&#x8FC7;0</span>
+            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; nums.length; i++) {
+                <span class="hljs-keyword">if</span> (nums[i] == <span class="hljs-number">0</span>) {
+                    <span class="hljs-keyword">if</span> (!flag) {
+                        flag = <span class="hljs-keyword">true</span>;
+                        firstZeroIndex = i;
+                    }
+                    zero++;
+                }
+            }
+            <span class="hljs-keyword">if</span> (zero &gt;= <span class="hljs-number">2</span>) {
+                <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; nums.length; i++) {
+                    product[i] = <span class="hljs-number">0</span>;
+                }
+            } <span class="hljs-keyword">else</span> { <span class="hljs-comment">// zero == 1</span>
+                <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; nums.length; i++) {
+                    <span class="hljs-keyword">if</span> (i == firstZeroIndex) <span class="hljs-keyword">continue</span>;
+                    onlyNone *= nums[i];
+                    product[i] = <span class="hljs-number">0</span>;
+                }
+                product[firstZeroIndex] = onlyNone;
+            }
+        }
+        <span class="hljs-keyword">return</span> product;
+    }
+    <span class="hljs-comment">/*=====================================================================================*/</span>
+    <span class="hljs-comment">/*&#x8BC4;&#x8BBA;&#x533A;&#xFF1A;
+    * &#x5148;&#x5C06;nums[0]-nums[i-1]&#x4E58;&#x5230;product[i]&#x4E0A;
+    * &#x518D;&#x5C06;nums[i+1]-nums[n-1]&#x4E58;&#x5230;product[i]&#x4E0A;
+    * &#x904D;&#x5386;&#x4E24;&#x904D;&#xFF0C;&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;O(n)&#xFF0C;&#x7A7A;&#x95F4;&#x590D;&#x6742;&#x5EA6;O(1)
+    * */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span>[] productOfArrayExceptItself2(<span class="hljs-keyword">int</span>[] nums) {
+        <span class="hljs-keyword">int</span>[] product = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[nums.length];
+        product[<span class="hljs-number">0</span>] = <span class="hljs-number">1</span>;
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt; nums.length; i ++) {
+            product[i] = product[i - <span class="hljs-number">1</span>] * nums[i - <span class="hljs-number">1</span>];
+        }
+        <span class="hljs-keyword">int</span> right = <span class="hljs-number">1</span>;
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = nums.length - <span class="hljs-number">1</span>; i &gt;= <span class="hljs-number">1</span>; i --) {
+            right *= nums[i];
+            product[i - <span class="hljs-number">1</span>] *= right;
+        }
+        <span class="hljs-keyword">return</span> product;
+    }
+
+<span class="hljs-comment">/*=====================================================================================*/</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
+        <span class="hljs-keyword">int</span>[] nums1 = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[]{<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>};
+        <span class="hljs-keyword">int</span>[] nums2 = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[]{<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">0</span>};
+        <span class="hljs-keyword">int</span>[] nums3 = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[]{<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>};
+        <span class="hljs-keyword">int</span>[] nums4 = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[]{<span class="hljs-number">9</span>, <span class="hljs-number">0</span>, <span class="hljs-number">2</span>};
+
+        printArray(nums1);
+        printArray(productOfArrayExceptItself1(nums1));
+        printArray(nums2);
+        printArray(productOfArrayExceptItself1(nums2));
+        printArray(nums3);
+        printArray(productOfArrayExceptItself1(nums3));
+        printArray(nums4);
+        printArray(productOfArrayExceptItself1(nums4));
+
+        System.out.println();
+
+        printArray(nums1);
+        printArray(productOfArrayExceptItself2(nums1));
+        printArray(nums2);
+        printArray(productOfArrayExceptItself2(nums2));
+        printArray(nums3);
+        printArray(productOfArrayExceptItself2(nums3));
+        printArray(nums4);
+        printArray(productOfArrayExceptItself2(nums4));
+    }
+}
+</code></pre>
+<p>&#x6253;&#x5370;&#x51FD;&#x6570;&#xFF1A;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">package</span> format;
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">PrintArray</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">printArray</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] nums)</span> </span>{
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; nums.length - <span class="hljs-number">1</span>; i ++) {
+            System.out.print(nums[i] + <span class="hljs-string">&quot; &quot;</span>);
+        }
+        System.out.println(nums[nums.length - <span class="hljs-number">1</span>]);
+    }
+}
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="leetcode169.html" class="navigation navigation-prev " aria-label="Previous page: LeetCode169 Majority Element">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="leetcode283.html" class="navigation navigation-next " aria-label="Next page: LeetCode283 Move Zeroes">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"LeetCode238 Product of Array Except","date":"2018-10-01T12:23:53.000Z","categories":"算法","tags":["LeetCode","Top 100 Liked Questions","Array","Easy","Java","algorithms"],"level":"1.2.10","depth":2,"next":{"title":"LeetCode283 Move Zeroes","level":"1.2.11","depth":2,"path":"Array/leetcode283.md","ref":"Array/leetcode283.md","articles":[]},"previous":{"title":"LeetCode169 Majority Element","level":"1.2.9","depth":2,"path":"Array/leetcode169.md","ref":"Array/leetcode169.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Array/leetcode238.md","mtime":"2018-11-24T16:26:40.643Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-11-24T17:17:58.968Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
