@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>LeetCode75 SortColors · GitBook</title>
+        <title>LeetCode11 LeetCode11 Container With Most Water · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="leetcode121.html" />
+    <link rel="next" href="leetcode26.html" />
     
     
-    <link rel="prev" href="leetcode64.html" />
+    <link rel="prev" href="leetcode1.html" />
     
 
     </head>
@@ -129,7 +129,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.2" data-path="leetcode11.html">
+        <li class="chapter active" data-level="1.2.2" data-path="leetcode11.html">
             
                 <a href="leetcode11.html">
             
@@ -207,7 +207,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.2.8" data-path="leetcode75.html">
+        <li class="chapter " data-level="1.2.8" data-path="leetcode75.html">
             
                 <a href="leetcode75.html">
             
@@ -726,7 +726,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >LeetCode75 SortColors</a>
+        <a href=".." >LeetCode11 LeetCode11 Container With Most Water</a>
     </h1>
 </div>
 
@@ -741,66 +741,66 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <p><img src="http://qiniu.limengting.site/mac2.jpg" alt=""></p>
+                                <p><img src="http://qiniu.limengting.site/mac6.jpg" alt=""></p>
 <blockquote>
-<p>Given an array with n objects colored red, white or blue, sort them in-place so that objects of the same color are adjacent, with the colors in the order red, white and blue.</p>
-<p>Here, we will use the integers 0, 1, and 2 to represent the color red, white, and blue respectively.</p>
+<p>Given n non-negative integers a1, a2, ..., an , where each represents a point at coordinate (i, ai).</p>
+<p>n vertical lines are drawn such that the two endpoints of line i is at (i, ai) and (i, 0). Find two lines, which together with x-axis forms a container, such that the container contains the most water.</p>
+<p>Note: You may not slant the container and n is at least 2.</p>
 </blockquote>
 <!-- more -->
+<p><img src="http://qiniu.limengting.site/leetcode11.jpg" alt=""></p>
 <blockquote>
-<p>Note: You are not suppose to use the library&apos;s sort function for this problem.</p>
-<p>Example:
-Input: [2,0,2,1,1,0]
-Output: [0,0,1,1,2,2]</p>
-<p>Follow up:
-A rather straight forward solution is a two-pass algorithm using counting sort.
-First, iterate the array counting number of 0&apos;s, 1&apos;s, and 2&apos;s,
-then overwrite array with total number of 0&apos;s, then 1&apos;s and followed by 2&apos;s.
-Could you come up with a one-pass algorithm using only constant space?</p>
+<p>The above vertical lines are represented by array [1,8,6,2,5,4,8,3,7]. In this case, the max area of water (blue section) the container can contain is 49.</p>
+<p>Example:</p>
+<p>Input: [1,8,6,2,5,4,8,3,7]
+Output: 49</p>
 </blockquote>
 <pre><code class="lang-java"><span class="hljs-keyword">package</span> array;
 
-<span class="hljs-keyword">import</span> <span class="hljs-keyword">static</span> format.PrintArray.printArray;
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">leetcode11ContainerWithMostWater</span> </span>{
 
-<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">leetcode75SortColors</span> </span>{  
     <span class="hljs-comment">/*=====================================================================================*/</span>
-    <span class="hljs-comment">/*&#x81EA;&#x60F3;&#xFF1A;&#x8377;&#x5170;&#x56FD;&#x65D7;&#x95EE;&#x9898;
-     * partition&#x8FC7;&#x7A0B;&#x770B;&#x6210;&#x5411;&#x5C0F;&#x4E8E;&#x533A;&#x57DF;&#x548C;&#x5927;&#x4E8E;&#x533A;&#x57DF;&#x53D1;&#x8D27;
-     * &#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;O(n),&#x7A7A;&#x95F4;&#x590D;&#x6742;&#x5EA6;O(1)
-     * */</span>
-    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">sortColors</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] nums)</span> </span>{
-        <span class="hljs-keyword">if</span> (nums == <span class="hljs-keyword">null</span> || nums.length &lt;= <span class="hljs-number">1</span>) <span class="hljs-keyword">return</span>;
-        partition(nums, <span class="hljs-number">0</span>, nums.length - <span class="hljs-number">1</span>);
-    }
-
-    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">partition</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] nums, <span class="hljs-keyword">int</span> lo, <span class="hljs-keyword">int</span> hi)</span> </span>{
-        <span class="hljs-keyword">int</span> less = -<span class="hljs-number">1</span>;
-        <span class="hljs-keyword">int</span> more = nums.length;
-        <span class="hljs-keyword">int</span> cur = <span class="hljs-number">0</span>;
-        <span class="hljs-keyword">while</span> (cur &lt; more) {
-            <span class="hljs-keyword">if</span> (nums[cur] == <span class="hljs-number">0</span>) {
-                swap(nums, cur++, ++less);
-            } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (nums[cur] == <span class="hljs-number">1</span>) {
-                cur++;
-            } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (nums[cur] == <span class="hljs-number">2</span>) {
-                swap(nums, cur, --more);
+    <span class="hljs-comment">/*&#x81EA;&#x60F3;1&#xFF1A;
+    * &#x628A;&#x9996;&#x672B;&#x70B9;&#x5206;&#x522B;&#x5B9A;&#x4E3A;lo,hi&#xFF0C;&#x6BCF;&#x6B21;&#x6BD4;&#x8F83;&#x6C42;&#x51FA;&#x6700;&#x5927;&#x7684;maxWater
+    * &#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;O(n&#xB2;)&#xFF0C;&#x7A7A;&#x95F4;&#x590D;&#x6742;&#x5EA6;O(1)
+    * */</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> <span class="hljs-title">containMaxWater1</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] nums)</span> </span>{
+        <span class="hljs-keyword">if</span> (nums == <span class="hljs-keyword">null</span> || nums.length &lt;= <span class="hljs-number">1</span>) {
+            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> RuntimeException(<span class="hljs-string">&quot;input error!&quot;</span>);
+        }
+        <span class="hljs-keyword">int</span> maxWater = <span class="hljs-number">0</span>;
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> lo = <span class="hljs-number">0</span>; lo &lt; nums.length; lo++) {
+            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> hi = lo + <span class="hljs-number">1</span>; hi &lt; nums.length; hi++) {
+                <span class="hljs-keyword">int</span> min = Math.min(nums[lo], nums[hi]);
+                maxWater = min * (hi - lo) &gt; maxWater ? min * (hi - lo) : maxWater;
             }
         }
+        <span class="hljs-keyword">return</span> maxWater;
     }
-
-    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">swap</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] nums, <span class="hljs-keyword">int</span> lo, <span class="hljs-keyword">int</span> hi)</span> </span>{
-        <span class="hljs-keyword">if</span> (lo == hi) <span class="hljs-keyword">return</span>;
-        nums[lo] = nums[lo] ^ nums[hi];
-        nums[hi] = nums[lo] ^ nums[hi];
-        nums[lo] = nums[lo] ^ nums[hi];
+    <span class="hljs-comment">/*=====================================================================================*/</span>
+    <span class="hljs-comment">/*Solution&#x533A;&#x65B9;&#x6CD5;2&#xFF1A;
+    * lo, hi&#x7684;&#x8D77;&#x59CB;&#x503C;&#x5206;&#x522B;&#x4E3A;0,n-1
+    * &#x8DDD;&#x79BB;&#x5728;&#x7F29;&#x77ED;&#xFF0C;&#x53EA;&#x6709;&#x79FB;&#x52A8;&#x77ED;&#x7684;&#x624D;&#x53EF;&#x80FD;&#x5C06;min(nums[i],nums[j])&#x589E;&#x5927;&#xFF0C;&#x4ECE;&#x800C;&#x5C06;maxWater&#x589E;&#x5927;
+    * &#x904D;&#x5386;&#x4E00;&#x904D;&#xFF0C;&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;O(n)&#xFF0C;&#x7A7A;&#x95F4;&#x590D;&#x6742;&#x5EA6;O(1)
+    * */</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> <span class="hljs-title">containMaxWater2</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] nums)</span> </span>{
+        <span class="hljs-keyword">int</span> maxWater = <span class="hljs-number">0</span>, lo = <span class="hljs-number">0</span>, hi = nums.length - <span class="hljs-number">1</span>;
+        <span class="hljs-keyword">while</span> (lo &lt; hi) {
+            <span class="hljs-keyword">int</span> min = Math.min(nums[lo],nums[hi]);
+            maxWater = min * (hi - lo) &gt; maxWater ? min * (hi - lo) : maxWater;
+            <span class="hljs-keyword">if</span> (nums[lo] &lt;= nums[hi]) {
+                lo ++;
+            } <span class="hljs-keyword">else</span> {
+                hi --;
+            }
+        }
+        <span class="hljs-keyword">return</span> maxWater;
     }
-
     <span class="hljs-comment">/*=====================================================================================*/</span>
     <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
-        <span class="hljs-keyword">int</span>[] nums = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[]{<span class="hljs-number">2</span>,<span class="hljs-number">0</span>,<span class="hljs-number">2</span>,<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">0</span>};
-        printArray(nums);
-        sortColors(nums);
-        printArray(nums);
+        <span class="hljs-keyword">int</span>[] nums = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[]{<span class="hljs-number">1</span>,<span class="hljs-number">8</span>,<span class="hljs-number">6</span>,<span class="hljs-number">2</span>,<span class="hljs-number">5</span>,<span class="hljs-number">4</span>,<span class="hljs-number">8</span>,<span class="hljs-number">3</span>,<span class="hljs-number">7</span>};
+        System.out.println(containMaxWater1(nums));
+        System.out.println(containMaxWater2(nums));
     }
 }
 </code></pre>
@@ -831,12 +831,12 @@ Could you come up with a one-pass algorithm using only constant space?</p>
 
             
                 
-                <a href="leetcode64.html" class="navigation navigation-prev " aria-label="Previous page: LeetCode64 Minimum Path Sum">
+                <a href="leetcode1.html" class="navigation navigation-prev " aria-label="Previous page: LeetCode1 Two Sum">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="leetcode121.html" class="navigation navigation-next " aria-label="Next page: LeetCode121 Best Time to Sell and Buy Stock">
+                <a href="leetcode26.html" class="navigation navigation-next " aria-label="Next page: LeetCode26 Remove Duplicates From Sorted Array">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -847,7 +847,7 @@ Could you come up with a one-pass algorithm using only constant space?</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"LeetCode75 SortColors","date":"2018-11-23T21:11:44.000Z","categories":"算法","tags":["LeetCode","Top 100 Liked Questions","Array","Easy","Java","partition","algorithms"],"level":"1.2.8","depth":2,"next":{"title":"LeetCode121 Best Time to Sell and Buy Stock","level":"1.2.9","depth":2,"path":"Array/leetcode121.md","ref":"Array/leetcode121.md","articles":[]},"previous":{"title":"LeetCode64 Minimum Path Sum","level":"1.2.7","depth":2,"path":"Array/leetcode64.md","ref":"Array/leetcode64.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Array/leetcode75.md","mtime":"2018-11-24T16:26:40.651Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-11-25T05:33:28.305Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"LeetCode11 LeetCode11 Container With Most Water","date":"2018-11-23T21:36:31.000Z","categories":"算法","tags":["LeetCode","Top 100 Liked Questions","Array","Medium","Java","algorithms"],"level":"1.2.2","depth":2,"next":{"title":"LeetCode26 Remove Duplicates From Sorted Array","level":"1.2.3","depth":2,"path":"Array/leetcode26.md","ref":"Array/leetcode26.md","articles":[]},"previous":{"title":"LeetCode1 Two Sum","level":"1.2.1","depth":2,"path":"Array/leetcode1.md","ref":"Array/leetcode1.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Array/leetcode11.md","mtime":"2018-11-25T05:11:21.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-11-25T05:33:28.305Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
