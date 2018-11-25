@@ -3,7 +3,7 @@
 * [Introduction](README.md)
 * Array
     * [LeetCode1 Two Sum](Array/leetcode1.md)
-    * [LeetCode11 LeetCode11 Container With Most Water](Array/leetcode11.md)
+    * [LeetCode11 Container With Most Water](Array/leetcode11.md)
     * [LeetCode26 Remove Duplicates From Sorted Array](Array/leetcode26.md)
     * [LeetCode35 Search Insertion Position](Array/leetcode35.md)
     * [LeetCode39 Combination Sum](Array/leetcode39.md)
