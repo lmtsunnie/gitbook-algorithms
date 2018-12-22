@@ -11,19 +11,15 @@ tags:
 - algorithms
 ---
 
-![](http://qiniu.limengting.site/code18.jpg)
-
 >Given a linked list, return the node where the cycle begins.
 >
 >If there is no cycle, return null.
-
-<!-- more -->
-
-> Note: Do not modify the linked list.
 >
-> Follow up:
+>Note: Do not modify the linked list.
 >
-> Can you solve it without using extra space?
+>Follow up:
+>
+>Can you solve it without using extra space?
 
 ```java
 package linkedlist;

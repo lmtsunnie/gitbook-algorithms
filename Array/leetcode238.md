@@ -11,12 +11,8 @@ tags:
 - algorithms
 ---
 
-![](http://qiniu.limengting.site/code13.jpg)
-
 > Given an array nums of n integers where n > 1, return an array output such that output[i] is equal to the product of all the elements of nums except nums[i].
-
-<!-- more-->
-
+>
 > Example:
 > Input:  [1,2,3,4] 1,2,3,0
 > Output: [24,12,8,6] 0,0,0,6

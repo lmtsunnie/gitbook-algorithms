@@ -1,5 +1,3 @@
-![](http://qiniu.limengting.site/mac11.jpg)
-
 > Given preorder and inorder traversal of a tree, construct the binary tree.
 >
 > Note:

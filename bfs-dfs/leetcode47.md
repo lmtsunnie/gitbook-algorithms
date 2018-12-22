@@ -12,12 +12,8 @@ tags:
 - backtracking
 ---
 
-![](http://qiniu.limengting.site/work24.jpg)
-
 > Given a collection of numbers that might contain duplicates, return all possible unique permutations.
-
-<!-- more -->
-
+>
 > Example:
 >
 > Input: [1,1,2]

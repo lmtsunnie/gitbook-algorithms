@@ -12,14 +12,10 @@ tags:
 cover: http://qiniu.limengting.site/code2.jpg
 ---
 
-![](http://qiniu.limengting.site/code3.jpg)
-
 > Given an array of size n, find the majority element.
 > The majority element is the element that appears more than ⌊ n/2 ⌋ times.
 > You may assume that the array is non-empty and the majority element always exist in the array.
-
-<!-- more -->
-
+>
 > Example 1:
 > Input: [3,2,3]
 > Output: 3

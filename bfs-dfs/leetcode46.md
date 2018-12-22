@@ -12,13 +12,8 @@ tags:
 - backtracking
 ---
 
-![](http://qiniu.limengting.site/work23.jpg)
-
 > Given a collection of distinct integers, return all possible permutations.
 >
-
-<!-- more -->
-
 > Example:
 >
 > Input: [1,2,3]

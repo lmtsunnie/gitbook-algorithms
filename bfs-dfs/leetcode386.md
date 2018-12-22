@@ -11,20 +11,16 @@ tags:
 - backtracking
 ---
 
-![](http://qiniu.limengting.site/work20.jpg)
-
 > Given an integer *n*, return 1 - *n* in lexicographical order.
 >
 > For example, given 13, return: [1,10,11,12,13,2,3,4,5,6,7,8,9].
 >
 > Please optimize your algorithm to use less time and space. The input size may be as large as 5,000,000.
 
-<!-- more -->
-
 看成9颗树，子节点是在父节点的基础上加一位（`*10 + i`），按顺序进行先序遍历。
 
 ```
-	     1        2        3    ...
+       1        2        3    ...
       /\        /\       /\
    10 ...19  20...29  30...39   ....
   /\      /\ /\  /\   /\   /\  
