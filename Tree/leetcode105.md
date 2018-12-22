@@ -1,9 +1,4 @@
----
-title: LeetCode105 Construct Binary Tree from Preorder and Inorder Traversal
-date: 2018-12-22 14:49:29
----
-
-![](http://qiniu.limengting.site/code8.jpg)
+![](http://qiniu.limengting.site/mac11.jpg)
 
 > Given preorder and inorder traversal of a tree, construct the binary tree.
 
