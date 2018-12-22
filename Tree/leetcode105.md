@@ -14,13 +14,13 @@
 >
 > Return the following binary tree:
 >
-> ​    3
->
+> ```
+>     3
 >    / \
 >   9  20
->
-> ​       /  \
-> ​    15   7
+>     /  \
+>    15   7
+> ```
 
 ```java
 package tree;
