@@ -20,6 +20,9 @@
 ```java
 package tree;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import static format.PrintBinaryTree.*;
 
 public class leetcode105ConstructBinaryTreeFromPreorderAndInorderTraversal {
@@ -27,24 +30,25 @@ public class leetcode105ConstructBinaryTreeFromPreorderAndInorderTraversal {
     * preOrder[0]是root，然后在inOrder里面找到preOrder[0]，例如是inOrder[1]
     * 则inOrder[1]的左边inOrder[0]是左子树，inOrder[1]的右边inOrder[2]-inOrder[4]是右子树
     * 递归可以构造出一颗树
+    * 改进：用HashMap来存储<inOrder[i], i>，空间复杂度O(n)
     * */
     public static Node buildTree(int[] preOrder, int[] inOrder) {
-        return helper(0, 0, inOrder.length - 1, preOrder, inOrder);
+        Map<Integer, Integer> inMap = new HashMap<>();
+        for (int i = 0; i < inOrder.length; i ++) {
+            inMap.put(inOrder[i], i);
+        }
+        return helper(0, 0, inOrder.length - 1, preOrder, inOrder, inMap);
     }
 
-    public static Node helper(int preStart, int inStart, int inEnd, int[] preOrder, int[] inOrder) {
-        if (preStart > preOrder.length - 1 || inStart > inEnd) {
+    public static Node helper(int preStartIndex, int inStartIndex, int inEndIndex, int[] preOrder, int[] inOrder, Map<Integer, Integer> inMap) {
+        if (preStartIndex > preOrder.length - 1 || inStartIndex > inEndIndex) {
             return null;
         }
-        Node root = new Node(preOrder[preStart]);
-        int inRootIndex = 0;
-        for (int i = inStart; i <= inEnd; i ++) {
-            if (inOrder[i] == root.value) {
-                inRootIndex = i;
-            }
-        }
-        root.left = helper(preStart + 1, inStart, inRootIndex - 1, preOrder, inOrder);
-        root.right = helper(preStart + inRootIndex - inStart + 1, inRootIndex + 1, inEnd, preOrder, inOrder);
+        Node root = new Node(preOrder[preStartIndex]);
+        int inRootIndex = inMap.get(root.value);
+        int numsLeft = inRootIndex - inStartIndex;
+        root.left = helper(preStartIndex + 1, inStartIndex, inRootIndex - 1, preOrder, inOrder, inMap);
+        root.right = helper(preStartIndex + numsLeft + 1, inRootIndex + 1, inEndIndex, preOrder, inOrder, inMap);
         return root;
     }
 
