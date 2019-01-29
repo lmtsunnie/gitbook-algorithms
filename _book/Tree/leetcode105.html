@@ -766,44 +766,43 @@ You may assume that duplicates do not exist in the tree.</p>
     /  \
    15   7
 </code></pre></blockquote>
-<pre><code class="lang-java"><span class="hljs-keyword">package</span> tree;
+<pre><code class="lang-java"><span class="hljs-keyword">package</span> array;
 
-<span class="hljs-keyword">import</span> java.util.HashMap;
-<span class="hljs-keyword">import</span> java.util.Map;
-
-<span class="hljs-keyword">import</span> <span class="hljs-keyword">static</span> format.PrintBinaryTree.*;
+<span class="hljs-keyword">import</span> common.TreeNode;
 
 <span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">leetcode105ConstructBinaryTreeFromPreorderAndInorderTraversal</span> </span>{
-    <span class="hljs-comment">/*&#x601D;&#x8DEF;&#x81EA;&#x5DF1;&#x60F3;&#x7684;&#xFF0C;&#x4F46;&#x662F;&#x5B9E;&#x73B0;&#x6709;&#x4E00;&#x4E9B;&#x95EE;&#x9898;&#xFF1A;
-    * preOrder[0]&#x662F;root&#xFF0C;&#x7136;&#x540E;&#x5728;inOrder&#x91CC;&#x9762;&#x627E;&#x5230;preOrder[0]&#xFF0C;&#x4F8B;&#x5982;&#x662F;inOrder[1]
-    * &#x5219;inOrder[1]&#x7684;&#x5DE6;&#x8FB9;inOrder[0]&#x662F;&#x5DE6;&#x5B50;&#x6811;&#xFF0C;inOrder[1]&#x7684;&#x53F3;&#x8FB9;inOrder[2]-inOrder[4]&#x662F;&#x53F3;&#x5B50;&#x6811;
-    * &#x9012;&#x5F52;&#x53EF;&#x4EE5;&#x6784;&#x9020;&#x51FA;&#x4E00;&#x9897;&#x6811;
-    * &#x6539;&#x8FDB;&#xFF1A;&#x7528;HashMap&#x6765;&#x5B58;&#x50A8;&lt;inOrder[i], i&gt;&#xFF0C;&#x7A7A;&#x95F4;&#x590D;&#x6742;&#x5EA6;O(n)
-    * */</span>
-    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> Node <span class="hljs-title">buildTree</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] preOrder, <span class="hljs-keyword">int</span>[] inOrder)</span> </span>{
-        Map&lt;Integer, Integer&gt; inMap = <span class="hljs-keyword">new</span> HashMap&lt;&gt;();
-        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; inOrder.length; i ++) {
-            inMap.put(inOrder[i], i);
-        }
-        <span class="hljs-keyword">return</span> helper(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, inOrder.length - <span class="hljs-number">1</span>, preOrder, inOrder, inMap);
-    }
-
-    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> Node <span class="hljs-title">helper</span><span class="hljs-params">(<span class="hljs-keyword">int</span> preStartIndex, <span class="hljs-keyword">int</span> inStartIndex, <span class="hljs-keyword">int</span> inEndIndex, <span class="hljs-keyword">int</span>[] preOrder, <span class="hljs-keyword">int</span>[] inOrder, Map&lt;Integer, Integer&gt; inMap)</span> </span>{
-        <span class="hljs-keyword">if</span> (preStartIndex &gt; preOrder.length - <span class="hljs-number">1</span> || inStartIndex &gt; inEndIndex) {
+    <span class="hljs-comment">/**
+     * &#x81EA;&#x60F3;&#xFF1A;&#x4E8C;&#x5206;&#x7684;&#x601D;&#x8DEF;&#xFF0C;&#x5148;&#x5E8F;&#x5206;&#x6210;[&#x6839;|&#x5DE6;|&#x53F3;]&#xFF0C;&#x4E2D;&#x5E8F;&#x5206;&#x6210;[&#x5DE6;|&#x6839;|&#x53F3;]&#xFF0C;&#x6839;&#x5728;&#x5148;&#x5E8F;&#x4E00;&#x5B9A;&#x662F;preorder[0]&#xFF0C;&#x627E;&#x5230;&#x6839;&#x5728;&#x4E2D;&#x5E8F;&#x4E2D;inorder[inRoot]
+     * &#x5DE6;&#x53F3;&#x5B50;&#x6811;&#x5404;&#x5206;&#x522B;&#x4E8C;&#x5206;&#xFF0C;&#x9012;&#x5F52;&#x5230;&#x8D85;&#x51FA;&#x8303;&#x56F4;&#x5219;&#x5411;&#x4E0A;&#x8FD4;&#x56DE;
+     * &#x5728;&#x5148;&#x5E8F;&#x4E2D;&#xFF0C;&#x6839;&#x662F;preStart&#xFF0C;&#x5DE6;&#x5B50;&#x6811;&#x662F;[preStart + 1, preStart + 1 + leftLength - 1]&#xFF0C;&#x53F3;&#x5B50;&#x6811;&#x662F;[preStart + leftLength + 1, preEnd]
+     * &#x5728;&#x4E2D;&#x5E8F;&#x4E2D;&#xFF0C;&#x5DE6;&#x5B50;&#x6811;&#x662F;[inStart, inRoot - 1]&#xFF0C;&#x6839;&#x662F;inRoot&#xFF0C;&#x53F3;&#x5B50;&#x6811;&#x662F;[inRoot + 1, inEnd]
+     * &#x6240;&#x4EE5;&#x5DE6;&#x5B50;&#x6811;&#x7684;&#x603B;&#x8282;&#x70B9;&#x4E2A;&#x6570;leftLength = inRoot - 1 - inStart + 1 = inRoot - inStart
+     * &#x6240;&#x4EE5;&#x5148;&#x5E8F;&#x4E2D;&#x5DE6;&#x5B50;&#x6811;&#x662F;[preStart + 1, preStart + inRoot - inStart]&#xFF0C;&#x53F3;&#x5B50;&#x6811;&#x662F;[preStart + inRoot - inStart + 1, preEnd]
+     * <span class="hljs-doctag">@param</span> preorder
+     * <span class="hljs-doctag">@param</span> inorder
+     * <span class="hljs-doctag">@return</span>
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> TreeNode <span class="hljs-title">buildTree</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] preorder, <span class="hljs-keyword">int</span>[] inorder)</span> </span>{
+        <span class="hljs-keyword">if</span> (preorder == <span class="hljs-keyword">null</span> || inorder == <span class="hljs-keyword">null</span> || preorder.length &lt;= <span class="hljs-number">0</span> || preorder.length != inorder.length) {
             <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;
         }
-        Node root = <span class="hljs-keyword">new</span> Node(preOrder[preStartIndex]);
-        <span class="hljs-keyword">int</span> inRootIndex = inMap.get(root.value);
-        <span class="hljs-keyword">int</span> numsLeft = inRootIndex - inStartIndex;
-        root.left = helper(preStartIndex + <span class="hljs-number">1</span>, inStartIndex, inRootIndex - <span class="hljs-number">1</span>, preOrder, inOrder, inMap);
-        root.right = helper(preStartIndex + numsLeft + <span class="hljs-number">1</span>, inRootIndex + <span class="hljs-number">1</span>, inEndIndex, preOrder, inOrder, inMap);
-        <span class="hljs-keyword">return</span> root;
+        <span class="hljs-keyword">return</span> helper(preorder, inorder, <span class="hljs-number">0</span>, preorder.length - <span class="hljs-number">1</span>, <span class="hljs-number">0</span>, inorder.length - <span class="hljs-number">1</span>);
     }
-
-    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
-        <span class="hljs-keyword">int</span>[] preOrder = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[]{<span class="hljs-number">3</span>,<span class="hljs-number">9</span>,<span class="hljs-number">20</span>,<span class="hljs-number">15</span>,<span class="hljs-number">7</span>};
-        <span class="hljs-keyword">int</span>[] inOrder = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[]{<span class="hljs-number">9</span>,<span class="hljs-number">3</span>,<span class="hljs-number">15</span>,<span class="hljs-number">20</span>,<span class="hljs-number">7</span>};
-        printTree(buildTree(preOrder, inOrder));
+    <span class="hljs-function"><span class="hljs-keyword">public</span> TreeNode <span class="hljs-title">helper</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] preorder, <span class="hljs-keyword">int</span>[] inorder, <span class="hljs-keyword">int</span> preStart, <span class="hljs-keyword">int</span> preEnd, <span class="hljs-keyword">int</span> inStart, <span class="hljs-keyword">int</span> inEnd)</span> </span>{
+        <span class="hljs-keyword">if</span> (preStart &gt; preEnd || inStart &gt; inEnd) {
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;
+        }
+        TreeNode root = <span class="hljs-keyword">new</span> TreeNode(preorder[preStart]);
+        <span class="hljs-keyword">int</span> inRoot = inStart;
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = inStart; i &lt;= inEnd; i ++) {
+            <span class="hljs-keyword">if</span> (inorder[i] == root.val) {
+                inRoot = i;
+                <span class="hljs-keyword">break</span>;
+            }
+        }
+        root.left = helper(preorder, inorder, preStart + <span class="hljs-number">1</span>, preStart + inRoot - inStart, inStart, inRoot - <span class="hljs-number">1</span>);
+        root.right = helper(preorder, inorder, preStart + inRoot - inStart + <span class="hljs-number">1</span>, preEnd, inRoot + <span class="hljs-number">1</span>, inEnd);
+        <span class="hljs-keyword">return</span> root;
     }
 }
 </code></pre>
@@ -846,7 +845,7 @@ You may assume that duplicates do not exist in the tree.</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"LeetCode105 Construct Binary Tree from Preorder and Inorder Traversal","level":"1.5.2","depth":2,"next":{"title":"bfs/dfs","level":"1.6","depth":1,"ref":"","articles":[{"title":"bfs/dfs总结","level":"1.6.1","depth":2,"path":"bfs-dfs/bfs-dfs总结.md","ref":"bfs-dfs/bfs-dfs总结.md","articles":[]},{"title":"LeetCode40 Combination Sum II","level":"1.6.2","depth":2,"path":"bfs-dfs/leetcode40.md","ref":"bfs-dfs/leetcode40.md","articles":[]},{"title":"LeetCode46 Permutation","level":"1.6.3","depth":2,"path":"bfs-dfs/leetcode46.md","ref":"bfs-dfs/leetcode46.md","articles":[]},{"title":"LeetCode47 Permutations II","level":"1.6.4","depth":2,"path":"bfs-dfs/leetcode47.md","ref":"bfs-dfs/leetcode47.md","articles":[]},{"title":"LeetCode78 Subsets","level":"1.6.5","depth":2,"path":"bfs-dfs/leetcode78.md","ref":"bfs-dfs/leetcode78.md","articles":[]},{"title":"LeetCode90 Subsets II","level":"1.6.6","depth":2,"path":"bfs-dfs/leetcode90.md","ref":"bfs-dfs/leetcode90.md","articles":[]},{"title":"LeetCode386 Lexicographical Numbers","level":"1.6.7","depth":2,"path":"bfs-dfs/leetcode386.md","ref":"bfs-dfs/leetcode386.md","articles":[]}]},"previous":{"title":"二叉树遍历算法总结","level":"1.5.1","depth":2,"path":"Tree/二叉树遍历算法总结.md","ref":"Tree/二叉树遍历算法总结.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Tree/leetcode105.md","mtime":"2018-12-23T06:35:27.825Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-12-23T06:36:02.669Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"LeetCode105 Construct Binary Tree from Preorder and Inorder Traversal","level":"1.5.2","depth":2,"next":{"title":"bfs/dfs","level":"1.6","depth":1,"ref":"","articles":[{"title":"bfs/dfs总结","level":"1.6.1","depth":2,"path":"bfs-dfs/bfs-dfs总结.md","ref":"bfs-dfs/bfs-dfs总结.md","articles":[]},{"title":"LeetCode40 Combination Sum II","level":"1.6.2","depth":2,"path":"bfs-dfs/leetcode40.md","ref":"bfs-dfs/leetcode40.md","articles":[]},{"title":"LeetCode46 Permutation","level":"1.6.3","depth":2,"path":"bfs-dfs/leetcode46.md","ref":"bfs-dfs/leetcode46.md","articles":[]},{"title":"LeetCode47 Permutations II","level":"1.6.4","depth":2,"path":"bfs-dfs/leetcode47.md","ref":"bfs-dfs/leetcode47.md","articles":[]},{"title":"LeetCode78 Subsets","level":"1.6.5","depth":2,"path":"bfs-dfs/leetcode78.md","ref":"bfs-dfs/leetcode78.md","articles":[]},{"title":"LeetCode90 Subsets II","level":"1.6.6","depth":2,"path":"bfs-dfs/leetcode90.md","ref":"bfs-dfs/leetcode90.md","articles":[]},{"title":"LeetCode386 Lexicographical Numbers","level":"1.6.7","depth":2,"path":"bfs-dfs/leetcode386.md","ref":"bfs-dfs/leetcode386.md","articles":[]}]},"previous":{"title":"二叉树遍历算法总结","level":"1.5.1","depth":2,"path":"Tree/二叉树遍历算法总结.md","ref":"Tree/二叉树遍历算法总结.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Tree/leetcode105.md","mtime":"2019-01-29T10:00:39.913Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-01-29T10:10:43.548Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
