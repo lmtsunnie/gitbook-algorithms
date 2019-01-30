@@ -32,9 +32,6 @@ public class leetcode105ConstructBinaryTreeFromPreorderAndInorderTraversal {
      * 所以左子树的总节点个数leftLength = inRoot - 1 - inStart + 1 = inRoot - inStart
      * 所以先序中左子树是[preStart + 1, preStart + inRoot - inStart]，右子树是[preStart + inRoot - inStart + 1, preEnd]
      * T(n) = 2T(n/2) + O(n)，时间复杂度nlogn
-     * @param preorder
-     * @param inorder
-     * @return
      */
     public TreeNode buildTree(int[] preorder, int[] inorder) {
         if (preorder == null || inorder == null || preorder.length <= 0 || preorder.length != inorder.length) {
