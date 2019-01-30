@@ -8,6 +8,7 @@
     * [LeetCode35 Search Insertion Position](Array/leetcode35.md)
     * [LeetCode39 Combination Sum](Array/leetcode39.md)
     * [LeetCode53 Maximum Subarray](Array/leetcode53.md)
+    * [LeetCode56 Merge Intervals](Array/leetcode56.md)
     * [LeetCode64 Minimum Path Sum](Array/leetcode64.md)
     * [LeetCode75 SortColors](Array/leetcode75.md)
     * [LeetCode121 Best Time to Sell and Buy Stock](Array/leetcode121.md)
