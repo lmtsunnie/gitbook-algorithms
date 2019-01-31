@@ -5,6 +5,7 @@
     * [LeetCode1 Two Sum](Array/leetcode1.md)
     * [LeetCode11 Container With Most Water](Array/leetcode11.md)
     * [LeetCode26 Remove Duplicates From Sorted Array](Array/leetcode26.md)
+    * [LeetCode34 Find First and Last Position of Element in Sorted Array](Array/leetcode34.md)
     * [LeetCode35 Search Insertion Position](Array/leetcode35.md)
     * [LeetCode39 Combination Sum](Array/leetcode39.md)
     * [LeetCode53 Maximum Subarray](Array/leetcode53.md)
