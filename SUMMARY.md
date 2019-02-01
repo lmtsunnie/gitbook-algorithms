@@ -21,6 +21,7 @@
     * [LeetCode581 Shortest Unsorted Continuous Subarray](Array/leetcode581.md)
     * [剑指offer 找出数组中重复的数字](Array/剑指offer-找出数组中重复的数字.md)
     * [Tsinghua OJ 范围查询(Range)](Array/范围查询.md)
+    * [二分查找的各种变形总结](Array/二分查找的各种变形总结.md)
 * LinkedList
 * Stack/Queue
     * [栈和队列的转换/用数组实现栈和队列](Stack-Queue/栈和队列常用算法总结.md)
