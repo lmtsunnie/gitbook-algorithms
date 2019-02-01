@@ -68,7 +68,7 @@ public class leetcode34FindFirstAndLastPositionOfElementInSortedArray {
     }
 
     /**
-     * 1.2 查找第一个大于等于某个数的下标
+     * 1.2 查找第一个大于等于某个数的下标 加一个判断条件变成第一个等于某个数的下标
      * 例：int[] a = {1,2,2,2,4,8,10}，查找2，返回第一个2的下标1；
      * 查找3，返回4的下标4；查找4，返回4的下标4。如果没有大于等于target的元素，返回-1。
      */
@@ -92,8 +92,8 @@ public class leetcode34FindFirstAndLastPositionOfElementInSortedArray {
     }
 
     /**
-     * 1.3 查找第一个小于等于某个数的下标
-     * 例，int[] a = {1,2,2,2,4,8,10}，查找2，返回最后一个数的下标3；查找3，返回最后一个2的下标3；
+     * 1.3 从右边起查找第一个小于等于某个数的下标 加一个判断条件变成最后一个等于某个数的下标
+     * 例，int[] a = {1,2,2,2,4,8,10}，查找2，返回最后一个2的下标3；查找3，返回最后一个2的下标3；
      * 查找4，返回4的下标4。如果没有<=target的元素，返回-1。
      */
     public static int findRightIndex(int[] nums, int target) {
