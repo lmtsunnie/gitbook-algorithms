@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>LeetCode283 Move Zeroes · GitBook</title>
+        <title>LeetCode33 Search in Rotated Sorted Array · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="leetcode448.html" />
+    <link rel="next" href="leetcode34.html" />
     
     
-    <link rel="prev" href="leetcode238.html" />
+    <link rel="prev" href="leetcode26.html" />
     
 
     </head>
@@ -155,7 +155,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.4" data-path="leetcode33.html">
+        <li class="chapter active" data-level="1.2.4" data-path="leetcode33.html">
             
                 <a href="leetcode33.html">
             
@@ -298,7 +298,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.2.15" data-path="leetcode283.html">
+        <li class="chapter " data-level="1.2.15" data-path="leetcode283.html">
             
                 <a href="leetcode283.html">
             
@@ -791,7 +791,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >LeetCode283 Move Zeroes</a>
+        <a href=".." >LeetCode33 Search in Rotated Sorted Array</a>
     </h1>
 </div>
 
@@ -807,49 +807,75 @@
                                 <section class="normal markdown-section">
                                 
                                 <blockquote>
-<p>Given an array nums, write a function to move all 0&apos;s to the end of it while maintaining the relative order of the non-zero elements.</p>
-<p>Example:</p>
-<p>Input: [0,1,0,3,12]
-Output: [1,3,12,0,0]</p>
-<p>Note:</p>
-<p>You must do this in-place without making a copy of the array.
-Minimize the total number of operations.</p>
-</blockquote>
+<p>Suppose an array sorted in ascending order is rotated at some pivot unknown to you beforehand.</p>
+<p>(i.e., <code>[0,1,2,4,5,6,7]</code> might become <code>[4,5,6,7,0,1,2]</code>).</p>
+<p>You are given a target value to search. If found in the array return its index, otherwise return <code>-1</code>.</p>
+<p>You may assume no duplicate exists in the array.</p>
+<p>Your algorithm&apos;s runtime complexity must be in the order of <em>O</em>(log <em>n</em>).</p>
+<p><strong>Example 1:</strong></p>
+<pre><code>Input: nums = [4,5,6,7,0,1,2], target = 0
+Output: 4
+</code></pre><p><strong>Example 2:</strong></p>
+<pre><code>Input: nums = [4,5,6,7,0,1,2], target = 3
+Output: -1
+</code></pre></blockquote>
+<p>&#x4E8C;&#x5206;&#x67E5;&#x627E;&#x7684;&#x601D;&#x60F3;&#xFF1A;<a href="https://limengting.site/2019/01/31/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE%E7%9A%84%E5%90%84%E7%A7%8D%E5%8F%98%E5%BD%A2%E6%80%BB%E7%BB%93/" target="_blank">&#x4E8C;&#x5206;&#x67E5;&#x627E;&#x603B;&#x7ED3;</a></p>
 <pre><code class="lang-java"><span class="hljs-keyword">package</span> array;
 
-<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">leetcode283MoveZeros</span> </span>{
-    <span class="hljs-comment">/*=====================================================================================*/</span>
-    <span class="hljs-comment">/*
-    &#x81EA;&#x60F3;1&#xFF1A;&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;O(n)&#xFF0C;&#x7A7A;&#x95F4;&#x590D;&#x6742;&#x5EA6;O(1)
-    &#x4ECE;&#x5DE6;&#x5230;&#x53F3;&#x7528;i&#x904D;&#x5386;&#x539F;&#x6570;&#x7EC4;&#xFF0C;&#x7528;j&#x8BB0;&#x5F55;&#x8BE5;&#x653E;&#x5230;&#x54EA;&#x4E2A;&#x4F4D;&#x7F6E;&#xFF0C;
-    &#x521D;&#x59CB;i=0,j=0,&#x9047;&#x5230;&#x4E0D;&#x4E3A;0&#x7684;&#x5C31;&#x653E;&#x5230;j&#x4F4D;&#x7F6E;&#xFF0C;j++&#xFF0C;i&#x904D;&#x5386;&#x5B8C;&#x6210;&#x540E;&#xFF0C;j&#x540E;&#x9762;&#x7684;&#x5168;&#x8865;0
-    */</span>
-    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">moveZeros</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] nums)</span> </span>{
-        <span class="hljs-keyword">if</span> (nums == <span class="hljs-keyword">null</span> || nums.length == <span class="hljs-number">0</span>) <span class="hljs-keyword">return</span>;
-        <span class="hljs-keyword">int</span> insertIndex = <span class="hljs-number">0</span>;
-        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> num : nums) {
-            <span class="hljs-keyword">if</span> (num != <span class="hljs-number">0</span>) {
-                nums[insertIndex ++] = num;
-            }
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">leetcode33SearchInRotatedSortedArray</span> </span>{
+    <span class="hljs-comment">/**
+     * &#x8BA8;&#x8BBA;&#x533A;&#xFF1A;&#x5206;&#x6210;3&#x79CD;&#x60C5;&#x51B5;&#x67E5;&#x627E;&#xFF0C;&#x4E3B;&#x8981;&#x662F;&#x627E;&#x5230;minIndex
+     * &#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;O(nlogn)&#xFF0C;&#x7A7A;&#x95F4;&#x590D;&#x6742;&#x5EA6;O(1)
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> <span class="hljs-title">search</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] nums, <span class="hljs-keyword">int</span> target)</span> </span>{
+        <span class="hljs-keyword">if</span> (nums == <span class="hljs-keyword">null</span> || nums.length &lt;= <span class="hljs-number">0</span>) {
+            <span class="hljs-keyword">return</span> -<span class="hljs-number">1</span>;
         }
-        <span class="hljs-keyword">while</span> (insertIndex &lt; nums.length) {
-            nums[insertIndex ++] = <span class="hljs-number">0</span>;
+        <span class="hljs-keyword">int</span> smallNumIndex = findMinIndex(nums);
+        <span class="hljs-keyword">if</span> (target == nums[<span class="hljs-number">0</span>]) {
+            <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+        } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (target &gt; nums[<span class="hljs-number">0</span>]) {
+            <span class="hljs-keyword">return</span> binarySearch(nums, <span class="hljs-number">0</span>, smallNumIndex - <span class="hljs-number">1</span> &gt;= <span class="hljs-number">0</span> ? smallNumIndex - <span class="hljs-number">1</span> : nums.length - <span class="hljs-number">1</span>, target);
+        } <span class="hljs-keyword">else</span> {
+            <span class="hljs-keyword">return</span> binarySearch(nums, smallNumIndex, nums.length - <span class="hljs-number">1</span>, target);
         }
-    }
-    <span class="hljs-comment">/*=====================================================================================*/</span>
-    <span class="hljs-comment">// &#x6253;&#x5370;&#x51FD;&#x6570;</span>
-    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">printArray</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] nums)</span> </span>{
-        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; nums.length - <span class="hljs-number">1</span>; i ++) {
-            System.out.print(nums[i] + <span class="hljs-string">&quot; &quot;</span>);
-        }
-        System.out.println(nums[nums.length - <span class="hljs-number">1</span>]);
     }
 
-    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span></span>{
-        <span class="hljs-keyword">int</span>[] nums = {<span class="hljs-number">0</span>,<span class="hljs-number">1</span>,<span class="hljs-number">0</span>,<span class="hljs-number">3</span>,<span class="hljs-number">12</span>};
-        printArray(nums);
-        moveZeros(nums);
-        printArray(nums);
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> <span class="hljs-title">binarySearch</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] nums, <span class="hljs-keyword">int</span> lo, <span class="hljs-keyword">int</span> hi, <span class="hljs-keyword">int</span> target)</span> </span>{
+        <span class="hljs-keyword">while</span> (lo &lt;= hi) {
+            <span class="hljs-keyword">int</span> mid = lo + ((hi - lo) &gt;&gt; <span class="hljs-number">1</span>);
+            <span class="hljs-keyword">if</span> (target &lt; nums[mid]) {
+                hi = mid - <span class="hljs-number">1</span>;
+            } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (target &gt; nums[mid]) {
+                lo = mid + <span class="hljs-number">1</span>;
+            } <span class="hljs-keyword">else</span> {
+                <span class="hljs-keyword">return</span> mid;
+            }
+        }
+        <span class="hljs-keyword">return</span> -<span class="hljs-number">1</span>;
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> <span class="hljs-title">findMinIndex</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] nums)</span> </span>{
+        <span class="hljs-keyword">int</span> lo = <span class="hljs-number">0</span>, hi = nums.length - <span class="hljs-number">1</span>;
+        <span class="hljs-keyword">while</span> (lo &lt;= hi) {
+            <span class="hljs-keyword">int</span> mid = lo + ((hi - lo) &gt;&gt; <span class="hljs-number">1</span>);
+            <span class="hljs-comment">// mid &lt; hi&#xFF1A;&#x6700;&#x5C0F;&#x503C;&#x5728;&#x5DE6;&#x534A;&#x90E8;&#x5206;&#x4E5F;&#x53EF;&#x80FD;&#x662F;&#x81EA;&#x5DF1;</span>
+            <span class="hljs-keyword">if</span> (nums[mid] &lt; nums[hi]) {
+                hi = mid;
+                <span class="hljs-comment">// mid &gt; hi&#xFF1A;&#x6700;&#x5C0F;&#x503C;&#x5728;&#x53F3;&#x534A;&#x90E8;&#x5206;&#xFF0C;&#x4E0D;&#x53EF;&#x80FD;&#x662F;&#x81EA;&#x5DF1;&#x4E86;</span>
+            } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (nums[mid] &gt; nums[hi]) {
+                lo = mid + <span class="hljs-number">1</span>;
+            } <span class="hljs-keyword">else</span> {
+                <span class="hljs-keyword">return</span> mid;
+            }
+        }
+        <span class="hljs-keyword">return</span> lo;
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
+        <span class="hljs-keyword">int</span>[] nums = {<span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">6</span>,<span class="hljs-number">7</span>,<span class="hljs-number">8</span>,<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>};
+        System.out.println(findMinIndex(nums));
+        System.out.println(search(nums, <span class="hljs-number">8</span>));
     }
 }
 </code></pre>
@@ -880,12 +906,12 @@ Minimize the total number of operations.</p>
 
             
                 
-                <a href="leetcode238.html" class="navigation navigation-prev " aria-label="Previous page: LeetCode238 Product of Array Except">
+                <a href="leetcode26.html" class="navigation navigation-prev " aria-label="Previous page: LeetCode26 Remove Duplicates From Sorted Array">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="leetcode448.html" class="navigation navigation-next " aria-label="Next page: LeetCode448 Find All Numbers Disappeared in an Array">
+                <a href="leetcode34.html" class="navigation navigation-next " aria-label="Next page: LeetCode34 Find First and Last Position of Element in Sorted Array">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -896,7 +922,7 @@ Minimize the total number of operations.</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"LeetCode283 Move Zeroes","date":"2018-08-25T14:47:58.000Z","categories":"算法","tags":["LeetCode","Top 100 Liked Questions","Array","Easy","Java","algorithms"],"cover":"http://qiniu.limengting.site/code1.jpg","level":"1.2.15","depth":2,"next":{"title":"LeetCode448 Find All Numbers Disappeared in an Array","level":"1.2.16","depth":2,"path":"Array/leetcode448.md","ref":"Array/leetcode448.md","articles":[]},"previous":{"title":"LeetCode238 Product of Array Except","level":"1.2.14","depth":2,"path":"Array/leetcode238.md","ref":"Array/leetcode238.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Array/leetcode283.md","mtime":"2019-01-23T08:48:55.529Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-02-07T09:17:25.893Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"LeetCode33 Search in Rotated Sorted Array","level":"1.2.4","depth":2,"next":{"title":"LeetCode34 Find First and Last Position of Element in Sorted Array","level":"1.2.5","depth":2,"path":"Array/leetcode34.md","ref":"Array/leetcode34.md","articles":[]},"previous":{"title":"LeetCode26 Remove Duplicates From Sorted Array","level":"1.2.3","depth":2,"path":"Array/leetcode26.md","ref":"Array/leetcode26.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Array/leetcode33.md","mtime":"2019-02-07T09:10:48.913Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-02-07T09:17:25.893Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
