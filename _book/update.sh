@@ -10,3 +10,6 @@ exit
 remotessh
 cd ../../limengting
 hexo g && hexo d
+
+for i in 
+echo i

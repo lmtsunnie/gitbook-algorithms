@@ -4,8 +4,4 @@
 
 本书github地址：https://github.com/lmtsunnie/gitbook-algorithms
 
-可加微信一起刷题练智力拿offer:
-
-![](wechat.JPG)
-
-
+联系邮箱：lmtsunnie@163.com
