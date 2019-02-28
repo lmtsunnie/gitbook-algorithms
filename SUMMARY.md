@@ -23,6 +23,8 @@
     * [剑指offer 找出数组中重复的数字](Array/剑指offer-找出数组中重复的数字.md)
     * [Tsinghua OJ 范围查询(Range)](Array/范围查询.md)
     * [二分查找的各种变形总结](Array/二分查找的各种变形总结.md)
+* String
+    - [剑指offer 替换空格](String/替换空格.md)
 * LinkedList
 * Stack/Queue
     * [栈和队列的转换/用数组实现栈和队列](Stack-Queue/栈和队列常用算法总结.md)
@@ -46,7 +48,7 @@
     * [LeetCode287 Find the Duplicate Number](Fast-Slow-pointers/leetcode287.md)
 * Matrix
     * [LeetCode48 Rotate Image](Matrix/leetcode48.md)
-    * [剑指offer 二维数组中的查找](Matrix/剑指offer-二维数组中的查找.md)
+    * [剑指offer 二维数组中的查找](Matrix/二维数组中的查找.md)
 * Sort
     * [排序算法总结](Sort/排序算法总结.md)
 
