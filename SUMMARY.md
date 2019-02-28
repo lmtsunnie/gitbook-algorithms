@@ -26,6 +26,7 @@
 * String
     - [剑指offer 替换空格](String/替换空格.md)
 * LinkedList
+    - [从尾到头打印链表](LinkedList/从尾到头打印链表.md)
 * Stack/Queue
     * [栈和队列的转换/用数组实现栈和队列](Stack-Queue/栈和队列常用算法总结.md)
 * Tree
