@@ -63,11 +63,11 @@ public class leetcode55JumpGame {
      * 起始的时候只有memo[nums.length - 1]== GOOD，其他的都为UNKNOWN
      * 从0开始回溯往后走，直到找到memo[index]==GOOD停止，否则返回BAD
      * ？？？为什么时间复杂度是O(n²)
-     * 空间复杂度O(n)，表O(n)，递归深度O(n)
+     * 表O(n)，递归深度O(n)，空间复杂度O(n)
      */
     Index[] memo;
 
-    public boolean canJump21(int[] nums) {
+    public boolean canJump2(int[] nums) {
         memo = new Index[nums.length];
         for (int i = 0; i < nums.length - 1; i++) {
             memo[i] = Index.UNKNOWN;
