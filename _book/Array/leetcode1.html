@@ -1,0 +1,990 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>LeetCode1 Two Sum · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="leetcode11.html" />
+    
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    Array
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.2.1" data-path="leetcode1.html">
+            
+                <a href="leetcode1.html">
+            
+                    
+                    LeetCode1 Two Sum
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="leetcode11.html">
+            
+                <a href="leetcode11.html">
+            
+                    
+                    LeetCode11 Container With Most Water
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="leetcode26.html">
+            
+                <a href="leetcode26.html">
+            
+                    
+                    LeetCode26 Remove Duplicates From Sorted Array
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="leetcode33.html">
+            
+                <a href="leetcode33.html">
+            
+                    
+                    LeetCode33 Search in Rotated Sorted Array
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="leetcode34.html">
+            
+                <a href="leetcode34.html">
+            
+                    
+                    LeetCode34 Find First and Last Position of Element in Sorted Array
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="leetcode35.html">
+            
+                <a href="leetcode35.html">
+            
+                    
+                    LeetCode35 Search Insertion Position
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="leetcode39.html">
+            
+                <a href="leetcode39.html">
+            
+                    
+                    LeetCode39 Combination Sum
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="leetcode53.html">
+            
+                <a href="leetcode53.html">
+            
+                    
+                    LeetCode53 Maximum Subarray
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="leetcode56.html">
+            
+                <a href="leetcode56.html">
+            
+                    
+                    LeetCode56 Merge Intervals
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10" data-path="leetcode64.html">
+            
+                <a href="leetcode64.html">
+            
+                    
+                    LeetCode64 Minimum Path Sum
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.11" data-path="leetcode75.html">
+            
+                <a href="leetcode75.html">
+            
+                    
+                    LeetCode75 SortColors
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.12" data-path="leetcode121.html">
+            
+                <a href="leetcode121.html">
+            
+                    
+                    LeetCode121 Best Time to Sell and Buy Stock
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.13" data-path="leetcode169.html">
+            
+                <a href="leetcode169.html">
+            
+                    
+                    LeetCode169 Majority Element
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.14" data-path="leetcode238.html">
+            
+                <a href="leetcode238.html">
+            
+                    
+                    LeetCode238 Product of Array Except
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.15" data-path="leetcode283.html">
+            
+                <a href="leetcode283.html">
+            
+                    
+                    LeetCode283 Move Zeroes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.16" data-path="leetcode448.html">
+            
+                <a href="leetcode448.html">
+            
+                    
+                    LeetCode448 Find All Numbers Disappeared in an Array
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.17" data-path="leetcode560.html">
+            
+                <a href="leetcode560.html">
+            
+                    
+                    LeetCode560 Subarray Sum Equals K
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.18" data-path="leetcode581.html">
+            
+                <a href="leetcode581.html">
+            
+                    
+                    LeetCode581 Shortest Unsorted Continuous Subarray
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.19" data-path="剑指offer-找出数组中重复的数字.html">
+            
+                <a href="剑指offer-找出数组中重复的数字.html">
+            
+                    
+                    剑指offer 找出数组中重复的数字
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.20" data-path="范围查询.html">
+            
+                <a href="范围查询.html">
+            
+                    
+                    Tsinghua OJ 范围查询(Range)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.21" data-path="二分查找的各种变形总结.html">
+            
+                <a href="二分查找的各种变形总结.html">
+            
+                    
+                    二分查找的各种变形总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    LinkedList
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
+                    Stack/Queue
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../Stack-Queue/栈和队列常用算法总结.html">
+            
+                <a href="../Stack-Queue/栈和队列常用算法总结.html">
+            
+                    
+                    栈和队列的转换/用数组实现栈和队列
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" >
+            
+                <span>
+            
+                    
+                    Tree
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../Tree/二叉树遍历算法总结.html">
+            
+                <a href="../Tree/二叉树遍历算法总结.html">
+            
+                    
+                    二叉树遍历算法总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../Tree/leetcode105.html">
+            
+                <a href="../Tree/leetcode105.html">
+            
+                    
+                    LeetCode105 Construct Binary Tree from Preorder and Inorder Traversal
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" >
+            
+                <span>
+            
+                    
+                    bfs/dfs
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../bfs-dfs/bfs-dfs总结.html">
+            
+                <a href="../bfs-dfs/bfs-dfs总结.html">
+            
+                    
+                    bfs/dfs总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../bfs-dfs/leetcode40.html">
+            
+                <a href="../bfs-dfs/leetcode40.html">
+            
+                    
+                    LeetCode40 Combination Sum II
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../bfs-dfs/leetcode46.html">
+            
+                <a href="../bfs-dfs/leetcode46.html">
+            
+                    
+                    LeetCode46 Permutation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../bfs-dfs/leetcode47.html">
+            
+                <a href="../bfs-dfs/leetcode47.html">
+            
+                    
+                    LeetCode47 Permutations II
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../bfs-dfs/leetcode78.html">
+            
+                <a href="../bfs-dfs/leetcode78.html">
+            
+                    
+                    LeetCode78 Subsets
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" data-path="../bfs-dfs/leetcode90.html">
+            
+                <a href="../bfs-dfs/leetcode90.html">
+            
+                    
+                    LeetCode90 Subsets II
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.7" data-path="../bfs-dfs/leetcode386.html">
+            
+                <a href="../bfs-dfs/leetcode386.html">
+            
+                    
+                    LeetCode386 Lexicographical Numbers
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" >
+            
+                <span>
+            
+                    
+                    dp
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../dp/leetcode55.html">
+            
+                <a href="../dp/leetcode55.html">
+            
+                    
+                    LeetCode55 Jump Game
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../dp/leetcode62.html">
+            
+                <a href="../dp/leetcode62.html">
+            
+                    
+                    LeetCode62 Unique Paths
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../dp/leetcode621.html">
+            
+                <a href="../dp/leetcode621.html">
+            
+                    
+                    LeetCode621 Task Scheduler
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" >
+            
+                <span>
+            
+                    
+                    Fast-Slow-pointers
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../Fast-Slow-pointers/leetcode142.html">
+            
+                <a href="../Fast-Slow-pointers/leetcode142.html">
+            
+                    
+                    LeetCode142 Linked List Cycle II
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../Fast-Slow-pointers/leetcode287.html">
+            
+                <a href="../Fast-Slow-pointers/leetcode287.html">
+            
+                    
+                    LeetCode287 Find the Duplicate Number
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" >
+            
+                <span>
+            
+                    
+                    Matrix
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../Matrix/leetcode48.html">
+            
+                <a href="../Matrix/leetcode48.html">
+            
+                    
+                    LeetCode48 Rotate Image
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="../Matrix/剑指offer-二维数组中的查找.md">
+            
+                <span>
+            
+                    
+                    剑指offer 二维数组中的查找
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" >
+            
+                <span>
+            
+                    
+                    Sort
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="../Sort/排序算法总结.html">
+            
+                <a href="../Sort/排序算法总结.html">
+            
+                    
+                    排序算法总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >LeetCode1 Two Sum</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <blockquote>
+<p>Given an array of integers, return indices of the two numbers such that they add up to a specific target.</p>
+<p>You may assume that each input would have exactly one solution, and you may not use the same element twice.</p>
+<p>Example:
+Given nums = [2, 7, 11, 15], target = 9,
+Because nums[0] + nums[1] = 2 + 7 = 9,
+return [0, 1].</p>
+</blockquote>
+<pre><code class="lang-java"><span class="hljs-keyword">package</span> array;
+
+<span class="hljs-keyword">import</span> java.util.HashMap;
+<span class="hljs-keyword">import</span> java.util.Map;
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">leetcode1TwoSum</span> </span>{
+    <span class="hljs-comment">/*=====================================================================================*/</span>
+
+    <span class="hljs-comment">/*
+    &#x81EA;&#x60F3;1&#xFF1A;
+    &#x4E00;&#x4E2A;&#x8F93;&#x5165;&#x6709;&#x4E14;&#x4EC5;&#x6709;&#x4E00;&#x4E2A;&#x8F93;&#x51FA;&#xFF0C;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x6700;&#x591A;&#x53EA;&#x80FD;&#x7528;&#x4E00;&#x6B21;
+    &#x6700;&#x7B80;&#x5355;&#x7684;&#x505A;&#x6CD5;&#xFF0C;&#x6839;&#x636E;&#x6BCF;&#x4E00;&#x4E2A;&#x6570;&#x518D;&#x904D;&#x5386;&#x4E00;&#x6B21;
+    &#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;O(n&#xB2;),&#x7A7A;&#x95F4;&#x590D;&#x6742;&#x5EA6;O(1)
+    */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span>[] twoSum1(<span class="hljs-keyword">int</span>[] nums, <span class="hljs-keyword">int</span> target) {
+        <span class="hljs-keyword">int</span> remain;
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; nums.length; i ++) {
+            remain = target - nums[i];
+            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = i + <span class="hljs-number">1</span>; j &lt; nums.length; j ++) {
+                <span class="hljs-keyword">if</span> (nums[j] == remain) {
+                    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[]{i, j};
+                }
+            }
+        }
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;
+    }
+    <span class="hljs-comment">/*=====================================================================================*/</span>
+
+    <span class="hljs-comment">/*
+    &#x81EA;&#x60F3;2&#xFF1A;&#x7528;&#x7A7A;&#x95F4;&#x6362;&#x65F6;&#x95F4;
+    &#x7528;&lt;K,V&gt;&#x5B58;&#x50A8;&#x6240;&#x6709;&#x7684;&lt;num, index&gt;
+    &#x53EA;&#x9700;&#x8981;&#x904D;&#x5386;&#x4E00;&#x904D;&#xFF0C;&#x5BF9;&#x4E8E;&#x6BCF;&#x4E00;&#x4E2A;num&#x7B97;&#x51FA;remain&#xFF0C;&#x628A;remain&#x4F5C;&#x4E3A;K&#x5728;map&#x4E2D;&#x67E5;&#x6709;&#x6CA1;&#x6709;&#x8FD9;&#x4E2A;&lt;K,V&gt;
+    &#x5982;&#x679C;&#x6709;&#x5C06;index&#x8FD4;&#x56DE;
+    &#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;O(n)&#xFF0C;&#x7A7A;&#x95F4;&#x590D;&#x6742;&#x5EA6;O(n)
+    * */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span>[] twoSum2(<span class="hljs-keyword">int</span>[] nums, <span class="hljs-keyword">int</span> target) {
+        Map&lt;Integer, Integer&gt; map = store(nums);
+        <span class="hljs-keyword">int</span> remain;
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; nums.length; i ++) {
+            remain = target - nums[i];
+            <span class="hljs-keyword">if</span> (map.get(remain) != <span class="hljs-keyword">null</span> &amp;&amp; map.get(remain) &gt; i) {
+                <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[]{i, map.get(remain)};
+            }
+        }
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> Map&lt;Integer, Integer&gt; <span class="hljs-title">store</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] nums)</span> </span>{
+        Map&lt;Integer, Integer&gt; map = <span class="hljs-keyword">new</span> HashMap&lt;&gt;();
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; nums.length; i ++) {
+            map.put(nums[i], i);
+        }
+        <span class="hljs-keyword">return</span> map;
+    }
+    <span class="hljs-comment">/*=====================================================================================*/</span>
+    <span class="hljs-comment">/*
+    * Solution&#x533A;&#xFF1A;one-pass HashMap
+    * &#x904D;&#x5386;&#x4E00;&#x6B21;&#xFF0C;&#x5BF9;&#x4E8E;&#x6BCF;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#xFF0C;&#x5982;&#x679C;map&#x4E2D;&#x6709;remain&#x7684;&#x503C;(&#x524D;&#x9762;&#x63D2;&#x5165;&#x4E86;)&#x76F4;&#x63A5;&#x8FD4;&#x56DE;&#xFF0C;
+    * &#x5982;&#x679C;&#x6CA1;&#x6709;&#x5219;&#x628A;&#x8FD9;&#x4E2A;&#x5143;&#x7D20;&#x7684;&lt;num, index&gt;&#x63D2;&#x5165;map
+    * &#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;O(n)&#xFF0C;&#x7A7A;&#x95F4;&#x590D;&#x6742;&#x5EA6;O(n)
+    * */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span>[] twoSum3(<span class="hljs-keyword">int</span>[] nums, <span class="hljs-keyword">int</span> target) {
+        Map&lt;Integer, Integer&gt; map = <span class="hljs-keyword">new</span> HashMap&lt;&gt;();
+        <span class="hljs-keyword">int</span> remain;
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; nums.length; i ++) {
+            remain = target - nums[i];
+            <span class="hljs-keyword">if</span> (map.containsKey(remain)) {
+                <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[]{i, map.get(remain)};
+            }
+            map.put(nums[i], i);
+        }
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;
+    }
+
+    <span class="hljs-comment">/*=====================================================================================*/</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
+        <span class="hljs-keyword">int</span>[] nums = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[]{<span class="hljs-number">3</span>,<span class="hljs-number">2</span>,<span class="hljs-number">4</span>};
+        <span class="hljs-keyword">int</span>[] res1 = twoSum1(nums, <span class="hljs-number">6</span>);
+        <span class="hljs-keyword">int</span>[] res2 = twoSum2(nums, <span class="hljs-number">6</span>);
+        <span class="hljs-keyword">int</span>[] res3 = twoSum2(nums, <span class="hljs-number">6</span>);
+        System.out.println(res1[<span class="hljs-number">0</span>] + <span class="hljs-string">&quot; &quot;</span> + res1[<span class="hljs-number">1</span>]);
+        System.out.println(res2[<span class="hljs-number">0</span>] + <span class="hljs-string">&quot; &quot;</span> + res2[<span class="hljs-number">1</span>]);
+        System.out.println(res3[<span class="hljs-number">0</span>] + <span class="hljs-string">&quot; &quot;</span> + res3[<span class="hljs-number">1</span>]);
+    }
+}
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                
+                <a href="leetcode11.html" class="navigation navigation-next navigation-unique" aria-label="Next page: LeetCode11 Container With Most Water">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"LeetCode1 Two Sum","date":"2018-09-05T14:49:29.000Z","categories":"算法","tags":["LeetCode","Top 100 Liked Questions","Array","Easy","Java","algorithms"],"level":"1.2.1","depth":2,"next":{"title":"LeetCode11 Container With Most Water","level":"1.2.2","depth":2,"path":"Array/leetcode11.md","ref":"Array/leetcode11.md","articles":[]},"previous":{"title":"Array","level":"1.2","depth":1,"ref":"","articles":[{"title":"LeetCode1 Two Sum","level":"1.2.1","depth":2,"path":"Array/leetcode1.md","ref":"Array/leetcode1.md","articles":[]},{"title":"LeetCode11 Container With Most Water","level":"1.2.2","depth":2,"path":"Array/leetcode11.md","ref":"Array/leetcode11.md","articles":[]},{"title":"LeetCode26 Remove Duplicates From Sorted Array","level":"1.2.3","depth":2,"path":"Array/leetcode26.md","ref":"Array/leetcode26.md","articles":[]},{"title":"LeetCode33 Search in Rotated Sorted Array","level":"1.2.4","depth":2,"path":"Array/leetcode33.md","ref":"Array/leetcode33.md","articles":[]},{"title":"LeetCode34 Find First and Last Position of Element in Sorted Array","level":"1.2.5","depth":2,"path":"Array/leetcode34.md","ref":"Array/leetcode34.md","articles":[]},{"title":"LeetCode35 Search Insertion Position","level":"1.2.6","depth":2,"path":"Array/leetcode35.md","ref":"Array/leetcode35.md","articles":[]},{"title":"LeetCode39 Combination Sum","level":"1.2.7","depth":2,"path":"Array/leetcode39.md","ref":"Array/leetcode39.md","articles":[]},{"title":"LeetCode53 Maximum Subarray","level":"1.2.8","depth":2,"path":"Array/leetcode53.md","ref":"Array/leetcode53.md","articles":[]},{"title":"LeetCode56 Merge Intervals","level":"1.2.9","depth":2,"path":"Array/leetcode56.md","ref":"Array/leetcode56.md","articles":[]},{"title":"LeetCode64 Minimum Path Sum","level":"1.2.10","depth":2,"path":"Array/leetcode64.md","ref":"Array/leetcode64.md","articles":[]},{"title":"LeetCode75 SortColors","level":"1.2.11","depth":2,"path":"Array/leetcode75.md","ref":"Array/leetcode75.md","articles":[]},{"title":"LeetCode121 Best Time to Sell and Buy Stock","level":"1.2.12","depth":2,"path":"Array/leetcode121.md","ref":"Array/leetcode121.md","articles":[]},{"title":"LeetCode169 Majority Element","level":"1.2.13","depth":2,"path":"Array/leetcode169.md","ref":"Array/leetcode169.md","articles":[]},{"title":"LeetCode238 Product of Array Except","level":"1.2.14","depth":2,"path":"Array/leetcode238.md","ref":"Array/leetcode238.md","articles":[]},{"title":"LeetCode283 Move Zeroes","level":"1.2.15","depth":2,"path":"Array/leetcode283.md","ref":"Array/leetcode283.md","articles":[]},{"title":"LeetCode448 Find All Numbers Disappeared in an Array","level":"1.2.16","depth":2,"path":"Array/leetcode448.md","ref":"Array/leetcode448.md","articles":[]},{"title":"LeetCode560 Subarray Sum Equals K","level":"1.2.17","depth":2,"path":"Array/leetcode560.md","ref":"Array/leetcode560.md","articles":[]},{"title":"LeetCode581 Shortest Unsorted Continuous Subarray","level":"1.2.18","depth":2,"path":"Array/leetcode581.md","ref":"Array/leetcode581.md","articles":[]},{"title":"剑指offer 找出数组中重复的数字","level":"1.2.19","depth":2,"path":"Array/剑指offer-找出数组中重复的数字.md","ref":"Array/剑指offer-找出数组中重复的数字.md","articles":[]},{"title":"Tsinghua OJ 范围查询(Range)","level":"1.2.20","depth":2,"path":"Array/范围查询.md","ref":"Array/范围查询.md","articles":[]},{"title":"二分查找的各种变形总结","level":"1.2.21","depth":2,"path":"Array/二分查找的各种变形总结.md","ref":"Array/二分查找的各种变形总结.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Array/leetcode1.md","mtime":"2019-01-23T08:48:55.529Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-02-28T13:29:48.151Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

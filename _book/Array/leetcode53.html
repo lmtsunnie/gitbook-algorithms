@@ -1,0 +1,1003 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>LeetCode53 Maximum Subarray · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="leetcode56.html" />
+    
+    
+    <link rel="prev" href="leetcode39.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    Array
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="leetcode1.html">
+            
+                <a href="leetcode1.html">
+            
+                    
+                    LeetCode1 Two Sum
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="leetcode11.html">
+            
+                <a href="leetcode11.html">
+            
+                    
+                    LeetCode11 Container With Most Water
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="leetcode26.html">
+            
+                <a href="leetcode26.html">
+            
+                    
+                    LeetCode26 Remove Duplicates From Sorted Array
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="leetcode33.html">
+            
+                <a href="leetcode33.html">
+            
+                    
+                    LeetCode33 Search in Rotated Sorted Array
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="leetcode34.html">
+            
+                <a href="leetcode34.html">
+            
+                    
+                    LeetCode34 Find First and Last Position of Element in Sorted Array
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="leetcode35.html">
+            
+                <a href="leetcode35.html">
+            
+                    
+                    LeetCode35 Search Insertion Position
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="leetcode39.html">
+            
+                <a href="leetcode39.html">
+            
+                    
+                    LeetCode39 Combination Sum
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.8" data-path="leetcode53.html">
+            
+                <a href="leetcode53.html">
+            
+                    
+                    LeetCode53 Maximum Subarray
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="leetcode56.html">
+            
+                <a href="leetcode56.html">
+            
+                    
+                    LeetCode56 Merge Intervals
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10" data-path="leetcode64.html">
+            
+                <a href="leetcode64.html">
+            
+                    
+                    LeetCode64 Minimum Path Sum
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.11" data-path="leetcode75.html">
+            
+                <a href="leetcode75.html">
+            
+                    
+                    LeetCode75 SortColors
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.12" data-path="leetcode121.html">
+            
+                <a href="leetcode121.html">
+            
+                    
+                    LeetCode121 Best Time to Sell and Buy Stock
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.13" data-path="leetcode169.html">
+            
+                <a href="leetcode169.html">
+            
+                    
+                    LeetCode169 Majority Element
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.14" data-path="leetcode238.html">
+            
+                <a href="leetcode238.html">
+            
+                    
+                    LeetCode238 Product of Array Except
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.15" data-path="leetcode283.html">
+            
+                <a href="leetcode283.html">
+            
+                    
+                    LeetCode283 Move Zeroes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.16" data-path="leetcode448.html">
+            
+                <a href="leetcode448.html">
+            
+                    
+                    LeetCode448 Find All Numbers Disappeared in an Array
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.17" data-path="leetcode560.html">
+            
+                <a href="leetcode560.html">
+            
+                    
+                    LeetCode560 Subarray Sum Equals K
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.18" data-path="leetcode581.html">
+            
+                <a href="leetcode581.html">
+            
+                    
+                    LeetCode581 Shortest Unsorted Continuous Subarray
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.19" data-path="剑指offer-找出数组中重复的数字.html">
+            
+                <a href="剑指offer-找出数组中重复的数字.html">
+            
+                    
+                    剑指offer 找出数组中重复的数字
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.20" data-path="范围查询.html">
+            
+                <a href="范围查询.html">
+            
+                    
+                    Tsinghua OJ 范围查询(Range)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.21" data-path="二分查找的各种变形总结.html">
+            
+                <a href="二分查找的各种变形总结.html">
+            
+                    
+                    二分查找的各种变形总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    LinkedList
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
+                    Stack/Queue
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../Stack-Queue/栈和队列常用算法总结.html">
+            
+                <a href="../Stack-Queue/栈和队列常用算法总结.html">
+            
+                    
+                    栈和队列的转换/用数组实现栈和队列
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" >
+            
+                <span>
+            
+                    
+                    Tree
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../Tree/二叉树遍历算法总结.html">
+            
+                <a href="../Tree/二叉树遍历算法总结.html">
+            
+                    
+                    二叉树遍历算法总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../Tree/leetcode105.html">
+            
+                <a href="../Tree/leetcode105.html">
+            
+                    
+                    LeetCode105 Construct Binary Tree from Preorder and Inorder Traversal
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" >
+            
+                <span>
+            
+                    
+                    bfs/dfs
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../bfs-dfs/bfs-dfs总结.html">
+            
+                <a href="../bfs-dfs/bfs-dfs总结.html">
+            
+                    
+                    bfs/dfs总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../bfs-dfs/leetcode40.html">
+            
+                <a href="../bfs-dfs/leetcode40.html">
+            
+                    
+                    LeetCode40 Combination Sum II
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../bfs-dfs/leetcode46.html">
+            
+                <a href="../bfs-dfs/leetcode46.html">
+            
+                    
+                    LeetCode46 Permutation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../bfs-dfs/leetcode47.html">
+            
+                <a href="../bfs-dfs/leetcode47.html">
+            
+                    
+                    LeetCode47 Permutations II
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../bfs-dfs/leetcode78.html">
+            
+                <a href="../bfs-dfs/leetcode78.html">
+            
+                    
+                    LeetCode78 Subsets
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" data-path="../bfs-dfs/leetcode90.html">
+            
+                <a href="../bfs-dfs/leetcode90.html">
+            
+                    
+                    LeetCode90 Subsets II
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.7" data-path="../bfs-dfs/leetcode386.html">
+            
+                <a href="../bfs-dfs/leetcode386.html">
+            
+                    
+                    LeetCode386 Lexicographical Numbers
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" >
+            
+                <span>
+            
+                    
+                    dp
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../dp/leetcode55.html">
+            
+                <a href="../dp/leetcode55.html">
+            
+                    
+                    LeetCode55 Jump Game
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../dp/leetcode62.html">
+            
+                <a href="../dp/leetcode62.html">
+            
+                    
+                    LeetCode62 Unique Paths
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../dp/leetcode621.html">
+            
+                <a href="../dp/leetcode621.html">
+            
+                    
+                    LeetCode621 Task Scheduler
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" >
+            
+                <span>
+            
+                    
+                    Fast-Slow-pointers
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../Fast-Slow-pointers/leetcode142.html">
+            
+                <a href="../Fast-Slow-pointers/leetcode142.html">
+            
+                    
+                    LeetCode142 Linked List Cycle II
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../Fast-Slow-pointers/leetcode287.html">
+            
+                <a href="../Fast-Slow-pointers/leetcode287.html">
+            
+                    
+                    LeetCode287 Find the Duplicate Number
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" >
+            
+                <span>
+            
+                    
+                    Matrix
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../Matrix/leetcode48.html">
+            
+                <a href="../Matrix/leetcode48.html">
+            
+                    
+                    LeetCode48 Rotate Image
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="../Matrix/剑指offer-二维数组中的查找.md">
+            
+                <span>
+            
+                    
+                    剑指offer 二维数组中的查找
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" >
+            
+                <span>
+            
+                    
+                    Sort
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="../Sort/排序算法总结.html">
+            
+                <a href="../Sort/排序算法总结.html">
+            
+                    
+                    排序算法总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >LeetCode53 Maximum Subarray</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <blockquote>
+<p>Given an integer array nums, find the contiguous subarray (containing at least one number) which has the largest sum and return its sum.</p>
+<p>Example:
+Input: [-2,1,-3,4,-1,2,1,-5,4],
+Output: 6
+Explanation: [4,-1,2,1] has the largest sum = 6.</p>
+<p>Follow up:
+If you have figured out the O(n) solution,
+try coding another solution using the divide and conquer approach, which is more subtle.</p>
+<p>divide and conquer:
+&#x5173;&#x4E8E;&#x4E2D;&#x95F4;&#x7684;&#x600E;&#x4E48;&#x5904;&#x7406;&#x81EA;&#x5DF1;&#x6CA1;&#x60F3;&#x5230;&#x901A;&#x8FC7;&#x662F;&#x5426;&#x8DE8;&#x8D8A;&#x6765;&#x5206;
+&#x53C2;&#x8003;<a href="https://www.geeksforgeeks.org/divide-and-conquer-maximum-sum-subarray/" target="_blank">https://www.geeksforgeeks.org/divide-and-conquer-maximum-sum-subarray/</a></p>
+</blockquote>
+<pre><code class="lang-java"><span class="hljs-keyword">package</span> array;
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">leetcode53MaximumSubarray</span> </span>{
+  <span class="hljs-comment">/*=====================================================================================*/</span>
+
+    <span class="hljs-comment">/*
+    &#x81EA;&#x60F3;1&#xFF1A;&#x5229;&#x7528;&#x6628;&#x5929;&#x5199;&#x7684;leetcode121&#x4E2D;&#x63D0;&#x5230;&#x7684;Kadane&#x7B97;&#x6CD5;
+    &#x626B;&#x63CF;&#x4E00;&#x6B21;&#x6574;&#x4E2A;&#x6570;&#x5217;&#x7684;&#x6240;&#x6709;&#x6570;&#x503C;&#xFF0C;&#x5728;&#x6BCF;&#x4E00;&#x4E2A;&#x626B;&#x63CF;&#x70B9;&#x8BA1;&#x7B97;&#x4EE5;&#x8BE5;&#x70B9;&#x6570;&#x503C;&#x4E3A;&#x7ED3;&#x675F;&#x70B9;&#x7684;&#x5B50;&#x6570;&#x5217;&#x7684;&#x6700;&#x5927;&#x548C;&#xFF08;&#x6B63;&#x6570;&#x548C;&#xFF09;&#x3002;
+    &#x8BE5;&#x5B50;&#x6570;&#x5217;&#x7531;&#x4E24;&#x90E8;&#x5206;&#x7EC4;&#x6210;&#xFF1A;&#x3010;&#x4EE5;&#x524D;&#x4E00;&#x4E2A;&#x4F4D;&#x7F6E;&#x4E3A;&#x7ED3;&#x675F;&#x70B9;&#x3011;&#x7684;&#x6700;&#x5927;&#x5B50;&#x6570;&#x5217;&#x3001;&#x8BE5;&#x4F4D;&#x7F6E;&#x7684;&#x6570;&#x503C;&#x3002;
+    maxTmp = max(maxTmp + x&#xFF0C;x) &#x524D;&#x9762;&#x4E00;&#x6BB5;&#x7684;maxCur&#x8981;&#x662F;&#x662F;&#x8D1F;&#x6570;&#xFF0C;&#x8FD8;&#x4E0D;&#x5982;&#x4E0D;&#x8981;&#x524D;&#x9762;&#x90A3;&#x6BB5;&#x4EE5;&#x5F53;&#x524D;&#x503C;&#x4F5C;&#x4E3A;&#x8D77;&#x59CB;
+    max = max(maxTmp, max)
+    &#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;O(n)&#xFF0C;&#x7A7A;&#x95F4;&#x590D;&#x6742;&#x5EA6;O(1)
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> <span class="hljs-title">maximumSubarray1</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] nums)</span> </span>{
+        <span class="hljs-keyword">int</span> max = Integer.MIN_VALUE;
+        <span class="hljs-keyword">int</span> maxTmp = <span class="hljs-number">0</span>;
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> num : nums) {
+            maxTmp = Math.max(maxTmp + num, num);
+            max = Math.max(max, maxTmp);
+        }
+        <span class="hljs-keyword">return</span> max;
+    }
+
+    <span class="hljs-comment">/*=====================================================================================*/</span>
+    <span class="hljs-comment">/*divide and conquer:
+      &#x5173;&#x4E8E;&#x4E2D;&#x95F4;&#x7684;&#x600E;&#x4E48;&#x5904;&#x7406;&#x81EA;&#x5DF1;&#x6CA1;&#x60F3;&#x5230;&#x901A;&#x8FC7;&#x662F;&#x5426;&#x8DE8;&#x8D8A;&#x6765;&#x5206;
+      &#x53C2;&#x8003;https://www.geeksforgeeks.org/divide-and-conquer-maximum-sum-subarray/
+
+      &#x6C42;&#x5DE6;&#x8FB9;&#x7684;maxSubLeft&#x518D;&#x6C42;&#x53F3;&#x8FB9;&#x7684;maxSubRight,
+      &#x518D;&#x6C42;&#x8DE8;&#x8D8A;&#x4E2D;&#x95F4;&#x70B9;&#x7684;maxSubCrossMid
+      &#x53D6;max&#x4E3A;&#x4E09;&#x8005;&#x6700;&#x5927;&#x503C;&#x8FD4;&#x56DE;
+      base case&#x662F;&#x5DE6;&#x8FB9;&#x6216;&#x53F3;&#x8FB9;&#x53EA;&#x6709;&#x4E00;&#x4E2A;&#x6570;&#xFF0C;&#x6C42;&#x4E00;&#x4E2A;&#x6570;&#x7684;maxSub&#x5FC5;&#x7136;&#x662F;&#x81EA;&#x5DF1;
+
+      maxSubCrossMid&#x5206;&#x4E3A;&#x6C42;&#x5DE6;&#x8FB9;&#x4EE5;nums[mid]&#x7ED3;&#x675F;&#x7684;sub&#x7684;&#x6700;&#x5927;&#x503C;&#xFF0C;&#x53F3;&#x8FB9;&#x4EE5;nums[mid+1]&#x5F00;&#x59CB;&#x7684;sub&#x7684;&#x6700;&#x5927;&#x503C;
+      &#x76F8;&#x52A0;&#x5373;&#x4E3A;&#x6240;&#x6C42;
+
+      T(n) = 2T(n/2) + O(n)
+      master&#x516C;&#x5F0F;&#xFF0C;d=1,a=b=2,d=logba=1
+      &#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;O(n) = n&#x7684;logba&#x6B21;&#x65B9; * logn = nlogn
+
+      logn&#x5207;&#x5206;&#x70B9;&#xFF0C;&#x6BCF;&#x4E2A;&#x5207;&#x5206;&#x70B9;&#x6709;O(1)&#x4E2A;&#x8981;&#x4FDD;&#x7559;&#x7684;&#x53C2;&#x6570;(nums&#x5165;&#x53E3;,lo,hi...)
+      &#x7A7A;&#x95F4;&#x590D;&#x6742;&#x5EA6;logn
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> <span class="hljs-title">maximumSubarray2</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] nums)</span> </span>{
+        <span class="hljs-keyword">return</span> maximumSubarrayPart(nums, <span class="hljs-number">0</span>, nums.length - <span class="hljs-number">1</span>);
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> <span class="hljs-title">maximumSubarrayPart</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] nums, <span class="hljs-keyword">int</span> lo, <span class="hljs-keyword">int</span> hi)</span> </span>{
+        <span class="hljs-keyword">if</span> (lo == hi) <span class="hljs-keyword">return</span> nums[lo];
+        <span class="hljs-keyword">int</span> mid = (lo + hi) / <span class="hljs-number">2</span>;
+        <span class="hljs-keyword">int</span> maxSubLeft = maximumSubarrayPart(nums, lo, mid);
+        <span class="hljs-keyword">int</span> maxSubRight = maximumSubarrayPart(nums, mid + <span class="hljs-number">1</span>, hi);
+
+        <span class="hljs-keyword">int</span> maxSubCrossMid = maxSubCrossMid(nums, lo, hi, mid);
+        <span class="hljs-comment">// &#x4E09;&#x8005;&#x6700;&#x5927;&#x503C;</span>
+        <span class="hljs-keyword">int</span> max = Math.max(Math.max(maxSubLeft, maxSubRight), maxSubCrossMid);
+        <span class="hljs-keyword">if</span> (max == maxSubLeft) <span class="hljs-keyword">return</span> maxSubLeft;
+        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (max == maxSubRight) <span class="hljs-keyword">return</span> maxSubRight;
+        <span class="hljs-keyword">else</span> <span class="hljs-keyword">return</span> maxSubCrossMid;
+    }
+
+    <span class="hljs-comment">// &#x56FA;&#x5B9A;&#x4E00;&#x7AEF;&#x7684;&#x6700;&#x5927;&#x5B50;&#x6570;&#x5217;&#x95EE;&#x9898;</span>
+    <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> <span class="hljs-title">maxSubCrossMid</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] nums, <span class="hljs-keyword">int</span> lo, <span class="hljs-keyword">int</span> hi, <span class="hljs-keyword">int</span> mid)</span> </span>{
+        <span class="hljs-keyword">int</span> maxSubLeft = nums[mid], maxSubRight = nums[mid + <span class="hljs-number">1</span>];
+        <span class="hljs-keyword">int</span> tmpSubLeft = nums[mid], tmpSubRight = nums[mid + <span class="hljs-number">1</span>];
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = mid - <span class="hljs-number">1</span>; i &gt;= <span class="hljs-number">0</span>; i --) {
+            tmpSubLeft += nums[i];
+            maxSubLeft = Math.max(maxSubLeft, tmpSubLeft);
+        }
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = mid + <span class="hljs-number">2</span>; j &lt; nums.length; j ++) {
+            tmpSubRight += nums[j];
+            maxSubRight = Math.max(maxSubRight, tmpSubRight);
+        }
+        <span class="hljs-keyword">return</span> maxSubLeft + maxSubRight;
+    }
+
+    <span class="hljs-comment">/*=====================================================================================*/</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
+        <span class="hljs-keyword">int</span>[] nums1 = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[]{-<span class="hljs-number">2</span>, <span class="hljs-number">1</span>, -<span class="hljs-number">3</span>, <span class="hljs-number">4</span>, -<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">1</span>, -<span class="hljs-number">5</span>, <span class="hljs-number">4</span>};
+        <span class="hljs-keyword">int</span>[] nums2 = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[]{-<span class="hljs-number">2</span>,-<span class="hljs-number">1</span>};
+        System.out.println(maximumSubarray1(nums1));
+        System.out.println(maximumSubarray1(nums2));
+
+        System.out.println(maximumSubarray2(nums1));
+        System.out.println(maximumSubarray2(nums2));
+    }
+}
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="leetcode39.html" class="navigation navigation-prev " aria-label="Previous page: LeetCode39 Combination Sum">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="leetcode56.html" class="navigation navigation-next " aria-label="Next page: LeetCode56 Merge Intervals">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"LeetCode53 Maximum Subarray","date":"2018-09-04T14:36:33.000Z","categories":"算法","tags":["LeetCode","Top 100 Liked Questions","Array","Medium","Java","algorithms"],"level":"1.2.8","depth":2,"next":{"title":"LeetCode56 Merge Intervals","level":"1.2.9","depth":2,"path":"Array/leetcode56.md","ref":"Array/leetcode56.md","articles":[]},"previous":{"title":"LeetCode39 Combination Sum","level":"1.2.7","depth":2,"path":"Array/leetcode39.md","ref":"Array/leetcode39.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Array/leetcode53.md","mtime":"2019-01-23T08:48:55.530Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-02-28T13:29:48.151Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
