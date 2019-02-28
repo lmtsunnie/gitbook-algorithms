@@ -17,39 +17,36 @@ categories: 算法
 ```java
 package matrix;
 
-public class FindNumInSortedMatrix {
-    /*=====================================================================================*/
+public class 二维数组中的查找 {
 
     /*自想1：
     以左下角为基准进行范围的缩小，查找的范围为行在[0,i]，列在[j,n-1]的矩形中
     target大于基准则划掉基准所在的列，target小于基准则划掉基准所在的行，逐渐缩小范围
     时间复杂度O(m+n)，空间复杂度O(1)
     */
-    public static boolean Find(int target, int[][] array) {
+    public static boolean find(int target, int[][] array) {
         if (array == null || array.length <= 0 || array[0].length <= 0) {
             return false;
         }
-        return helper(target, array, array.length - 1, 0);
+        int m = array.length;
+        int n = array[0].length;
+        int i = m - 1, j = 0;
+        while (i >= 0 && j <= n - 1) {
+            if (target < array[i][j]) {
+                i--;
+            } else if (target > array[i][j]) {
+                j++;
+            } else {
+                return true;
+            }
+        }
+        return false;
     }
 
-    public static boolean helper(int target, int[][] array, int i, int j) {
-        if (i < 0 || j > array[0].length - 1) {
-            return false;
-        }
-        int refer = array[i][j];
-        if (target < refer) {
-            return helper(target, array, i - 1, j);
-        } else if (target > refer) {
-            return helper(target, array, i, j + 1);
-        } else {
-            return true;
-        }
-    }
 
     public static void main(String[] args) {
-        int[][] array = new int[][]{{1,2,8,9},{2,4,9,12},{4,7,10,13},{6,8,11,15}};
-        System.out.println(Find(15, array));
+        int[][] array = new int[][]{{1, 2, 8, 9}, {2, 4, 9, 12}, {4, 7, 10, 13}, {6, 8, 11, 15}};
+        System.out.println(find(15, array));
     }
-
 }
 ```
