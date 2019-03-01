@@ -31,6 +31,7 @@
     * [栈和队列的转换/用数组实现栈和队列](Stack-Queue/栈和队列常用算法总结.md)
 * Tree
     * [二叉树遍历算法总结](Tree/二叉树遍历算法总结.md)
+    * [重建二叉树](Tree/重建二叉树.md)
     * [LeetCode105 Construct Binary Tree from Preorder and Inorder Traversal](Tree/leetcode105.md)
 * bfs/dfs
     * [bfs/dfs总结](bfs-dfs/bfs-dfs总结.md)
