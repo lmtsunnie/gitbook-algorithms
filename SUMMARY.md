@@ -24,14 +24,14 @@
     * [Tsinghua OJ 范围查询(Range)](Array/范围查询.md)
     * [二分查找的各种变形总结](Array/二分查找的各种变形总结.md)
 * String
-    - [剑指offer 替换空格](String/替换空格.md)
+    - [剑指offer 2.替换空格](String/替换空格.md)
 * LinkedList
-    - [剑指offer 从尾到头打印链表](LinkedList/从尾到头打印链表.md)
+    - [剑指offer 3.从尾到头打印链表](LinkedList/从尾到头打印链表.md)
 * Stack/Queue
     * [栈和队列的转换/用数组实现栈和队列](Stack-Queue/栈和队列常用算法总结.md)
 * Tree
     * [二叉树遍历算法总结](Tree/二叉树遍历算法总结.md)
-    * [重建二叉树](Tree/重建二叉树.md)
+    * [剑指offer 4.重建二叉树](Tree/重建二叉树.md)
     * [LeetCode105 Construct Binary Tree from Preorder and Inorder Traversal](Tree/leetcode105.md)
 * bfs/dfs
     * [bfs/dfs总结](bfs-dfs/bfs-dfs总结.md)
@@ -50,7 +50,7 @@
     * [LeetCode287 Find the Duplicate Number](Fast-Slow-pointers/leetcode287.md)
 * Matrix
     * [LeetCode48 Rotate Image](Matrix/leetcode48.md)
-    * [剑指offer 二维数组中的查找](Matrix/二维数组中的查找.md)
+    * [剑指offer 1.二维数组中的查找](Matrix/二维数组中的查找.md)
 * Sort
     * [排序算法总结](Sort/排序算法总结.md)
 
