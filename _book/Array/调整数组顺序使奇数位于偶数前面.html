@@ -1054,8 +1054,37 @@
     }
 
     <span class="hljs-comment">/**
+     * &#x81EA;&#x60F3;2&#xFF1A;&#x63D2;&#x5165;&#x6392;&#x5E8F;&#x7684;&#x601D;&#x60F3;
+     * &#x662F;&#x5947;&#x6570;&#x5C31;&#x524D;&#x79FB;&#xFF0C;&#x76F8;&#x90BB;&#x4EA4;&#x6362;
+     * &#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;O(n&#xB2;)&#xFF0C;&#x7A7A;&#x95F4;&#x590D;&#x6742;&#x5EA6;O(1)
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">reOrderArray2</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] array)</span> </span>{
+        <span class="hljs-keyword">if</span> (array == <span class="hljs-keyword">null</span> || array.length &lt;= <span class="hljs-number">0</span>) {
+            <span class="hljs-keyword">return</span>;
+        }
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt; array.length; i++) {
+            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = i; j &gt;= <span class="hljs-number">1</span>; j--) {
+                <span class="hljs-keyword">if</span> (array[j] % <span class="hljs-number">2</span> == <span class="hljs-number">1</span> &amp;&amp; array[j - <span class="hljs-number">1</span>] % <span class="hljs-number">2</span> == <span class="hljs-number">0</span>) {
+                    swap(array, j, j - <span class="hljs-number">1</span>);
+                }
+            }
+        }
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">swap</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] array, <span class="hljs-keyword">int</span> i, <span class="hljs-keyword">int</span> j)</span> </span>{
+        <span class="hljs-keyword">if</span> (i == j) {
+            <span class="hljs-keyword">return</span>;
+        }
+        array[i] = array[i] ^ array[j];
+        array[j] = array[i] ^ array[j];
+        array[i] = array[i] ^ array[j];
+    }
+
+
+    <span class="hljs-comment">/**
      * &#x8BA8;&#x8BBA;&#x533A;&#xFF1A;
      * &#x8981;&#x60F3;&#x4FDD;&#x8BC1;&#x539F;&#x6709;&#x6B21;&#x5E8F;&#xFF0C;&#x5219;&#x53EA;&#x80FD;&#x987A;&#x6B21;&#x79FB;&#x52A8;&#x6216;&#x76F8;&#x90BB;&#x4EA4;&#x6362;&#x3002;
+     * &#x8FD9;&#x91CC;&#x91C7;&#x7528;&#x987A;&#x6B21;&#x79FB;&#x52A8;
      * i&#x5B58;&#x5076;&#x6570;&#x7684;&#x4E0B;&#x6807;&#xFF0C;j&#x5B58;i&#x4E4B;&#x540E;&#x7684;&#x5947;&#x6570;&#x7684;&#x4E0B;&#x6807;
      * i&#x4ECE;&#x5DE6;&#x5411;&#x53F3;&#x904D;&#x5386;&#xFF0C;&#x627E;&#x5230;&#x7B2C;&#x4E00;&#x4E2A;&#x5076;&#x6570;&#x3002;
      * j&#x4ECE;i+1&#x5F00;&#x59CB;&#x5411;&#x540E;&#x627E;&#xFF0C;&#x76F4;&#x5230;&#x627E;&#x5230;&#x7B2C;&#x4E00;&#x4E2A;&#x5947;&#x6570;&#x3002;
@@ -1063,7 +1092,7 @@
      * &#x7EC8;&#x6B62;&#x6761;&#x4EF6;&#xFF1A;j&#x5411;&#x540E;&#x904D;&#x5386;&#x6CA1;&#x6709;&#x518D;&#x627E;&#x5230;&#x5947;&#x6570;&#x3002;
      * &#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;O(n&#xB2;)&#xFF0C;&#x7A7A;&#x95F4;&#x590D;&#x6742;&#x5EA6;O(1)
      */</span>
-    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">reOrderArray2</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] array)</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">reOrderArray3</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] array)</span> </span>{
         <span class="hljs-keyword">if</span> (array == <span class="hljs-keyword">null</span> || array.length &lt;= <span class="hljs-number">0</span>) {
             <span class="hljs-keyword">return</span>;
         }
@@ -1098,7 +1127,7 @@
     }
 
     <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
-        <span class="hljs-keyword">int</span>[] array = {<span class="hljs-number">1</span>,<span class="hljs-number">3</span>,<span class="hljs-number">5</span>,<span class="hljs-number">7</span>,<span class="hljs-number">2</span>,<span class="hljs-number">4</span>,<span class="hljs-number">6</span>};
+        <span class="hljs-keyword">int</span>[] array = {<span class="hljs-number">1</span>, <span class="hljs-number">3</span>, <span class="hljs-number">5</span>, <span class="hljs-number">7</span>, <span class="hljs-number">2</span>, <span class="hljs-number">4</span>, <span class="hljs-number">6</span>};
         reOrderArray2(array);
     }
 }
@@ -1146,7 +1175,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"剑指offer 13.调整数组顺序使奇数位于偶数前面","level":"1.2.25","depth":2,"next":{"title":"Tsinghua OJ 范围查询(Range)","level":"1.2.26","depth":2,"path":"Array/范围查询.md","ref":"Array/范围查询.md","articles":[]},"previous":{"title":"剑指offer 10.矩阵覆盖","level":"1.2.24","depth":2,"path":"Array/矩阵覆盖.md","ref":"Array/矩阵覆盖.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Array/调整数组顺序使奇数位于偶数前面.md","mtime":"2019-03-02T17:19:10.300Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-02T17:20:07.901Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"剑指offer 13.调整数组顺序使奇数位于偶数前面","level":"1.2.25","depth":2,"next":{"title":"Tsinghua OJ 范围查询(Range)","level":"1.2.26","depth":2,"path":"Array/范围查询.md","ref":"Array/范围查询.md","articles":[]},"previous":{"title":"剑指offer 10.矩阵覆盖","level":"1.2.24","depth":2,"path":"Array/矩阵覆盖.md","ref":"Array/矩阵覆盖.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Array/调整数组顺序使奇数位于偶数前面.md","mtime":"2019-03-02T17:30:41.731Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-02T17:30:44.564Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
