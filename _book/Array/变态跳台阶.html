@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Tsinghua OJ 范围查询(Range) · GitBook</title>
+        <title>剑指offer 9.变态跳台阶 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="二分查找的各种变形总结.html" />
+    <link rel="next" href="范围查询.html" />
     
     
-    <link rel="prev" href="变态跳台阶.html" />
+    <link rel="prev" href="跳台阶.html" />
     
 
     </head>
@@ -402,7 +402,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.23" data-path="变态跳台阶.html">
+        <li class="chapter active" data-level="1.2.23" data-path="变态跳台阶.html">
             
                 <a href="变态跳台阶.html">
             
@@ -415,7 +415,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.2.24" data-path="范围查询.html">
+        <li class="chapter " data-level="1.2.24" data-path="范围查询.html">
             
                 <a href="范围查询.html">
             
@@ -933,7 +933,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >Tsinghua OJ 范围查询(Range)</a>
+        <a href=".." >剑指offer 9.变态跳台阶</a>
     </h1>
 </div>
 
@@ -949,186 +949,30 @@
                                 <section class="normal markdown-section">
                                 
                                 <blockquote>
-<p><strong>Descriptioin</strong></p>
-<p>Let S be a set of n integral points on the x-axis. For each given interval [a, b], you are asked to count the points lying inside.</p>
-<p><strong>Input</strong></p>
-<p>The first line contains two integers: n (size of S) and m (the number of queries).</p>
-<p>The second line enumerates all the n points in S.</p>
-<p>Each of the following m lines consists of two integers a and b and defines an query interval [a, b].</p>
-<p><strong>Output</strong></p>
-<p>The number of points in S lying inside each of the m query intervals.</p>
-<p><strong>Example</strong></p>
-<p>Input</p>
-<p>5 2</p>
-<p>1 3 7 9 11</p>
-<p>4 6</p>
-<p>7 12</p>
-<p>Output</p>
-<p>0
-3</p>
-<p><strong>Restrictions</strong></p>
-<p>0 &lt;= n, m &lt;= 5 * 10^5</p>
-<p>For each query interval [a, b], it is guaranteed that a &lt;= b.</p>
-<p>Points in S are distinct from each other.</p>
-<p>Coordinates of each point as well as the query interval boundaries a and b are non-negative integers not greater than 10^7.</p>
-<p>Time: 2 sec</p>
-<p>Memory: 256 MB</p>
-<p><strong>&#x63CF;&#x8FF0;</strong></p>
-<p>&#x6570;&#x8F74;&#x4E0A;&#x6709;n&#x4E2A;&#x70B9;&#xFF0C;&#x5BF9;&#x4E8E;&#x4EFB;&#x4E00;&#x95ED;&#x533A;&#x95F4; [a, b]&#xFF0C;&#x8BD5;&#x8BA1;&#x7B97;&#x843D;&#x5728;&#x5176;&#x5185;&#x7684;&#x70B9;&#x6570;&#x3002;</p>
-<p><strong>&#x8F93;&#x5165;</strong></p>
-<p>&#x7B2C;&#x4E00;&#x884C;&#x5305;&#x62EC;&#x4E24;&#x4E2A;&#x6574;&#x6570;&#xFF1A;&#x70B9;&#x7684;&#x603B;&#x6570;n&#xFF0C;&#x67E5;&#x8BE2;&#x7684;&#x6B21;&#x6570;m&#x3002;</p>
-<p>&#x7B2C;&#x4E8C;&#x884C;&#x5305;&#x542B;n&#x4E2A;&#x6570;&#xFF0C;&#x4E3A;&#x5404;&#x4E2A;&#x70B9;&#x7684;&#x5750;&#x6807;&#x3002;</p>
-<p>&#x4EE5;&#x4E0B;m&#x884C;&#xFF0C;&#x5404;&#x5305;&#x542B;&#x4E24;&#x4E2A;&#x6574;&#x6570;&#xFF1A;&#x67E5;&#x8BE2;&#x533A;&#x95F4;&#x7684;&#x5DE6;&#x3001;&#x53F3;&#x8FB9;&#x754C;a&#x548C;b&#x3002;</p>
-<p><strong>&#x8F93;&#x51FA;</strong></p>
-<p>&#x5BF9;&#x6BCF;&#x6B21;&#x67E5;&#x8BE2;&#xFF0C;&#x8F93;&#x51FA;&#x843D;&#x5728;&#x95ED;&#x533A;&#x95F4;[a, b]&#x5185;&#x70B9;&#x7684;&#x4E2A;&#x6570;&#x3002;</p>
-<p><strong>&#x6837;&#x4F8B;</strong></p>
-<p>&#x89C1;&#x82F1;&#x6587;&#x9898;&#x9762;</p>
-<p><strong>&#x9650;&#x5236;</strong></p>
-<p>0 &#x2264; n, m &#x2264; 5&#xD7;105</p>
-<p>&#x5BF9;&#x4E8E;&#x6BCF;&#x6B21;&#x67E5;&#x8BE2;&#x7684;&#x533A;&#x95F4;[a, b]&#xFF0C;&#x90FD;&#x6709;a &#x2264; b</p>
-<p>&#x5404;&#x70B9;&#x7684;&#x5750;&#x6807;&#x4E92;&#x5F02;</p>
-<p>&#x5404;&#x70B9;&#x7684;&#x5750;&#x6807;&#x3001;&#x67E5;&#x8BE2;&#x533A;&#x95F4;&#x7684;&#x8FB9;&#x754C;a&#x3001;b&#xFF0C;&#x5747;&#x4E3A;&#x4E0D;&#x8D85;&#x8FC7;10^7&#x7684;&#x975E;&#x8D1F;&#x6574;&#x6570;</p>
-<p>&#x65F6;&#x95F4;&#xFF1A;2 sec</p>
-<p>&#x5185;&#x5B58;&#xFF1A;256 MB</p>
-<p>OJ&#x5730;&#x5740;&#xFF1A;<a href="https://dsa.cs.tsinghua.edu.cn/oj/course.shtml?courseid=58" target="_blank">https://dsa.cs.tsinghua.edu.cn/oj/course.shtml?courseid=58</a></p>
+<p>&#x4E00;&#x53EA;&#x9752;&#x86D9;&#x4E00;&#x6B21;&#x53EF;&#x4EE5;&#x8DF3;&#x4E0A;1&#x7EA7;&#x53F0;&#x9636;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x8DF3;&#x4E0A;2&#x7EA7;&#x2026;&#x2026;&#x5B83;&#x4E5F;&#x53EF;&#x4EE5;&#x8DF3;&#x4E0A;n&#x7EA7;&#x3002;&#x6C42;&#x8BE5;&#x9752;&#x86D9;&#x8DF3;&#x4E0A;&#x4E00;&#x4E2A;n&#x7EA7;&#x7684;&#x53F0;&#x9636;&#x603B;&#x5171;&#x6709;&#x591A;&#x5C11;&#x79CD;&#x8DF3;&#x6CD5;&#x3002;</p>
 </blockquote>
-<p>&#x8FD9;&#x662F;&#x6E05;&#x534E;&#x5927;&#x5B66;&#x6570;&#x636E;&#x7ED3;&#x6784;MOOC&#x7684;&#x914D;&#x5957;&#x7EC3;&#x4E60;&#x7684;&#x7B2C;&#x4E00;&#x9898;&#xFF0C;&#x4E00;&#x5F00;&#x59CB;&#x770B;&#x5230;&#x8FD9;&#x9898;&#x4EE5;&#x4E3A;&#x5F88;&#x6C34;&#xFF0C;&#x540E;&#x6765;&#x6211;&#x5C31;&#x54ED;&#x4E86;&#x3002;&#x3002;&#x3002;&#x7EC8;&#x7A76;&#x662F;&#x6211;&#x592A;&#x5F31;&#x3002;</p>
-<p>&#x601D;&#x8DEF;&#x662F;&#x5229;&#x7528;&#x4E8C;&#x5206;&#x67E5;&#x627E;&#x7684;&#x4E00;&#x4E2A;&#x6539;&#x8FDB;&#xFF0C;&#x5728;&#x6709;&#x5E8F;&#x6570;&#x7EC4;&#x4E2D;&#x627E;&#x5230;&#x2265;a&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x548C;&#x2264;b&#x7684;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x3002;</p>
-<blockquote>
-<p>&#x4E8C;&#x5206;&#x67E5;&#x627E;&#x7684;&#x6539;&#x8FDB;&#x7684;&#x5177;&#x4F53;&#x5206;&#x6790;&#x53C2;&#x89C1;&#x300A;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x9093;&#x4FCA;&#x8F89;&#x7B2C;&#x4E09;&#x7248;&#x300B;P56</p>
-</blockquote>
-<p>&#x9996;&#x5148;&#x6211;&#x662F;&#x7528;Java&#x5199;&#x4E86;&#x4E00;&#x4E2A;O(n)&#x7684;&#x7248;&#x672C;&#xFF0C;&#x7ED3;&#x679C;&#x53D1;&#x73B0;&#x7EB3;&#x5C3C;&#xFF1F;&#x8FDE;&#x4E00;&#x534A;&#x7684;&#x6D4B;&#x8BD5;&#x7528;&#x4F8B;&#x90FD;&#x901A;&#x4E0D;&#x8FC7;&#x5C31;&#x4F1A;&#x8D85;&#x65F6;&#x3002;&#x7136;&#x540E;&#x5199;&#x4E86;&#x4E8C;&#x5206;&#x67E5;&#x627E;&#x7684;&#x7248;&#x672C;&#xFF0C;&#x8FD8;&#x662F;&#x53EA;&#x80FD;&#x5F97;60&#x5206;&#xFF0C;&#x8FD9;&#x53EF;&#x662F;&#x4E2A;O(logn)&#x7684;&#x7B97;&#x6CD5;&#x5440;&#x3002;&#x5E73;&#x65F6;&#x5199;leetcode&#x7684;&#x65F6;&#x95F4;&#x9650;&#x5236;&#x592A;&#x677E;&#x4E86;&#xFF0C;&#x90FD;&#x51E0;&#x4E4E;&#x4E0D;&#x4F1A;&#x78B0;&#x5230;&#x8D85;&#x65F6;&#x7684;&#x60C5;&#x51B5;&#x3002;&#x4F18;&#x5316;&#x4E4B;&#x540E;Java&#x7684;&#x7248;&#x672C;&#x6700;&#x9AD8;&#x5F97;&#x4E86;80&#x5206;&#x3002;</p>
-<pre><code class="lang-java"><span class="hljs-keyword">import</span> java.util.Arrays;
-<span class="hljs-keyword">import</span> java.util.Scanner;
+<pre><code class="lang-java"><span class="hljs-keyword">package</span> array;
 
-<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Main</span> </span>{
-    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> <span class="hljs-title">findLeftIndex</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] nums, <span class="hljs-keyword">int</span> target, <span class="hljs-keyword">int</span> lo, <span class="hljs-keyword">int</span> hi)</span> </span>{
-        <span class="hljs-keyword">while</span> (lo &lt; hi) {
-            <span class="hljs-keyword">int</span> mid = lo + ((hi - lo) &gt;&gt; <span class="hljs-number">1</span>);
-            <span class="hljs-comment">// &#x82E5;target &lt;= nums[mid]&#xFF0C;hi = mid&#xFF0C;&#x5728;[lo, mid)&#x4E2D;&#x627E;</span>
-            <span class="hljs-comment">// &#x82E5;target &gt; nums[mid]&#xFF0C;lo = mid + 1&#xFF0C;&#x5728;(mid, hi)&#x4E2D;</span>
-            <span class="hljs-keyword">if</span> (nums[mid] &gt;= target) {
-                hi = mid;
-            } <span class="hljs-keyword">else</span> {
-                lo = mid + <span class="hljs-number">1</span>;
-            }
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> &#x53D8;&#x6001;&#x8DF3;&#x53F0;&#x9636; </span>{
+    <span class="hljs-comment">/**
+     * f(n) = 1 + f(1) + f(2) + ... + f(n - 2) + f(n - 1) = 1 + preSum
+     * f(0) = 0, f(1) = 1, f(2) = 2
+     * 0&#xFF0C;1&#xFF0C;2&#xFF0C;4&#xFF0C;8, ...
+     * &#x6590;&#x6CE2;&#x90A3;&#x5951;&#x6570;&#x5217;&#xFF0C;&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;O(n)&#xFF0C;&#x7A7A;&#x95F4;&#x590D;&#x6742;&#x5EA6;O(1)
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">JumpFloorII</span><span class="hljs-params">(<span class="hljs-keyword">int</span> target)</span> </span>{
+        <span class="hljs-keyword">if</span> (target &lt;= <span class="hljs-number">0</span>) {
+            <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
         }
-        <span class="hljs-keyword">return</span> lo; <span class="hljs-comment">// &#x5FAA;&#x73AF;&#x7ED3;&#x675F;&#x65F6;&#xFF0C;lo&#x4E3A;&gt;=target&#x7684;&#x6700;&#x5C0F;&#x4E0B;&#x6807;&#xFF0C;&#x6545;lo-1&#x4E3A;&lt;target&#x7684;&#x6700;&#x5927;&#x4E0B;&#x6807;</span>
-    } <span class="hljs-comment">// &#x6709;&#x591A;&#x4E2A;&#x5143;&#x7D20;&#x547D;&#x4E2D;target&#x65F6;&#xFF0C;&#x4FDD;&#x8BC1;&#x8FD4;&#x56DE;&#x4E0B;&#x6807;&#x6700;&#x5C0F;&#x7684;&#xFF1B;&#x67E5;&#x627E;&#x5931;&#x8D25;&#x65F6;&#x8FD4;&#x56DE;&gt;=target&#x7684;&#x6700;&#x5C0F;&#x4E0B;&#x6807;</span>
-
-    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> <span class="hljs-title">findRightIndex</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] nums, <span class="hljs-keyword">int</span> target, <span class="hljs-keyword">int</span> lo, <span class="hljs-keyword">int</span> hi)</span> </span>{
-        <span class="hljs-keyword">while</span> (lo &lt; hi) {
-            <span class="hljs-keyword">int</span> mid = lo + ((hi - lo) &gt;&gt; <span class="hljs-number">1</span>);
-
-            <span class="hljs-comment">//int mid = lo + ((hi - lo) &gt;&gt; 1);</span>
-            <span class="hljs-keyword">if</span> (nums[mid] &gt; target) {
-                hi = mid;
-            } <span class="hljs-keyword">else</span> {
-                lo = mid + <span class="hljs-number">1</span>;
-            }
-
+        <span class="hljs-keyword">int</span> preSum = <span class="hljs-number">1</span>, cur = <span class="hljs-number">1</span>;
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">2</span>; i &lt;= target; i++) {
+            cur = preSum + <span class="hljs-number">1</span>;
+            preSum += cur;
         }
-        <span class="hljs-keyword">return</span> --lo; <span class="hljs-comment">// &#x5FAA;&#x73AF;&#x7ED3;&#x675F;&#x65F6;&#xFF0C;lo&#x4E3A;&gt;target&#x7684;&#x6700;&#x5C0F;&#x4E0B;&#x6807;&#xFF0C;&#x6545;lo-1&#x4E3A;&lt;=target&#x7684;&#x6700;&#x5927;&#x4E0B;&#x6807;</span>
-    } <span class="hljs-comment">// &#x6709;&#x591A;&#x4E2A;&#x5143;&#x7D20;&#x547D;&#x4E2D;target&#x65F6;&#xFF0C;&#x4FDD;&#x8BC1;&#x8FD4;&#x56DE;&#x4E0B;&#x6807;&#x6700;&#x5927;&#x7684;&#xFF1B;&#x67E5;&#x627E;&#x5931;&#x8D25;&#x65F6;&#x8FD4;&#x56DE;&lt;=target&#x7684;&#x6700;&#x5927;&#x4E0B;&#x6807;</span>
-
-
-    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> <span class="hljs-title">range</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] nums, <span class="hljs-keyword">int</span> length, <span class="hljs-keyword">int</span> a, <span class="hljs-keyword">int</span> b)</span> </span>{
-        <span class="hljs-keyword">int</span> loRange = findLeftIndex(nums, a, <span class="hljs-number">0</span>, length);
-        <span class="hljs-keyword">int</span> hiRange = findRightIndex(nums, b, <span class="hljs-number">0</span>, length);
-        <span class="hljs-keyword">return</span> hiRange - loRange + <span class="hljs-number">1</span>;
-    }
-
-    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
-        Scanner scanner = <span class="hljs-keyword">new</span> Scanner(System.in);
-        <span class="hljs-keyword">int</span> length = scanner.nextInt();
-        <span class="hljs-keyword">int</span> queryTimes = scanner.nextInt();
-        <span class="hljs-keyword">int</span>[] nums = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[length];
-        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; length; i++) {
-            nums[i] = scanner.nextInt();
-        }
-        Arrays.sort(nums);
-
-        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> query = <span class="hljs-number">1</span>; query &lt;= queryTimes; query ++) {
-            <span class="hljs-keyword">int</span> a = scanner.nextInt();
-            <span class="hljs-keyword">int</span> b = scanner.nextInt();
-            System.out.println(range(nums, length, a, b));
-        }
+        <span class="hljs-keyword">return</span> cur;
     }
 }
 </code></pre>
-<p>Java&#x8FD0;&#x884C;&#x7ED3;&#x679C;&#xFF1A;</p>
-<p><img src="http://qiniu.limengting.site/Java.png" alt=""></p>
-<p>&#x7136;&#x540E;&#x6539;&#x6210;&#x4E86;&#x6211;&#x975E;&#x5E38;&#x4E0D;&#x613F;&#x610F;&#x5199;&#x7684;C++&#x8BED;&#x8A00;&#x7684;&#x7248;&#x672C;&#xFF0C;&#x7531;&#x6B64;&#x4E5F;&#x662F;&#x53D1;&#x73B0;&#x4E86;C++&#x7684;&#x5F3A;&#x5927;&#xFF0C;&#x505A;&#x4EBA;&#x8FD8;&#x662F;&#x4E0D;&#x80FD;&#x5077;&#x61D2;&#x554A;&#x3002;C++&#x867D;&#x7136;&#x96BE;&#x7528;&#xFF0C;&#x6307;&#x9488;&#x5F15;&#x7528;&#x50BB;&#x50BB;&#x5206;&#x4E0D;&#x6E05;&#x695A;&#xFF0C;&#x800C;&#x4E14;stl&#x5728;&#x5F88;&#x591A;&#x60C5;&#x51B5;&#x4E0B;&#x4F1A;&#x88AB;&#x7981;&#x7528;&#xFF0C;&#x4F46;&#x662F;&#x65E0;&#x5948;&#x4EBA;&#x5BB6;&#x5904;&#x5728;&#x5E95;&#x5C42;&#x6548;&#x7387;&#x90A3;&#x53EB;&#x4E00;&#x4E2A;&#x9AD8;&#x3002;&#x6CA1;&#x6709;&#x4F18;&#x5316;&#x7684;&#x65F6;&#x5019;&#x5C31;&#x62FF;&#x4E86;75&#x5206;&#xFF0C;&#x628A;cin,cout&#x6539;&#x6210;scanf,printf&#x4E4B;&#x540E;&#x5C31;&#x80FD;&#x8F7B;&#x677E;&#x62FF;&#x6EE1;&#x5206;&#x4E86;&#x3002;&#x770B;&#x6765;&#x8FD9;&#x8F88;&#x5B50;&#x662F;&#x5957;&#x4E0D;&#x8FC7;C++&#x7684;&#x9B54;&#x638C;&#x4E86;&#x3002;</p>
-<blockquote>
-<p>stdlib.h&#x4E2D;&#x7684;qsort&#x53C2;&#x89C1;&#xFF1A;<a href="http://www.cnblogs.com/CCBB/archive/2010/01/15/1648827.html" target="_blank">http://www.cnblogs.com/CCBB/archive/2010/01/15/1648827.html</a></p>
-</blockquote>
-<pre><code class="lang-c++"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
-<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdlib.h&gt;</span></span>
-
-<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;
-
-<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> L 500005</span>
-<span class="hljs-keyword">int</span> nums[L];
-<span class="hljs-comment">/*&#x628A;&#x5E38;&#x7528;&#x7684;&#x53D8;&#x91CF;&#x53D8;&#x6210;&#x5168;&#x5C40;&#x7684;&#x51CF;&#x5C11;&#x53C2;&#x6570;&#x4F20;&#x9012;*/</span>
-
-<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">compare</span><span class="hljs-params">(<span class="hljs-keyword">const</span> <span class="hljs-keyword">void</span> *a, <span class="hljs-keyword">const</span> <span class="hljs-keyword">void</span> *b)</span>
-</span>{
-    <span class="hljs-keyword">int</span> *pa = (<span class="hljs-keyword">int</span>*)a;
-    <span class="hljs-keyword">int</span> *pb = (<span class="hljs-keyword">int</span>*)b;
-    <span class="hljs-keyword">return</span> (*pa ) - (*pb);  <span class="hljs-comment">//&#x4ECE;&#x5C0F;&#x5230;&#x5927;&#x6392;&#x5E8F;</span>
-}
-
-<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">binarySearch1</span><span class="hljs-params">(<span class="hljs-keyword">int</span> target, <span class="hljs-keyword">int</span> lo, <span class="hljs-keyword">int</span> hi)</span> </span>{
-    <span class="hljs-keyword">while</span> (lo &lt; hi) {
-        <span class="hljs-comment">// int mid = lo + (hi - lo) / 2;</span>
-        <span class="hljs-keyword">int</span> mid = lo + ((hi - lo) &gt;&gt; <span class="hljs-number">1</span>);
-        <span class="hljs-comment">// &#x82E5;target &lt;= nums[mid]&#xFF0C;hi = mid&#xFF0C;&#x5728;[lo, mid)&#x4E2D;&#x627E;</span>
-        <span class="hljs-comment">// &#x82E5;target &gt; nums[mid]&#xFF0C;lo = mid + 1&#xFF0C;&#x5728;(mid, hi)&#x4E2D;</span>
-        nums[mid] &gt;= target ? hi = mid : lo = mid + <span class="hljs-number">1</span>;
-    }
-    <span class="hljs-keyword">return</span> lo; <span class="hljs-comment">// &#x5FAA;&#x73AF;&#x7ED3;&#x675F;&#x65F6;&#xFF0C;lo&#x4E3A;&gt;=target&#x7684;&#x6700;&#x5C0F;&#x4E0B;&#x6807;&#xFF0C;&#x6545;lo-1&#x4E3A;&lt;target&#x7684;&#x6700;&#x5927;&#x4E0B;&#x6807;</span>
-} <span class="hljs-comment">// &#x6709;&#x591A;&#x4E2A;&#x5143;&#x7D20;&#x547D;&#x4E2D;target&#x65F6;&#xFF0C;&#x4FDD;&#x8BC1;&#x8FD4;&#x56DE;&#x4E0B;&#x6807;&#x6700;&#x5927;&#x7684;&#xFF1B;&#x67E5;&#x627E;&#x5931;&#x8D25;&#x65F6;&#x8FD4;&#x56DE;&lt;target&#x7684;&#x6700;&#x5927;&#x4E0B;&#x6807;</span>
-
-<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">binarySearch2</span><span class="hljs-params">(<span class="hljs-keyword">int</span> target, <span class="hljs-keyword">int</span> lo, <span class="hljs-keyword">int</span> hi)</span> </span>{
-    <span class="hljs-keyword">while</span> (lo &lt; hi) {
-        <span class="hljs-comment">// int mid = lo + (hi - lo) / 2;</span>
-        <span class="hljs-keyword">int</span> mid = lo + ((hi - lo) &gt;&gt; <span class="hljs-number">1</span>);
-        nums[mid] &gt; target ? hi = mid : lo = mid + <span class="hljs-number">1</span>;
-    }
-    <span class="hljs-keyword">return</span> --lo; <span class="hljs-comment">// &#x5FAA;&#x73AF;&#x7ED3;&#x675F;&#x65F6;&#xFF0C;lo&#x4E3A;&gt;target&#x7684;&#x6700;&#x5C0F;&#x4E0B;&#x6807;&#xFF0C;&#x6545;lo-1&#x4E3A;&lt;=target&#x7684;&#x6700;&#x5927;&#x4E0B;&#x6807;</span>
-} <span class="hljs-comment">// &#x6709;&#x591A;&#x4E2A;&#x5143;&#x7D20;&#x547D;&#x4E2D;target&#x65F6;&#xFF0C;&#x4FDD;&#x8BC1;&#x8FD4;&#x56DE;&#x4E0B;&#x6807;&#x6700;&#x5927;&#x7684;&#xFF1B;&#x67E5;&#x627E;&#x5931;&#x8D25;&#x65F6;&#x8FD4;&#x56DE;&lt;=target&#x7684;&#x6700;&#x5927;&#x4E0B;&#x6807;</span>
-
-
-<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">range</span><span class="hljs-params">(<span class="hljs-keyword">int</span> length, <span class="hljs-keyword">int</span> a, <span class="hljs-keyword">int</span> b)</span> </span>{
-    <span class="hljs-keyword">int</span> loRange = binarySearch1(a, <span class="hljs-number">0</span>, length);
-    <span class="hljs-keyword">int</span> hiRange = binarySearch2(b, <span class="hljs-number">0</span>, length);
-    <span class="hljs-keyword">return</span> hiRange - loRange + <span class="hljs-number">1</span>;
-}
-
-<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>{
-    <span class="hljs-keyword">int</span> length, queryTimes;
-    <span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%d %d\n&quot;</span>, &amp;length, &amp;queryTimes);
-    <span class="hljs-comment">//cin &gt;&gt; length &gt;&gt; queryTimes;</span>
-    <span class="hljs-comment">//int nums[length];</span>
-    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; length; i ++) {
-        <span class="hljs-comment">//cin &gt;&gt; nums[i];</span>
-        <span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%d&quot;</span>, &amp;nums[i]);
-    }
-
-    qsort(nums, length, <span class="hljs-keyword">sizeof</span>(<span class="hljs-keyword">int</span>), compare);
-
-    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> query = <span class="hljs-number">1</span>; query &lt;= queryTimes; query ++) {
-        <span class="hljs-keyword">int</span> a, b;
-        <span class="hljs-comment">//cin &gt;&gt; a &gt;&gt; b;</span>
-        <span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%d %d&quot;</span>, &amp;a, &amp;b);
-        <span class="hljs-comment">//cout &lt;&lt; range(length, a, b) &lt;&lt; endl;</span>
-        <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d\n&quot;</span>, range(length, a, b));
-    }
-}
-</code></pre>
-<p>&#x4E00;&#x6BDB;&#x4E00;&#x6837;&#x7684;&#x7B97;&#x6CD5;&#xFF0C;&#x4F46;&#x662F;&#x65F6;&#x95F4;&#x7A7A;&#x95F4;&#x90FD;&#x79D2;&#x6740;Java&#x7684;C++&#xFF1A;</p>
-<p><img src="http://qiniu.limengting.site/Cpp1.png" alt=""></p>
-<p>&#x6700;&#x540E;&#x6211;&#x8981;&#x8BF4;&#xFF0C;&#x6211;&#x7231;C++&#xFF0C;C++&#x4F7F;&#x6211;&#x5FEB;&#x4E50;&#xFF01;</p>
 
                                 
                                 </section>
@@ -1156,12 +1000,12 @@
 
             
                 
-                <a href="变态跳台阶.html" class="navigation navigation-prev " aria-label="Previous page: 剑指offer 9.变态跳台阶">
+                <a href="跳台阶.html" class="navigation navigation-prev " aria-label="Previous page: 剑指offer 8.跳台阶">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="二分查找的各种变形总结.html" class="navigation navigation-next " aria-label="Next page: 二分查找的各种变形总结">
+                <a href="范围查询.html" class="navigation navigation-next " aria-label="Next page: Tsinghua OJ 范围查询(Range)">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -1172,7 +1016,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Tsinghua OJ 范围查询(Range)","date":"2018-09-13T20:19:26.000Z","categories":"算法","tags":["Array","Tsinghua OJ","Java","C/C++"],"level":"1.2.24","depth":2,"next":{"title":"二分查找的各种变形总结","level":"1.2.25","depth":2,"path":"Array/二分查找的各种变形总结.md","ref":"Array/二分查找的各种变形总结.md","articles":[]},"previous":{"title":"剑指offer 9.变态跳台阶","level":"1.2.23","depth":2,"path":"Array/变态跳台阶.md","ref":"Array/变态跳台阶.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Array/范围查询.md","mtime":"2019-01-31T17:00:04.370Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-02T10:54:42.704Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"剑指offer 9.变态跳台阶","level":"1.2.23","depth":2,"next":{"title":"Tsinghua OJ 范围查询(Range)","level":"1.2.24","depth":2,"path":"Array/范围查询.md","ref":"Array/范围查询.md","articles":[]},"previous":{"title":"剑指offer 8.跳台阶","level":"1.2.22","depth":2,"path":"Array/跳台阶.md","ref":"Array/跳台阶.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Array/变态跳台阶.md","mtime":"2019-03-02T10:53:55.811Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-02T10:54:42.704Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

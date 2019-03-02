@@ -24,6 +24,7 @@
     * [剑指offer 6.旋转数组的最小元素](Array/旋转数组的最小元素.md)
     * [剑指offer 7.斐波那契数列](Array/斐波那契数列.md)
     * [剑指offer 8.跳台阶](Array/跳台阶.md)
+    * [剑指offer 9.变态跳台阶](Array/变态跳台阶.md)
     * [Tsinghua OJ 范围查询(Range)](Array/范围查询.md)
     * [二分查找的各种变形总结](Array/二分查找的各种变形总结.md)
 * String
