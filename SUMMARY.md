@@ -20,7 +20,8 @@
     * [LeetCode448 Find All Numbers Disappeared in an Array](Array/leetcode448.md)
     * [LeetCode560 Subarray Sum Equals K](Array/leetcode560.md)
     * [LeetCode581 Shortest Unsorted Continuous Subarray](Array/leetcode581.md)
-    * [剑指offer 找出数组中重复的数字](Array/剑指offer-找出数组中重复的数字.md)
+    * [剑指offer 找出数组中重复的数字](Array/找出数组中重复的数字.md)
+    * [剑指offer 6.旋转数组的最小元素](Array/旋转数组的最小元素.md)
     * [Tsinghua OJ 范围查询(Range)](Array/范围查询.md)
     * [二分查找的各种变形总结](Array/二分查找的各种变形总结.md)
 * String
