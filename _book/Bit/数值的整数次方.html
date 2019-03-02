@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>LeetCode40 Combination Sum II · GitBook</title>
+        <title>数值的整数次方 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,8 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="leetcode46.html" />
     
-    
-    <link rel="prev" href="bfs-dfs总结.html" />
+    <link rel="prev" href="二进制中1的个数.html" />
     
 
     </head>
@@ -640,9 +638,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.7.1" data-path="bfs-dfs总结.html">
+        <li class="chapter " data-level="1.7.1" data-path="../bfs-dfs/bfs-dfs总结.html">
             
-                <a href="bfs-dfs总结.html">
+                <a href="../bfs-dfs/bfs-dfs总结.html">
             
                     
                     bfs/dfs总结
@@ -653,9 +651,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.7.2" data-path="leetcode40.html">
+        <li class="chapter " data-level="1.7.2" data-path="../bfs-dfs/leetcode40.html">
             
-                <a href="leetcode40.html">
+                <a href="../bfs-dfs/leetcode40.html">
             
                     
                     LeetCode40 Combination Sum II
@@ -666,9 +664,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.7.3" data-path="leetcode46.html">
+        <li class="chapter " data-level="1.7.3" data-path="../bfs-dfs/leetcode46.html">
             
-                <a href="leetcode46.html">
+                <a href="../bfs-dfs/leetcode46.html">
             
                     
                     LeetCode46 Permutation
@@ -679,9 +677,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.7.4" data-path="leetcode47.html">
+        <li class="chapter " data-level="1.7.4" data-path="../bfs-dfs/leetcode47.html">
             
-                <a href="leetcode47.html">
+                <a href="../bfs-dfs/leetcode47.html">
             
                     
                     LeetCode47 Permutations II
@@ -692,9 +690,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.7.5" data-path="leetcode78.html">
+        <li class="chapter " data-level="1.7.5" data-path="../bfs-dfs/leetcode78.html">
             
-                <a href="leetcode78.html">
+                <a href="../bfs-dfs/leetcode78.html">
             
                     
                     LeetCode78 Subsets
@@ -705,9 +703,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.7.6" data-path="leetcode90.html">
+        <li class="chapter " data-level="1.7.6" data-path="../bfs-dfs/leetcode90.html">
             
-                <a href="leetcode90.html">
+                <a href="../bfs-dfs/leetcode90.html">
             
                     
                     LeetCode90 Subsets II
@@ -718,9 +716,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.7.7" data-path="leetcode386.html">
+        <li class="chapter " data-level="1.7.7" data-path="../bfs-dfs/leetcode386.html">
             
-                <a href="leetcode386.html">
+                <a href="../bfs-dfs/leetcode386.html">
             
                     
                     LeetCode386 Lexicographical Numbers
@@ -930,9 +928,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.12.1" data-path="../Bit/二进制中1的个数.html">
+        <li class="chapter " data-level="1.12.1" data-path="二进制中1的个数.html">
             
-                <a href="../Bit/二进制中1的个数.html">
+                <a href="二进制中1的个数.html">
             
                     
                     二进制中1的个数
@@ -943,9 +941,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.12.2" data-path="../Bit/数值的整数次方.html">
+        <li class="chapter active" data-level="1.12.2" data-path="数值的整数次方.html">
             
-                <a href="../Bit/数值的整数次方.html">
+                <a href="数值的整数次方.html">
             
                     
                     数值的整数次方
@@ -991,7 +989,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >LeetCode40 Combination Sum II</a>
+        <a href=".." >数值的整数次方</a>
     </h1>
 </div>
 
@@ -1007,84 +1005,60 @@
                                 <section class="normal markdown-section">
                                 
                                 <blockquote>
-<p>Given a collection of candidate numbers (candidates) and a target number (target), find all unique combinations in candidates where the candidate numbers sums to target.</p>
-<p>Each number in candidates may only be used once in the combination.</p>
-<p>Note:
-All numbers (including target) will be positive integers.
-The solution set must not contain duplicate combinations.</p>
-<p>Example 1:</p>
-<p>Input: candidates = [10,1,2,7,6,1,5], target = 8,
-A solution set is:
-[
-  [1, 7],
-  [1, 2, 5],
-  [2, 6],
-  [1, 1, 6]
-]</p>
-<p>Example 2:</p>
-<p>Input: candidates = [2,5,2,1,2], target = 5,
-A solution set is:
-[
-  [1,2,2],
-  [5]
-]</p>
+<p>&#x7ED9;&#x5B9A;&#x4E00;&#x4E2A;double&#x7C7B;&#x578B;&#x7684;&#x6D6E;&#x70B9;&#x6570;base&#x548C;int&#x7C7B;&#x578B;&#x7684;&#x6574;&#x6570;exponent&#x3002;&#x6C42;base&#x7684;exponent&#x6B21;&#x65B9;&#x3002;</p>
 </blockquote>
-<pre><code class="lang-java"><span class="hljs-keyword">package</span> backtracking;
+<pre><code class="lang-java"><span class="hljs-keyword">package</span> bit;
 
-<span class="hljs-keyword">import</span> java.util.ArrayList;
-<span class="hljs-keyword">import</span> java.util.Arrays;
-<span class="hljs-keyword">import</span> java.util.List;
-
-<span class="hljs-keyword">import</span> <span class="hljs-keyword">static</span> format.PrintDoubleArrayList.printDoubleList;
-
-<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">leetcode40CombinationSum2</span> </span>{
-    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> List&lt;List&lt;Integer&gt;&gt; combinationSum2(<span class="hljs-keyword">int</span>[] candidates, <span class="hljs-keyword">int</span> target) {
-        <span class="hljs-keyword">if</span> (candidates == <span class="hljs-keyword">null</span> || candidates.length &lt;= <span class="hljs-number">0</span>) {
-            <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> &#x6570;&#x503C;&#x7684;&#x6574;&#x6570;&#x6B21;&#x65B9; </span>{
+    <span class="hljs-comment">/**
+     * &#x81EA;&#x60F3;1&#xFF1A;&#x8FDE;&#x4E58;
+     * f(n) = f(n - 1) * base
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">double</span> <span class="hljs-title">Power1</span><span class="hljs-params">(<span class="hljs-keyword">double</span> base, <span class="hljs-keyword">int</span> exponent)</span> </span>{
+        <span class="hljs-keyword">double</span> cur = base;
+        <span class="hljs-keyword">if</span> (base == <span class="hljs-number">0</span> &amp;&amp; exponent &lt;= <span class="hljs-number">0</span>) {
+            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> RuntimeException(<span class="hljs-string">&quot;valid input!&quot;</span>);
         }
-        Arrays.sort(candidates);
-        List&lt;List&lt;Integer&gt;&gt; lists = <span class="hljs-keyword">new</span> ArrayList&lt;&gt;();
-        backtrack(lists, <span class="hljs-keyword">new</span> ArrayList&lt;&gt;(), candidates, <span class="hljs-number">0</span>, target);
-        <span class="hljs-keyword">return</span> lists;
-    }
-
-    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">backtrack</span><span class="hljs-params">(List&lt;List&lt;Integer&gt;&gt; lists, List&lt;Integer&gt; tmpList, <span class="hljs-keyword">int</span>[] candidates, <span class="hljs-keyword">int</span> start, <span class="hljs-keyword">int</span> remain)</span> </span>{
-        <span class="hljs-keyword">if</span> (remain &lt; <span class="hljs-number">0</span>) <span class="hljs-keyword">return</span>;
-        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (remain == <span class="hljs-number">0</span>) {
-            lists.add(<span class="hljs-keyword">new</span> ArrayList&lt;&gt;(tmpList));
+        <span class="hljs-keyword">if</span> (exponent == <span class="hljs-number">0</span>) {
+            <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;
         } <span class="hljs-keyword">else</span> {
-            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = start; i &lt; candidates.length; i ++) {
-                <span class="hljs-keyword">if</span> (i &gt;= start + <span class="hljs-number">1</span> &amp;&amp; candidates[i - <span class="hljs-number">1</span>] == candidates[i]) {
-                    <span class="hljs-keyword">continue</span>;
-                }
-                tmpList.add(candidates[i]);
-                backtrack(lists, tmpList, candidates, i + <span class="hljs-number">1</span>, remain - candidates[i]);
-                tmpList.remove(tmpList.size() - <span class="hljs-number">1</span>);
+            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">2</span>; i &lt;= Math.abs(exponent); i++) {
+                cur *= base;
             }
         }
+        <span class="hljs-keyword">return</span> exponent &gt; <span class="hljs-number">0</span> ? cur : <span class="hljs-number">1</span> / cur;
     }
-    <span class="hljs-comment">/*=====================================================================================*/</span>
 
-    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
-        <span class="hljs-keyword">int</span>[] nums1 = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[]{<span class="hljs-number">10</span>,<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">7</span>,<span class="hljs-number">6</span>,<span class="hljs-number">1</span>,<span class="hljs-number">5</span>};
-        <span class="hljs-keyword">int</span> target1 = <span class="hljs-number">8</span>;
-        printDoubleList(combinationSum2(nums1, target1));
-        System.out.println(<span class="hljs-string">&quot;====================&quot;</span>);
-        <span class="hljs-keyword">int</span>[] nums2 = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[]{<span class="hljs-number">2</span>,<span class="hljs-number">5</span>,<span class="hljs-number">2</span>,<span class="hljs-number">1</span>,<span class="hljs-number">2</span>};
-        <span class="hljs-keyword">int</span> target2 = <span class="hljs-number">5</span>;
-        printDoubleList(combinationSum2(nums2, target2));
+    <span class="hljs-comment">/**
+     * &#x81EA;&#x60F3;2&#xFF1A;&#x7528;&#x4F4D;&#x8FD0;&#x7B97;&#x4EE3;&#x66FF;&#x8FDE;&#x4E58;
+     * &#x4E3E;&#x4F8B;&#xFF0C;13&#x8868;&#x8FBE;&#x4E3A;&#x4E8C;&#x8FDB;&#x5236;1101&#x3002;
+     * 10^1101 = 10^0001 * 10^0100 * 10^1000&#x3002;
+     * &#x901A;&#x8FC7;&amp;1&#x548C;&gt;&gt;1&#x6765;&#x9010;&#x4F4D;&#x8BFB;&#x53D6;1101&#xFF0C;&#x4E3A;1&#x65F6;&#x5C06;&#x8BE5;&#x4F4D;&#x4EE3;&#x8868;&#x7684;&#x4E58;&#x6570;&#x7D2F;&#x4E58;&#x5230;&#x6700;&#x7EC8;&#x7ED3;&#x679C;&#x3002;
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">double</span> <span class="hljs-title">Power2</span><span class="hljs-params">(<span class="hljs-keyword">double</span> base, <span class="hljs-keyword">int</span> exponent)</span> </span>{
+        <span class="hljs-keyword">double</span> cur = <span class="hljs-number">1</span>, factor = base;
+        <span class="hljs-keyword">int</span> absExp = Math.abs(exponent);
+        <span class="hljs-keyword">if</span> (base == <span class="hljs-number">0</span> &amp;&amp; exponent &lt;= <span class="hljs-number">0</span>) {
+            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> RuntimeException(<span class="hljs-string">&quot;valid input!&quot;</span>);
+        }
+        <span class="hljs-keyword">if</span> (exponent == <span class="hljs-number">0</span>) {
+            <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;
+        } <span class="hljs-keyword">else</span> {
+            <span class="hljs-keyword">while</span> (absExp != <span class="hljs-number">0</span>) {
+                <span class="hljs-comment">// &#x4ECE;&#x53F3;&#x5230;&#x5DE6;&#x4E00;&#x4F4D;&#x4E00;&#x4F4D;&#x68C0;&#x9A8C;absExp</span>
+                <span class="hljs-keyword">if</span> ((absExp &amp; <span class="hljs-number">1</span>) != <span class="hljs-number">0</span>) {
+                    cur *= factor;
+                }
+                <span class="hljs-comment">// factor = (factor)&#xB2;&#xFF0C;base&#x7684;&#x5E73;&#x65B9;&#xFF0C;&#x56DB;&#x6B21;&#x65B9;&#xFF0C;8&#x6B21;&#x65B9;...</span>
+                <span class="hljs-comment">// &#x5982;&#x679C;base&#x662F;int&#x7684;&#x8BDD;&#xFF0C;&#x8FD9;&#x91CC;&#x53EF;&#x4EE5;&#x8BA9;base&#x5411;&#x5DE6;&#x79FB;&#x52A8;1&#x4F4D;&#xFF0C;2&#x4F4D;&#xFF0C;3&#x4F4D;...&#x5F97;&#x5230;factor</span>
+                factor *= factor;
+                <span class="hljs-comment">// absExp&#x53F3;&#x79FB;&#x4E00;&#x4F4D;&#xFF0C;&#x5373;&#x66F4;&#x9AD8;&#x4E00;&#x4F4D;&#x79FB;&#x5230;&#x4E2A;&#x4F4D;</span>
+                absExp &gt;&gt;= <span class="hljs-number">1</span>;
+            }
+        }
+        <span class="hljs-keyword">return</span> exponent &gt; <span class="hljs-number">0</span> ? cur : <span class="hljs-number">1</span> / cur;
     }
 }
-</code></pre>
-<p>&#x6253;&#x5370;&#x51FD;&#x6570;&#xFF1A;</p>
-<pre><code class="lang-java">    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">printDoubleList</span><span class="hljs-params">(List&lt;List&lt;Integer&gt;&gt; lists)</span> </span>{
-        <span class="hljs-keyword">for</span> (List&lt;Integer&gt; list : lists) {
-            <span class="hljs-keyword">for</span> (Integer i : list) {
-                System.out.print(i + <span class="hljs-string">&quot; &quot;</span>);
-            }
-            System.out.println();
-        }
-    }
 </code></pre>
 
                                 
@@ -1113,14 +1087,10 @@ A solution set is:
 
             
                 
-                <a href="bfs-dfs总结.html" class="navigation navigation-prev " aria-label="Previous page: bfs/dfs总结">
+                <a href="二进制中1的个数.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 二进制中1的个数">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
-                
-                <a href="leetcode46.html" class="navigation navigation-next " aria-label="Next page: LeetCode46 Permutation">
-                    <i class="fa fa-angle-right"></i>
-                </a>
                 
             
         
@@ -1129,7 +1099,7 @@ A solution set is:
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"LeetCode40 Combination Sum II","date":"2018-11-11T17:00:08.000Z","categories":"算法","tags":["LeetCode","Array","Medium","Java","algorithms","bfs/dfs","backtracking"],"level":"1.7.2","depth":2,"next":{"title":"LeetCode46 Permutation","level":"1.7.3","depth":2,"path":"bfs-dfs/leetcode46.md","ref":"bfs-dfs/leetcode46.md","articles":[]},"previous":{"title":"bfs/dfs总结","level":"1.7.1","depth":2,"path":"bfs-dfs/bfs-dfs总结.md","ref":"bfs-dfs/bfs-dfs总结.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"bfs-dfs/leetcode40.md","mtime":"2019-01-23T08:48:55.566Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-02T13:43:15.810Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"数值的整数次方","level":"1.12.2","depth":2,"previous":{"title":"二进制中1的个数","level":"1.12.1","depth":2,"path":"Bit/二进制中1的个数.md","ref":"Bit/二进制中1的个数.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Bit/数值的整数次方.md","mtime":"2019-03-02T13:42:47.093Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-02T13:43:15.810Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
