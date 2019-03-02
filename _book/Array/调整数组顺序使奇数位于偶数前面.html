@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>LeetCode33 Search in Rotated Sorted Array · GitBook</title>
+        <title>剑指offer 13.调整数组顺序使奇数位于偶数前面 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="leetcode34.html" />
+    <link rel="next" href="范围查询.html" />
     
     
-    <link rel="prev" href="leetcode26.html" />
+    <link rel="prev" href="矩阵覆盖.html" />
     
 
     </head>
@@ -155,7 +155,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.2.4" data-path="leetcode33.html">
+        <li class="chapter " data-level="1.2.4" data-path="leetcode33.html">
             
                 <a href="leetcode33.html">
             
@@ -428,7 +428,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.25" data-path="调整数组顺序使奇数位于偶数前面.html">
+        <li class="chapter active" data-level="1.2.25" data-path="调整数组顺序使奇数位于偶数前面.html">
             
                 <a href="调整数组顺序使奇数位于偶数前面.html">
             
@@ -1004,7 +1004,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >LeetCode33 Search in Rotated Sorted Array</a>
+        <a href=".." >剑指offer 13.调整数组顺序使奇数位于偶数前面</a>
     </h1>
 </div>
 
@@ -1020,75 +1020,86 @@
                                 <section class="normal markdown-section">
                                 
                                 <blockquote>
-<p>Suppose an array sorted in ascending order is rotated at some pivot unknown to you beforehand.</p>
-<p>(i.e., <code>[0,1,2,4,5,6,7]</code> might become <code>[4,5,6,7,0,1,2]</code>).</p>
-<p>You are given a target value to search. If found in the array return its index, otherwise return <code>-1</code>.</p>
-<p>You may assume no duplicate exists in the array.</p>
-<p>Your algorithm&apos;s runtime complexity must be in the order of <em>O</em>(log <em>n</em>).</p>
-<p><strong>Example 1:</strong></p>
-<pre><code>Input: nums = [4,5,6,7,0,1,2], target = 0
-Output: 4
-</code></pre><p><strong>Example 2:</strong></p>
-<pre><code>Input: nums = [4,5,6,7,0,1,2], target = 3
-Output: -1
-</code></pre></blockquote>
-<p>&#x4E8C;&#x5206;&#x67E5;&#x627E;&#x7684;&#x601D;&#x60F3;&#xFF1A;<a href="https://limengting.site/2019/01/31/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE%E7%9A%84%E5%90%84%E7%A7%8D%E5%8F%98%E5%BD%A2%E6%80%BB%E7%BB%93/" target="_blank">&#x4E8C;&#x5206;&#x67E5;&#x627E;&#x603B;&#x7ED3;</a></p>
+<p>&#x8F93;&#x5165;&#x4E00;&#x4E2A;&#x6574;&#x6570;&#x6570;&#x7EC4;&#xFF0C;&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x6765;&#x8C03;&#x6574;&#x8BE5;&#x6570;&#x7EC4;&#x4E2D;&#x6570;&#x5B57;&#x7684;&#x987A;&#x5E8F;&#xFF0C;
+&#x4F7F;&#x5F97;&#x6240;&#x6709;&#x7684;&#x5947;&#x6570;&#x4F4D;&#x4E8E;&#x6570;&#x7EC4;&#x7684;&#x524D;&#x534A;&#x90E8;&#x5206;&#xFF0C;&#x6240;&#x6709;&#x7684;&#x5076;&#x6570;&#x4F4D;&#x4E8E;&#x6570;&#x7EC4;&#x7684;&#x540E;&#x534A;&#x90E8;&#x5206;&#xFF0C;
+&#x5E76;&#x4FDD;&#x8BC1;&#x5947;&#x6570;&#x548C;&#x5947;&#x6570;&#xFF0C;&#x5076;&#x6570;&#x548C;&#x5076;&#x6570;&#x4E4B;&#x95F4;&#x7684;&#x76F8;&#x5BF9;&#x4F4D;&#x7F6E;&#x4E0D;&#x53D8;&#x3002;</p>
+</blockquote>
 <pre><code class="lang-java"><span class="hljs-keyword">package</span> array;
 
-<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">leetcode33SearchInRotatedSortedArray</span> </span>{
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> &#x8C03;&#x6574;&#x6570;&#x7EC4;&#x987A;&#x5E8F;&#x4F7F;&#x5947;&#x6570;&#x4F4D;&#x4E8E;&#x5076;&#x6570;&#x524D;&#x9762; </span>{
     <span class="hljs-comment">/**
-     * &#x8BA8;&#x8BBA;&#x533A;&#xFF1A;&#x5206;&#x6210;3&#x79CD;&#x60C5;&#x51B5;&#x67E5;&#x627E;&#xFF0C;&#x4E3B;&#x8981;&#x662F;&#x627E;&#x5230;minIndex
-     * &#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;O(nlogn)&#xFF0C;&#x7A7A;&#x95F4;&#x590D;&#x6742;&#x5EA6;O(1)
+     * &#x81EA;&#x60F3;1&#xFF1A;
+     * &#x53E6;&#x5916;&#x7528;&#x4E00;&#x4E2A;&#x6570;&#x7EC4;
+     * &#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;O(n)&#xFF0C;&#x7A7A;&#x95F4;&#x590D;&#x6742;&#x5EA6;O(n)
      */</span>
-    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> <span class="hljs-title">search</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] nums, <span class="hljs-keyword">int</span> target)</span> </span>{
-        <span class="hljs-keyword">if</span> (nums == <span class="hljs-keyword">null</span> || nums.length &lt;= <span class="hljs-number">0</span>) {
-            <span class="hljs-keyword">return</span> -<span class="hljs-number">1</span>;
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">reOrderArray1</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] array)</span> </span>{
+        <span class="hljs-keyword">if</span> (array == <span class="hljs-keyword">null</span> || array.length &lt;= <span class="hljs-number">0</span>) {
+            <span class="hljs-keyword">return</span>;
         }
-        <span class="hljs-keyword">int</span> smallNumIndex = findMinIndex(nums);
-        <span class="hljs-keyword">if</span> (target == nums[<span class="hljs-number">0</span>]) {
-            <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
-        } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (target &gt; nums[<span class="hljs-number">0</span>]) {
-            <span class="hljs-keyword">return</span> binarySearch(nums, <span class="hljs-number">0</span>, smallNumIndex - <span class="hljs-number">1</span> &gt;= <span class="hljs-number">0</span> ? smallNumIndex - <span class="hljs-number">1</span> : nums.length - <span class="hljs-number">1</span>, target);
-        } <span class="hljs-keyword">else</span> {
-            <span class="hljs-keyword">return</span> binarySearch(nums, smallNumIndex, nums.length - <span class="hljs-number">1</span>, target);
+        <span class="hljs-keyword">int</span>[] res = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[array.length];
+        <span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>;
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> num : array) {
+            <span class="hljs-keyword">if</span> (num % <span class="hljs-number">2</span> == <span class="hljs-number">1</span>) {
+                res[i++] = num;
+            }
+        }
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> num : array) {
+            <span class="hljs-keyword">if</span> (num % <span class="hljs-number">2</span> == <span class="hljs-number">0</span>) {
+                res[i++] = num;
+            }
+        }
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = <span class="hljs-number">0</span>; j &lt; array.length; j++) {
+            array[j] = res[j];
         }
     }
 
-    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> <span class="hljs-title">binarySearch</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] nums, <span class="hljs-keyword">int</span> lo, <span class="hljs-keyword">int</span> hi, <span class="hljs-keyword">int</span> target)</span> </span>{
-        <span class="hljs-keyword">while</span> (lo &lt;= hi) {
-            <span class="hljs-keyword">int</span> mid = lo + ((hi - lo) &gt;&gt; <span class="hljs-number">1</span>);
-            <span class="hljs-keyword">if</span> (target &lt; nums[mid]) {
-                hi = mid - <span class="hljs-number">1</span>;
-            } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (target &gt; nums[mid]) {
-                lo = mid + <span class="hljs-number">1</span>;
-            } <span class="hljs-keyword">else</span> {
-                <span class="hljs-keyword">return</span> mid;
+    <span class="hljs-comment">/**
+     * &#x8BA8;&#x8BBA;&#x533A;&#xFF1A;
+     * &#x8981;&#x60F3;&#x4FDD;&#x8BC1;&#x539F;&#x6709;&#x6B21;&#x5E8F;&#xFF0C;&#x5219;&#x53EA;&#x80FD;&#x987A;&#x6B21;&#x79FB;&#x52A8;&#x6216;&#x76F8;&#x90BB;&#x4EA4;&#x6362;&#x3002;
+     * i&#x5B58;&#x5076;&#x6570;&#x7684;&#x4E0B;&#x6807;&#xFF0C;j&#x5B58;i&#x4E4B;&#x540E;&#x7684;&#x5947;&#x6570;&#x7684;&#x4E0B;&#x6807;
+     * i&#x4ECE;&#x5DE6;&#x5411;&#x53F3;&#x904D;&#x5386;&#xFF0C;&#x627E;&#x5230;&#x7B2C;&#x4E00;&#x4E2A;&#x5076;&#x6570;&#x3002;
+     * j&#x4ECE;i+1&#x5F00;&#x59CB;&#x5411;&#x540E;&#x627E;&#xFF0C;&#x76F4;&#x5230;&#x627E;&#x5230;&#x7B2C;&#x4E00;&#x4E2A;&#x5947;&#x6570;&#x3002;
+     * &#x5C06;[i,...,j-1]&#x7684;&#x5143;&#x7D20;&#x6574;&#x4F53;&#x540E;&#x79FB;&#x4E00;&#x4F4D;&#xFF0C;&#x6700;&#x540E;&#x5C06;&#x627E;&#x5230;&#x7684;&#x5947;&#x6570;&#x653E;&#x5165;i&#x4F4D;&#x7F6E;&#xFF0C;&#x7136;&#x540E;i++&#x3002;
+     * &#x7EC8;&#x6B62;&#x6761;&#x4EF6;&#xFF1A;j&#x5411;&#x540E;&#x904D;&#x5386;&#x6CA1;&#x6709;&#x518D;&#x627E;&#x5230;&#x5947;&#x6570;&#x3002;
+     * &#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;O(n&#xB2;)&#xFF0C;&#x7A7A;&#x95F4;&#x590D;&#x6742;&#x5EA6;O(1)
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">reOrderArray2</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] array)</span> </span>{
+        <span class="hljs-keyword">if</span> (array == <span class="hljs-keyword">null</span> || array.length &lt;= <span class="hljs-number">0</span>) {
+            <span class="hljs-keyword">return</span>;
+        }
+        <span class="hljs-comment">// array[i]&#x662F;&#x7B2C;&#x4E00;&#x4E2A;&#x5076;&#x6570;</span>
+        <span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>;
+        <span class="hljs-keyword">for</span> (; i &lt; array.length; i++) {
+            <span class="hljs-keyword">if</span> (array[i] % <span class="hljs-number">2</span> == <span class="hljs-number">0</span>) {
+                <span class="hljs-keyword">break</span>;
             }
         }
-        <span class="hljs-keyword">return</span> -<span class="hljs-number">1</span>;
-    }
-
-    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> <span class="hljs-title">findMinIndex</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] nums)</span> </span>{
-        <span class="hljs-keyword">int</span> lo = <span class="hljs-number">0</span>, hi = nums.length - <span class="hljs-number">1</span>;
-        <span class="hljs-keyword">while</span> (lo &lt;= hi) {
-            <span class="hljs-keyword">int</span> mid = lo + ((hi - lo) &gt;&gt; <span class="hljs-number">1</span>);
-            <span class="hljs-comment">// mid &lt; hi&#xFF1A;&#x6700;&#x5C0F;&#x503C;&#x5728;&#x5DE6;&#x534A;&#x90E8;&#x5206;&#x4E5F;&#x53EF;&#x80FD;&#x662F;&#x81EA;&#x5DF1;</span>
-            <span class="hljs-keyword">if</span> (nums[mid] &lt; nums[hi]) {
-                hi = mid;
-                <span class="hljs-comment">// mid &gt; hi&#xFF1A;&#x6700;&#x5C0F;&#x503C;&#x5728;&#x53F3;&#x534A;&#x90E8;&#x5206;&#xFF0C;&#x4E0D;&#x53EF;&#x80FD;&#x662F;&#x81EA;&#x5DF1;&#x4E86;</span>
-            } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (nums[mid] &gt; nums[hi]) {
-                lo = mid + <span class="hljs-number">1</span>;
-            } <span class="hljs-keyword">else</span> {
-                <span class="hljs-keyword">return</span> mid;
+        <span class="hljs-comment">// array[j]&#x662F;array[i]&#x540E;&#x9762;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x5947;&#x6570;</span>
+        <span class="hljs-keyword">int</span> j = i + <span class="hljs-number">1</span>;
+        <span class="hljs-keyword">while</span> (j &lt; array.length) {
+            <span class="hljs-keyword">for</span> (; j &lt; array.length; j++) {
+                <span class="hljs-keyword">if</span> (array[j] % <span class="hljs-number">2</span> == <span class="hljs-number">1</span>) {
+                    <span class="hljs-keyword">break</span>;
+                }
             }
+            <span class="hljs-comment">// &#x5982;&#x679C;array[i]&#x540E;&#x9762;&#x6CA1;&#x6709;&#x5947;&#x6570;&#xFF0C;&#x8BC1;&#x660E;&#x5947;&#x6570;&#x5168;&#x90E8;&#x5728;&#x5076;&#x6570;&#x7684;&#x524D;&#x9762;</span>
+            <span class="hljs-keyword">if</span> (j &gt;= array.length) {
+                <span class="hljs-keyword">return</span>;
+            }
+            <span class="hljs-comment">// &#x8BB0;&#x4E0B;&#x5373;&#x5C06;&#x88AB;&#x8986;&#x76D6;&#x7684;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x503C;</span>
+            <span class="hljs-keyword">int</span> odd = array[j];
+            <span class="hljs-comment">// &#x5411;&#x540E;&#x79FB;&#x5FC5;&#x987B;&#x4ECE;&#x540E;&#x5F80;&#x524D;&#x79FB;&#x52A8;&#xFF0C;&#x4E0D;&#x7136;&#x524D;&#x9762;&#x7684;&#x5411;&#x540E;&#x79FB;&#x4F1A;&#x8986;&#x76D6;&#x540E;&#x9762;&#x7684;&#x503C;</span>
+            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> k = j - <span class="hljs-number">1</span>; k &gt;= i; k--) {
+                array[k + <span class="hljs-number">1</span>] = array[k];
+            }
+            array[i++] = odd;
+            j++;
         }
-        <span class="hljs-keyword">return</span> lo;
     }
 
     <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
-        <span class="hljs-keyword">int</span>[] nums = {<span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">6</span>,<span class="hljs-number">7</span>,<span class="hljs-number">8</span>,<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>};
-        System.out.println(findMinIndex(nums));
-        System.out.println(search(nums, <span class="hljs-number">8</span>));
+        <span class="hljs-keyword">int</span>[] array = {<span class="hljs-number">1</span>,<span class="hljs-number">3</span>,<span class="hljs-number">5</span>,<span class="hljs-number">7</span>,<span class="hljs-number">2</span>,<span class="hljs-number">4</span>,<span class="hljs-number">6</span>};
+        reOrderArray2(array);
     }
 }
 </code></pre>
@@ -1119,12 +1130,12 @@ Output: -1
 
             
                 
-                <a href="leetcode26.html" class="navigation navigation-prev " aria-label="Previous page: LeetCode26 Remove Duplicates From Sorted Array">
+                <a href="矩阵覆盖.html" class="navigation navigation-prev " aria-label="Previous page: 剑指offer 10.矩阵覆盖">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="leetcode34.html" class="navigation navigation-next " aria-label="Next page: LeetCode34 Find First and Last Position of Element in Sorted Array">
+                <a href="范围查询.html" class="navigation navigation-next " aria-label="Next page: Tsinghua OJ 范围查询(Range)">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -1135,7 +1146,7 @@ Output: -1
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"LeetCode33 Search in Rotated Sorted Array","level":"1.2.4","depth":2,"next":{"title":"LeetCode34 Find First and Last Position of Element in Sorted Array","level":"1.2.5","depth":2,"path":"Array/leetcode34.md","ref":"Array/leetcode34.md","articles":[]},"previous":{"title":"LeetCode26 Remove Duplicates From Sorted Array","level":"1.2.3","depth":2,"path":"Array/leetcode26.md","ref":"Array/leetcode26.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Array/leetcode33.md","mtime":"2019-02-07T09:10:48.913Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-02T17:20:07.901Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"剑指offer 13.调整数组顺序使奇数位于偶数前面","level":"1.2.25","depth":2,"next":{"title":"Tsinghua OJ 范围查询(Range)","level":"1.2.26","depth":2,"path":"Array/范围查询.md","ref":"Array/范围查询.md","articles":[]},"previous":{"title":"剑指offer 10.矩阵覆盖","level":"1.2.24","depth":2,"path":"Array/矩阵覆盖.md","ref":"Array/矩阵覆盖.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Array/调整数组顺序使奇数位于偶数前面.md","mtime":"2019-03-02T17:19:10.300Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-02T17:20:07.901Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

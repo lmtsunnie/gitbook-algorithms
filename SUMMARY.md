@@ -26,6 +26,7 @@
     * [剑指offer 8.跳台阶](Array/跳台阶.md)
     * [剑指offer 9.变态跳台阶](Array/变态跳台阶.md)
     * [剑指offer 10.矩阵覆盖](Array/矩阵覆盖.md)
+    * [剑指offer 13.调整数组顺序使奇数位于偶数前面](Array/调整数组顺序使奇数位于偶数前面.md)
     * [Tsinghua OJ 范围查询(Range)](Array/范围查询.md)
     * [二分查找的各种变形总结](Array/二分查找的各种变形总结.md)
 * String
