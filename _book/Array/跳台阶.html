@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>LeetCode33 Search in Rotated Sorted Array · GitBook</title>
+        <title>剑指offer 8.跳台阶 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="leetcode34.html" />
+    <link rel="next" href="范围查询.html" />
     
     
-    <link rel="prev" href="leetcode26.html" />
+    <link rel="prev" href="斐波那契数列.html" />
     
 
     </head>
@@ -155,7 +155,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.2.4" data-path="leetcode33.html">
+        <li class="chapter " data-level="1.2.4" data-path="leetcode33.html">
             
                 <a href="leetcode33.html">
             
@@ -389,7 +389,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.22" data-path="跳台阶.html">
+        <li class="chapter active" data-level="1.2.22" data-path="跳台阶.html">
             
                 <a href="跳台阶.html">
             
@@ -920,7 +920,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >LeetCode33 Search in Rotated Sorted Array</a>
+        <a href=".." >剑指offer 8.跳台阶</a>
     </h1>
 </div>
 
@@ -936,75 +936,29 @@
                                 <section class="normal markdown-section">
                                 
                                 <blockquote>
-<p>Suppose an array sorted in ascending order is rotated at some pivot unknown to you beforehand.</p>
-<p>(i.e., <code>[0,1,2,4,5,6,7]</code> might become <code>[4,5,6,7,0,1,2]</code>).</p>
-<p>You are given a target value to search. If found in the array return its index, otherwise return <code>-1</code>.</p>
-<p>You may assume no duplicate exists in the array.</p>
-<p>Your algorithm&apos;s runtime complexity must be in the order of <em>O</em>(log <em>n</em>).</p>
-<p><strong>Example 1:</strong></p>
-<pre><code>Input: nums = [4,5,6,7,0,1,2], target = 0
-Output: 4
-</code></pre><p><strong>Example 2:</strong></p>
-<pre><code>Input: nums = [4,5,6,7,0,1,2], target = 3
-Output: -1
-</code></pre></blockquote>
-<p>&#x4E8C;&#x5206;&#x67E5;&#x627E;&#x7684;&#x601D;&#x60F3;&#xFF1A;<a href="https://limengting.site/2019/01/31/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE%E7%9A%84%E5%90%84%E7%A7%8D%E5%8F%98%E5%BD%A2%E6%80%BB%E7%BB%93/" target="_blank">&#x4E8C;&#x5206;&#x67E5;&#x627E;&#x603B;&#x7ED3;</a></p>
+<p>&#x4E00;&#x53EA;&#x9752;&#x86D9;&#x4E00;&#x6B21;&#x53EF;&#x4EE5;&#x8DF3;&#x4E0A;1&#x7EA7;&#x53F0;&#x9636;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x8DF3;&#x4E0A;2&#x7EA7;&#x3002;&#x6C42;&#x8BE5;&#x9752;&#x86D9;&#x8DF3;&#x4E0A;&#x4E00;&#x4E2A;n&#x7EA7;&#x7684;&#x53F0;&#x9636;&#x603B;&#x5171;&#x6709;&#x591A;&#x5C11;&#x79CD;&#x8DF3;&#x6CD5;&#xFF08;&#x5148;&#x540E;&#x6B21;&#x5E8F;&#x4E0D;&#x540C;&#x7B97;&#x4E0D;&#x540C;&#x7684;&#x7ED3;&#x679C;&#xFF09;&#x3002;</p>
+</blockquote>
 <pre><code class="lang-java"><span class="hljs-keyword">package</span> array;
 
-<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">leetcode33SearchInRotatedSortedArray</span> </span>{
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> &#x8DF3;&#x53F0;&#x9636; </span>{
     <span class="hljs-comment">/**
-     * &#x8BA8;&#x8BBA;&#x533A;&#xFF1A;&#x5206;&#x6210;3&#x79CD;&#x60C5;&#x51B5;&#x67E5;&#x627E;&#xFF0C;&#x4E3B;&#x8981;&#x662F;&#x627E;&#x5230;minIndex
-     * &#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;O(nlogn)&#xFF0C;&#x7A7A;&#x95F4;&#x590D;&#x6742;&#x5EA6;O(1)
+     * f(n) = f(n - 1) + f(n - 2)
+     * f(1) = 1, f(2) = 2
+     * &#x6590;&#x6CE2;&#x90A3;&#x5951;&#x6570;&#x5217;&#xFF0C;&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;O(n)&#xFF0C;&#x7A7A;&#x95F4;&#x590D;&#x6742;&#x5EA6;O(1)
      */</span>
-    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> <span class="hljs-title">search</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] nums, <span class="hljs-keyword">int</span> target)</span> </span>{
-        <span class="hljs-keyword">if</span> (nums == <span class="hljs-keyword">null</span> || nums.length &lt;= <span class="hljs-number">0</span>) {
-            <span class="hljs-keyword">return</span> -<span class="hljs-number">1</span>;
-        }
-        <span class="hljs-keyword">int</span> smallNumIndex = findMinIndex(nums);
-        <span class="hljs-keyword">if</span> (target == nums[<span class="hljs-number">0</span>]) {
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">JumpFloor</span><span class="hljs-params">(<span class="hljs-keyword">int</span> target)</span> </span>{
+        <span class="hljs-keyword">if</span> (target &lt;= <span class="hljs-number">0</span>) {
             <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
-        } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (target &gt; nums[<span class="hljs-number">0</span>]) {
-            <span class="hljs-keyword">return</span> binarySearch(nums, <span class="hljs-number">0</span>, smallNumIndex - <span class="hljs-number">1</span> &gt;= <span class="hljs-number">0</span> ? smallNumIndex - <span class="hljs-number">1</span> : nums.length - <span class="hljs-number">1</span>, target);
-        } <span class="hljs-keyword">else</span> {
-            <span class="hljs-keyword">return</span> binarySearch(nums, smallNumIndex, nums.length - <span class="hljs-number">1</span>, target);
         }
-    }
-
-    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> <span class="hljs-title">binarySearch</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] nums, <span class="hljs-keyword">int</span> lo, <span class="hljs-keyword">int</span> hi, <span class="hljs-keyword">int</span> target)</span> </span>{
-        <span class="hljs-keyword">while</span> (lo &lt;= hi) {
-            <span class="hljs-keyword">int</span> mid = lo + ((hi - lo) &gt;&gt; <span class="hljs-number">1</span>);
-            <span class="hljs-keyword">if</span> (target &lt; nums[mid]) {
-                hi = mid - <span class="hljs-number">1</span>;
-            } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (target &gt; nums[mid]) {
-                lo = mid + <span class="hljs-number">1</span>;
-            } <span class="hljs-keyword">else</span> {
-                <span class="hljs-keyword">return</span> mid;
-            }
+        <span class="hljs-keyword">if</span> (target == <span class="hljs-number">1</span>) {
+            <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;
         }
-        <span class="hljs-keyword">return</span> -<span class="hljs-number">1</span>;
-    }
-
-    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> <span class="hljs-title">findMinIndex</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] nums)</span> </span>{
-        <span class="hljs-keyword">int</span> lo = <span class="hljs-number">0</span>, hi = nums.length - <span class="hljs-number">1</span>;
-        <span class="hljs-keyword">while</span> (lo &lt;= hi) {
-            <span class="hljs-keyword">int</span> mid = lo + ((hi - lo) &gt;&gt; <span class="hljs-number">1</span>);
-            <span class="hljs-comment">// mid &lt; hi&#xFF1A;&#x6700;&#x5C0F;&#x503C;&#x5728;&#x5DE6;&#x534A;&#x90E8;&#x5206;&#x4E5F;&#x53EF;&#x80FD;&#x662F;&#x81EA;&#x5DF1;</span>
-            <span class="hljs-keyword">if</span> (nums[mid] &lt; nums[hi]) {
-                hi = mid;
-                <span class="hljs-comment">// mid &gt; hi&#xFF1A;&#x6700;&#x5C0F;&#x503C;&#x5728;&#x53F3;&#x534A;&#x90E8;&#x5206;&#xFF0C;&#x4E0D;&#x53EF;&#x80FD;&#x662F;&#x81EA;&#x5DF1;&#x4E86;</span>
-            } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (nums[mid] &gt; nums[hi]) {
-                lo = mid + <span class="hljs-number">1</span>;
-            } <span class="hljs-keyword">else</span> {
-                <span class="hljs-keyword">return</span> mid;
-            }
+        <span class="hljs-keyword">int</span> pre = <span class="hljs-number">1</span>, cur = <span class="hljs-number">2</span>;
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">3</span>; i &lt;= target; i ++) {
+            cur += pre;
+            pre = cur - pre;
         }
-        <span class="hljs-keyword">return</span> lo;
-    }
-
-    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
-        <span class="hljs-keyword">int</span>[] nums = {<span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">6</span>,<span class="hljs-number">7</span>,<span class="hljs-number">8</span>,<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>};
-        System.out.println(findMinIndex(nums));
-        System.out.println(search(nums, <span class="hljs-number">8</span>));
+        <span class="hljs-keyword">return</span> cur;
     }
 }
 </code></pre>
@@ -1035,12 +989,12 @@ Output: -1
 
             
                 
-                <a href="leetcode26.html" class="navigation navigation-prev " aria-label="Previous page: LeetCode26 Remove Duplicates From Sorted Array">
+                <a href="斐波那契数列.html" class="navigation navigation-prev " aria-label="Previous page: 剑指offer 7.斐波那契数列">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="leetcode34.html" class="navigation navigation-next " aria-label="Next page: LeetCode34 Find First and Last Position of Element in Sorted Array">
+                <a href="范围查询.html" class="navigation navigation-next " aria-label="Next page: Tsinghua OJ 范围查询(Range)">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -1051,7 +1005,7 @@ Output: -1
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"LeetCode33 Search in Rotated Sorted Array","level":"1.2.4","depth":2,"next":{"title":"LeetCode34 Find First and Last Position of Element in Sorted Array","level":"1.2.5","depth":2,"path":"Array/leetcode34.md","ref":"Array/leetcode34.md","articles":[]},"previous":{"title":"LeetCode26 Remove Duplicates From Sorted Array","level":"1.2.3","depth":2,"path":"Array/leetcode26.md","ref":"Array/leetcode26.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Array/leetcode33.md","mtime":"2019-02-07T09:10:48.913Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-02T09:24:29.942Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"剑指offer 8.跳台阶","level":"1.2.22","depth":2,"next":{"title":"Tsinghua OJ 范围查询(Range)","level":"1.2.23","depth":2,"path":"Array/范围查询.md","ref":"Array/范围查询.md","articles":[]},"previous":{"title":"剑指offer 7.斐波那契数列","level":"1.2.21","depth":2,"path":"Array/斐波那契数列.md","ref":"Array/斐波那契数列.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Array/跳台阶.md","mtime":"2019-03-02T09:23:55.333Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-02T09:24:29.942Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
