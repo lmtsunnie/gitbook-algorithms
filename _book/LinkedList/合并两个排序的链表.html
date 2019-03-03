@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>剑指offer 12.数值的整数次方 · GitBook</title>
+        <title>剑指offer 16.合并两个排序的链表 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -58,7 +58,7 @@
 
     
     
-    <link rel="prev" href="二进制中1的个数.html" />
+    <link rel="prev" href="反转链表.html" />
     
 
     </head>
@@ -516,9 +516,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.4.1" data-path="../LinkedList/从尾到头打印链表.html">
+        <li class="chapter " data-level="1.4.1" data-path="从尾到头打印链表.html">
             
-                <a href="../LinkedList/从尾到头打印链表.html">
+                <a href="从尾到头打印链表.html">
             
                     
                     剑指offer 3.从尾到头打印链表
@@ -529,9 +529,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.2" data-path="../LinkedList/链表中倒数第k个结点.html">
+        <li class="chapter " data-level="1.4.2" data-path="链表中倒数第k个结点.html">
             
-                <a href="../LinkedList/链表中倒数第k个结点.html">
+                <a href="链表中倒数第k个结点.html">
             
                     
                     剑指offer 14.链表中倒数第k个结点
@@ -542,9 +542,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.3" data-path="../LinkedList/反转链表.html">
+        <li class="chapter " data-level="1.4.3" data-path="反转链表.html">
             
-                <a href="../LinkedList/反转链表.html">
+                <a href="反转链表.html">
             
                     
                     剑指offer 15.反转链表
@@ -555,9 +555,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.4" data-path="../LinkedList/合并两个排序的链表.html">
+        <li class="chapter active" data-level="1.4.4" data-path="合并两个排序的链表.html">
             
-                <a href="../LinkedList/合并两个排序的链表.html">
+                <a href="合并两个排序的链表.html">
             
                     
                     剑指offer 16.合并两个排序的链表
@@ -980,9 +980,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.12.1" data-path="二进制中1的个数.html">
+        <li class="chapter " data-level="1.12.1" data-path="../Bit/二进制中1的个数.html">
             
-                <a href="二进制中1的个数.html">
+                <a href="../Bit/二进制中1的个数.html">
             
                     
                     剑指offer 11.二进制中1的个数
@@ -993,9 +993,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.12.2" data-path="数值的整数次方.html">
+        <li class="chapter " data-level="1.12.2" data-path="../Bit/数值的整数次方.html">
             
-                <a href="数值的整数次方.html">
+                <a href="../Bit/数值的整数次方.html">
             
                     
                     剑指offer 12.数值的整数次方
@@ -1041,7 +1041,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >剑指offer 12.数值的整数次方</a>
+        <a href=".." >剑指offer 16.合并两个排序的链表</a>
     </h1>
 </div>
 
@@ -1057,58 +1057,71 @@
                                 <section class="normal markdown-section">
                                 
                                 <blockquote>
-<p>&#x7ED9;&#x5B9A;&#x4E00;&#x4E2A;double&#x7C7B;&#x578B;&#x7684;&#x6D6E;&#x70B9;&#x6570;base&#x548C;int&#x7C7B;&#x578B;&#x7684;&#x6574;&#x6570;exponent&#x3002;&#x6C42;base&#x7684;exponent&#x6B21;&#x65B9;&#x3002;</p>
+<p>&#x8F93;&#x5165;&#x4E24;&#x4E2A;&#x5355;&#x8C03;&#x9012;&#x589E;&#x7684;&#x94FE;&#x8868;&#xFF0C;&#x8F93;&#x51FA;&#x4E24;&#x4E2A;&#x94FE;&#x8868;&#x5408;&#x6210;&#x540E;&#x7684;&#x94FE;&#x8868;&#xFF0C;&#x5F53;&#x7136;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x5408;&#x6210;&#x540E;&#x7684;&#x94FE;&#x8868;&#x6EE1;&#x8DB3;&#x5355;&#x8C03;&#x4E0D;&#x51CF;&#x89C4;&#x5219;&#x3002;</p>
 </blockquote>
-<pre><code class="lang-java"><span class="hljs-keyword">package</span> bit;
+<pre><code class="lang-java"><span class="hljs-keyword">package</span> linkedlist;
 
-<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> &#x6570;&#x503C;&#x7684;&#x6574;&#x6570;&#x6B21;&#x65B9; </span>{
+<span class="hljs-keyword">import</span> common.ListNode;
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> &#x5408;&#x5E76;&#x4E24;&#x4E2A;&#x6392;&#x5E8F;&#x7684;&#x94FE;&#x8868; </span>{
     <span class="hljs-comment">/**
-     * &#x81EA;&#x60F3;1&#xFF1A;&#x8FDE;&#x4E58;
-     * f(n) = f(n - 1) * base
+     * &#x81EA;&#x60F3;1&#xFF1A;
+     * &#x5F52;&#x5E76;&#x6392;&#x5E8F;merge&#x51FD;&#x6570;&#x7684;&#x601D;&#x60F3;
+     * &#x7528;&#x53E6;&#x4E00;&#x4E2A;&#x94FE;&#x8868;&#x5B58;&#x50A8;&#xFF0C;&#x8C01;&#x5C0F;&#x52A0;&#x5165;&#x8C01;
+     * &#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;O(m + n)&#xFF0C;&#x7A7A;&#x95F4;&#x590D;&#x6742;&#x5EA6;O(n)
      */</span>
-    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">double</span> <span class="hljs-title">Power1</span><span class="hljs-params">(<span class="hljs-keyword">double</span> base, <span class="hljs-keyword">int</span> exponent)</span> </span>{
-        <span class="hljs-keyword">double</span> cur = base;
-        <span class="hljs-keyword">if</span> (base == <span class="hljs-number">0</span> &amp;&amp; exponent &lt;= <span class="hljs-number">0</span>) {
-            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> RuntimeException(<span class="hljs-string">&quot;valid input!&quot;</span>);
+    <span class="hljs-function"><span class="hljs-keyword">public</span> ListNode <span class="hljs-title">Merge1</span><span class="hljs-params">(ListNode list1, ListNode list2)</span> </span>{
+        <span class="hljs-keyword">if</span> (list1 == <span class="hljs-keyword">null</span>) {
+            <span class="hljs-keyword">return</span> list2;
         }
-        <span class="hljs-keyword">if</span> (exponent == <span class="hljs-number">0</span>) {
-            <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;
-        } <span class="hljs-keyword">else</span> {
-            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">2</span>; i &lt;= Math.abs(exponent); i++) {
-                cur *= base;
+        <span class="hljs-keyword">if</span> (list2 == <span class="hljs-keyword">null</span>) {
+            <span class="hljs-keyword">return</span> list1;
+        }
+        ListNode head = <span class="hljs-keyword">null</span>, cur = <span class="hljs-keyword">null</span>;
+        <span class="hljs-keyword">while</span> (list1 != <span class="hljs-keyword">null</span> &amp;&amp; list2 != <span class="hljs-keyword">null</span>) {
+            ListNode lessNode = list1.val &lt;= list2.val ? list1 : list2;
+            <span class="hljs-keyword">if</span> (head == <span class="hljs-keyword">null</span>) {
+                head = cur = lessNode;
+            } <span class="hljs-keyword">else</span> {
+                cur.next = lessNode;
+                cur = cur.next;
+            }
+            <span class="hljs-keyword">if</span> (lessNode == list1) {
+                list1 = list1.next;
+            } <span class="hljs-keyword">else</span> {
+                list2 = list2.next;
             }
         }
-        <span class="hljs-keyword">return</span> exponent &gt; <span class="hljs-number">0</span> ? cur : <span class="hljs-number">1</span> / cur;
+        <span class="hljs-comment">// list1&#x5230;&#x5934;&#x4E86;&#xFF0C;&#x628A;list2&#x5168;&#x63A5;&#x4E0A;</span>
+        <span class="hljs-keyword">if</span> (list1 == <span class="hljs-keyword">null</span>) {
+            cur.next = list2;
+            <span class="hljs-comment">// list2&#x5230;&#x5934;&#x4E86;&#xFF0C;&#x628A;list1&#x5168;&#x63A5;&#x4E0A;</span>
+        } <span class="hljs-keyword">else</span> {
+            cur.next = list1;
+        }
+        <span class="hljs-keyword">return</span> head;
     }
 
     <span class="hljs-comment">/**
-     * &#x8BA8;&#x8BBA;&#x533A;&#xFF1A;&#x7528;&#x4F4D;&#x8FD0;&#x7B97;&#x4EE3;&#x66FF;&#x8FDE;&#x4E58;
-     * &#x4E3E;&#x4F8B;&#xFF0C;13&#x8868;&#x8FBE;&#x4E3A;&#x4E8C;&#x8FDB;&#x5236;1101&#x3002;
-     * 10^1101 = 10^0001 * 10^0100 * 10^1000&#x3002;
-     * &#x901A;&#x8FC7;&amp;1&#x548C;&gt;&gt;1&#x6765;&#x9010;&#x4F4D;&#x8BFB;&#x53D6;1101&#xFF0C;&#x4E3A;1&#x65F6;&#x5C06;&#x8BE5;&#x4F4D;&#x4EE3;&#x8868;&#x7684;&#x4E58;&#x6570;&#x7D2F;&#x4E58;&#x5230;&#x6700;&#x7EC8;&#x7ED3;&#x679C;&#x3002;
+     * &#x8BC4;&#x8BBA;&#x533A;&#xFF1A;
+     * &#x9012;&#x5F52;
+     * &#x6293;&#x4F4F;Merge&#x51FD;&#x6570;&#x8FD4;&#x56DE;&#x7684;&#x662F;&#x4E24;&#x4E2A;&#x53C2;&#x6570;&#x5408;&#x5E76;&#x540E;&#x7684;&#x94FE;&#x8868;&#x7684;&#x7279;&#x5F81;
+     * &#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;O(2^(m + n))???&#x4E0D;&#x662F;&#x5F88;&#x786E;&#x5B9A;&#xFF0C;&#x611F;&#x89C9;&#x662F;&#x6307;&#x6570;&#x7EA7;&#x7684;&#xFF0C;&#x7A7A;&#x95F4;&#x590D;&#x6742;&#x5EA6;O(1)
      */</span>
-    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">double</span> <span class="hljs-title">Power2</span><span class="hljs-params">(<span class="hljs-keyword">double</span> base, <span class="hljs-keyword">int</span> exponent)</span> </span>{
-        <span class="hljs-keyword">double</span> cur = <span class="hljs-number">1</span>, factor = base;
-        <span class="hljs-keyword">int</span> absExp = Math.abs(exponent);
-        <span class="hljs-keyword">if</span> (base == <span class="hljs-number">0</span> &amp;&amp; exponent &lt;= <span class="hljs-number">0</span>) {
-            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> RuntimeException(<span class="hljs-string">&quot;valid input!&quot;</span>);
+    <span class="hljs-function"><span class="hljs-keyword">public</span> ListNode <span class="hljs-title">Merge2</span><span class="hljs-params">(ListNode list1, ListNode list2)</span> </span>{
+        <span class="hljs-keyword">if</span> (list1 == <span class="hljs-keyword">null</span>) {
+            <span class="hljs-keyword">return</span> list2;
         }
-        <span class="hljs-keyword">if</span> (exponent == <span class="hljs-number">0</span>) {
-            <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;
+        <span class="hljs-keyword">if</span> (list2 == <span class="hljs-keyword">null</span>) {
+            <span class="hljs-keyword">return</span> list1;
+        }
+        <span class="hljs-keyword">if</span> (list1.val &lt;= list2.val) {
+            list1.next = Merge2(list1.next, list2);
+            <span class="hljs-keyword">return</span> list1;
         } <span class="hljs-keyword">else</span> {
-            <span class="hljs-keyword">while</span> (absExp != <span class="hljs-number">0</span>) {
-                <span class="hljs-comment">// &#x4ECE;&#x53F3;&#x5230;&#x5DE6;&#x4E00;&#x4F4D;&#x4E00;&#x4F4D;&#x68C0;&#x9A8C;absExp</span>
-                <span class="hljs-keyword">if</span> ((absExp &amp; <span class="hljs-number">1</span>) != <span class="hljs-number">0</span>) {
-                    cur *= factor;
-                }
-                <span class="hljs-comment">// factor = (factor)&#xB2;&#xFF0C;base&#x7684;&#x5E73;&#x65B9;&#xFF0C;&#x56DB;&#x6B21;&#x65B9;&#xFF0C;8&#x6B21;&#x65B9;...</span>
-                <span class="hljs-comment">// &#x5982;&#x679C;base&#x662F;int&#x7684;&#x8BDD;&#xFF0C;&#x8FD9;&#x91CC;&#x53EF;&#x4EE5;&#x8BA9;base&#x5411;&#x5DE6;&#x79FB;&#x52A8;1&#x4F4D;&#xFF0C;2&#x4F4D;&#xFF0C;3&#x4F4D;...&#x5F97;&#x5230;factor</span>
-                factor *= factor;
-                <span class="hljs-comment">// absExp&#x53F3;&#x79FB;&#x4E00;&#x4F4D;&#xFF0C;&#x5373;&#x66F4;&#x9AD8;&#x4E00;&#x4F4D;&#x79FB;&#x5230;&#x4E2A;&#x4F4D;</span>
-                absExp &gt;&gt;= <span class="hljs-number">1</span>;
-            }
+            list2.next = Merge2(list1, list2.next);
+            <span class="hljs-keyword">return</span> list2;
         }
-        <span class="hljs-keyword">return</span> exponent &gt; <span class="hljs-number">0</span> ? cur : <span class="hljs-number">1</span> / cur;
     }
 }
 </code></pre>
@@ -1139,7 +1152,7 @@
 
             
                 
-                <a href="二进制中1的个数.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 剑指offer 11.二进制中1的个数">
+                <a href="反转链表.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 剑指offer 15.反转链表">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
@@ -1151,7 +1164,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"剑指offer 12.数值的整数次方","level":"1.12.2","depth":2,"previous":{"title":"剑指offer 11.二进制中1的个数","level":"1.12.1","depth":2,"path":"Bit/二进制中1的个数.md","ref":"Bit/二进制中1的个数.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Bit/数值的整数次方.md","mtime":"2019-03-02T13:43:29.964Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-03T09:53:31.148Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"剑指offer 16.合并两个排序的链表","level":"1.4.4","depth":2,"next":{"title":"Stack/Queue","level":"1.5","depth":1,"ref":"","articles":[{"title":"栈和队列的转换/用数组实现栈和队列","level":"1.5.1","depth":2,"path":"Stack-Queue/栈和队列常用算法总结.md","ref":"Stack-Queue/栈和队列常用算法总结.md","articles":[]},{"title":"剑指offer 5.用两个栈实现队列","level":"1.5.2","depth":2,"path":"Stack-Queue/用两个栈实现队列.md","ref":"Stack-Queue/用两个栈实现队列.md","articles":[]}]},"previous":{"title":"剑指offer 15.反转链表","level":"1.4.3","depth":2,"path":"LinkedList/反转链表.md","ref":"LinkedList/反转链表.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"LinkedList/合并两个排序的链表.md","mtime":"2019-03-03T09:52:35.163Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-03T09:53:31.148Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
