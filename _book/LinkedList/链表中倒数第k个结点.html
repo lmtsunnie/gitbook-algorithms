@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>LeetCode55 Jump Game · GitBook</title>
+        <title>剑指offer 14.链表中倒数第k个结点 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,8 +57,8 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="leetcode62.html" />
     
+    <link rel="prev" href="从尾到头打印链表.html" />
     
 
     </head>
@@ -516,9 +516,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.4.1" data-path="../LinkedList/从尾到头打印链表.html">
+        <li class="chapter " data-level="1.4.1" data-path="从尾到头打印链表.html">
             
-                <a href="../LinkedList/从尾到头打印链表.html">
+                <a href="从尾到头打印链表.html">
             
                     
                     剑指offer 3.从尾到头打印链表
@@ -529,9 +529,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.2" data-path="../LinkedList/链表中倒数第k个结点.html">
+        <li class="chapter active" data-level="1.4.2" data-path="链表中倒数第k个结点.html">
             
-                <a href="../LinkedList/链表中倒数第k个结点.html">
+                <a href="链表中倒数第k个结点.html">
             
                     
                     剑指offer 14.链表中倒数第k个结点
@@ -774,9 +774,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="1.8.1" data-path="leetcode55.html">
+        <li class="chapter " data-level="1.8.1" data-path="../dp/leetcode55.html">
             
-                <a href="leetcode55.html">
+                <a href="../dp/leetcode55.html">
             
                     
                     LeetCode55 Jump Game
@@ -787,9 +787,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.8.2" data-path="leetcode62.html">
+        <li class="chapter " data-level="1.8.2" data-path="../dp/leetcode62.html">
             
-                <a href="leetcode62.html">
+                <a href="../dp/leetcode62.html">
             
                     
                     LeetCode62 Unique Paths
@@ -800,9 +800,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.8.3" data-path="leetcode621.html">
+        <li class="chapter " data-level="1.8.3" data-path="../dp/leetcode621.html">
             
-                <a href="leetcode621.html">
+                <a href="../dp/leetcode621.html">
             
                     
                     LeetCode621 Task Scheduler
@@ -1015,7 +1015,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >LeetCode55 Jump Game</a>
+        <a href=".." >剑指offer 14.链表中倒数第k个结点</a>
     </h1>
 </div>
 
@@ -1031,133 +1031,63 @@
                                 <section class="normal markdown-section">
                                 
                                 <blockquote>
-<p>Given an array of non-negative integers, you are initially positioned at the first index of the array.</p>
-<p>Each element in the array represents your maximum jump length at that position.</p>
-<p>Determine if you are able to reach the last index.</p>
-<p><strong>Example 1:</strong></p>
-<pre><code>Input: [2,3,1,1,4]
-Output: true
-Explanation: Jump 1 step from index 0 to 1, then 3 steps to the last index.
-</code></pre><p><strong>Example 2:</strong></p>
-<pre><code>Input: [3,2,1,0,4]
-Output: false
-Explanation: You will always arrive at index 3 no matter what. Its maximum
-             jump length is 0, which makes it impossible to reach the last index.
-</code></pre></blockquote>
-<pre><code class="lang-java"><span class="hljs-keyword">package</span> array;
+<p>&#x8F93;&#x5165;&#x4E00;&#x4E2A;&#x94FE;&#x8868;&#xFF0C;&#x8F93;&#x51FA;&#x8BE5;&#x94FE;&#x8868;&#x4E2D;&#x5012;&#x6570;&#x7B2C;k&#x4E2A;&#x7ED3;&#x70B9;&#x3002;</p>
+</blockquote>
+<pre><code class="lang-java"><span class="hljs-keyword">package</span> linkedlist;
 
-<span class="hljs-keyword">enum</span> Index {
-    GOOD, BAD, UNKNOWN
-}
+<span class="hljs-keyword">import</span> common.ListNode;
 
-<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">leetcode55JumpGame</span> </span>{
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> &#x94FE;&#x8868;&#x4E2D;&#x5012;&#x6570;&#x7B2C;<span class="hljs-title">k</span>&#x4E2A;&#x7ED3;&#x70B9; </span>{
     <span class="hljs-comment">/**
-     * &#x81EA;&#x60F3;1&#xFF1A;&#x56DE;&#x6EAF;&#xFF08;&#x8D85;&#x65F6;&#xFF09;
-     * &#x5982;&#x679C;nums[]&#x4E2D;&#x7684;&#x6BCF;&#x4E2A;&#x6570;&#x90FD;&gt;=nums.length - 1&#xFF0C;&#x90A3;&#x4E48;&#x6240;&#x6709;&#x7684;&#x4F4D;&#x7F6E;&#x90FD;&#x53EF;&#x4EE5;&#x9009;&#x62E9;&#x8D70;&#x6216;&#x8005;&#x4E0D;&#x8D70;&#xFF0C;&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;O(2&#x7684;n&#x6B21;&#x65B9;)&#xFF0C;
-     * &#x9012;&#x5F52;&#x6DF1;&#x5EA6;&#x4E3A;n&#xFF0C;&#x7A7A;&#x95F4;&#x590D;&#x6742;&#x5EA6;O(n)
+     * &#x81EA;&#x60F3;1&#xFF1A;
+     * &#x5148;&#x6570;&#x4E2A;&#x6570;n&#xFF0C;&#x5012;&#x6570;&#x7B2C;k&#x4E2A;&#x5373;&#x6B63;&#x6570;&#x7B2C;n-k+1&#x4E2A;
+     * &#x6CE8;&#x610F;&#x8003;&#x8651;k&gt;n&#x7684;&#x60C5;&#x51B5;
+     * &#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;O(n)&#xFF0C;&#x9700;&#x8981;&#x904D;&#x5386;&#x4E24;&#x6B21;&#x94FE;&#x8868;&#xFF0C;&#x7A7A;&#x95F4;&#x590D;&#x6742;&#x5EA6;O(1)
      */</span>
-    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">canJumpFromPosition1</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] nums, <span class="hljs-keyword">int</span> startIndex)</span> </span>{
-        <span class="hljs-comment">// &#x7ED3;&#x675F;&#x6761;&#x4EF6;</span>
-        <span class="hljs-keyword">if</span> (startIndex == nums.length - <span class="hljs-number">1</span>) {
-            <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;
+    <span class="hljs-function"><span class="hljs-keyword">public</span> ListNode <span class="hljs-title">FindKthToTail1</span><span class="hljs-params">(ListNode head, <span class="hljs-keyword">int</span> k)</span> </span>{
+        ListNode cur = head;
+        <span class="hljs-keyword">int</span> count = <span class="hljs-number">0</span>;
+        <span class="hljs-keyword">while</span> (cur != <span class="hljs-keyword">null</span>) {
+            count++;
+            cur = cur.next;
         }
-        <span class="hljs-comment">// &#x7B97;&#x51FA;&#x8FB9;&#x754C;&#x6761;&#x4EF6;</span>
-        <span class="hljs-keyword">int</span> nextMaxIndex = Math.min(startIndex + nums[startIndex], nums.length - <span class="hljs-number">1</span>);
-        <span class="hljs-comment">// &#x57FA;&#x4E8E;&#x5F53;&#x524D;&#x60C5;&#x51B5;&#x505A;&#x6DF1;&#x5EA6;&#x641C;&#x7D22;(&#x4E00;&#x6B65;&#x6B65;&#x8D70;&#x5230;&#x5E95;)</span>
-        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> nextIndex = startIndex + <span class="hljs-number">1</span>; nextIndex &lt;= nextMaxIndex; nextIndex++) {
-            <span class="hljs-keyword">if</span> (canJumpFromPosition1(nums, nextIndex)) {
-                <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;
-            }
+        <span class="hljs-keyword">int</span> indexFrom1 = count - k + <span class="hljs-number">1</span>;
+        <span class="hljs-keyword">if</span> (indexFrom1 &lt;= <span class="hljs-number">0</span>) {
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;
         }
-        <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;
-    }
-
-    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">canJump1</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] nums)</span> </span>{
-        <span class="hljs-comment">// &#x4E3B;&#x51FD;&#x6570;&#x8C03;&#x7528;&#x5B50;&#x51FD;&#x6570;</span>
-        <span class="hljs-keyword">return</span> canJumpFromPosition1(nums, <span class="hljs-number">0</span>);
+        cur = head;
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">2</span>; i &lt;= indexFrom1 &amp;&amp; cur != <span class="hljs-keyword">null</span>; i++) {
+            cur = cur.next;
+        }
+        <span class="hljs-keyword">return</span> cur;
     }
 
     <span class="hljs-comment">/**
-     * Solution&#x533A;&#x65B9;&#x6CD5;2&#xFF1A;
-     * &#x4ECE;&#x524D;&#x5F80;&#x540E;&#x52A8;&#x6001;&#x89C4;&#x5212;
-     * &#x628A;&#x6BCF;&#x4E2A;&#x70B9;&#x4ECE;&#x8BE5;&#x4F4D;&#x7F6E;&#x5F00;&#x59CB;&#x80FD;&#x5426;&#x5230;&#x8FBE;&#x6700;&#x540E;&#x7684;&#x4F4D;&#x7F6E;&#x8BB0;&#x4E3A;&#x4E00;&#x5F20;&#x8868;memo
-     * memo[index]== GOOD&#x5219;&#x4E3A;index&#x4F4D;&#x7F6E;&#x53EF;&#x4EE5;&#x5230;&#x8FBE;&#x6700;&#x540E;&#xFF0C;BAD&#x4E3A;&#x4E0D;&#x53EF;&#x4EE5;&#xFF0C;UNKNOWN&#x4E3A;&#x672A;&#x77E5;
-     * &#x8D77;&#x59CB;&#x7684;&#x65F6;&#x5019;&#x53EA;&#x6709;memo[nums.length - 1]== GOOD&#xFF0C;&#x5176;&#x4ED6;&#x7684;&#x90FD;&#x4E3A;UNKNOWN
-     * &#x4ECE;0&#x5F00;&#x59CB;&#x56DE;&#x6EAF;&#x5F80;&#x540E;&#x8D70;&#xFF0C;&#x76F4;&#x5230;&#x627E;&#x5230;memo[index]==GOOD&#x505C;&#x6B62;&#xFF0C;&#x5426;&#x5219;&#x8FD4;&#x56DE;BAD
-     * &#xFF1F;&#xFF1F;&#xFF1F;&#x4E3A;&#x4EC0;&#x4E48;&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#x662F;O(n&#xB2;)
-     * &#x8868;O(n)&#xFF0C;&#x9012;&#x5F52;&#x6DF1;&#x5EA6;O(n)&#xFF0C;&#x7A7A;&#x95F4;&#x590D;&#x6742;&#x5EA6;O(n)
+     * &#x8BA8;&#x8BBA;&#x533A;&#xFF1A;
+     * &#x4E24;&#x4E2A;&#x6307;&#x9488;&#xFF0C;&#x533A;&#x95F4;&#x5E73;&#x79FB;
+     * &#x7B2C;&#x4E00;&#x4E2A;&#x6307;&#x9488;&#x4ECE;&#x7B2C;k&#x4E2A;&#x8D70;&#x5230;&#x7B2C;n&#x4E2A;&#xFF0C;&#x7B2C;&#x4E8C;&#x4E2A;&#x6307;&#x9488;&#x4ECE;&#x7B2C;1&#x4E2A;&#x8D70;&#x5230;&#x5012;&#x6570;&#x7B2C;k&#x4E2A;
+     * &#x4E24;&#x4E2A;&#x6307;&#x9488;&#xFF0C;&#x5148;&#x8BA9;&#x7B2C;&#x4E00;&#x4E2A;&#x6307;&#x9488;&#x548C;&#x7B2C;&#x4E8C;&#x4E2A;&#x6307;&#x9488;&#x90FD;&#x6307;&#x5411;&#x5934;&#x7ED3;&#x70B9;&#xFF0C;&#x7136;&#x540E;&#x518D;&#x8BA9;&#x7B2C;&#x4E00;&#x4E2A;&#x6307;&#x9488;&#x8D70;(k-1)&#x6B65;&#xFF0C;&#x5230;&#x8FBE;&#x7B2C;k&#x4E2A;&#x8282;&#x70B9;&#x3002;
+     * &#x7136;&#x540E;&#x4E24;&#x4E2A;&#x6307;&#x9488;&#x540C;&#x65F6;&#x5F80;&#x540E;&#x79FB;&#x52A8;&#xFF0C;&#x5F53;&#x7B2C;&#x4E00;&#x4E2A;&#x7ED3;&#x70B9;&#x5230;&#x8FBE;&#x7B2C;n&#x4E2A;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x7B2C;&#x4E8C;&#x4E2A;&#x7ED3;&#x70B9;&#x6240;&#x5728;&#x4F4D;&#x7F6E;&#x5C31;&#x662F;&#x5012;&#x6570;&#x7B2C;k&#x4E2A;&#x8282;&#x70B9;&#x4E86;&#x3002;
+     * &#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;O(n)&#xFF0C;&#x53EA;&#x9700;&#x8981;&#x904D;&#x5386;&#x4E00;&#x6B21;&#x94FE;&#x8868;&#xFF0C;&#x7A7A;&#x95F4;&#x590D;&#x6742;&#x5EA6;O(1)
      */</span>
-    Index[] memo;
-
-    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">canJump2</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] nums)</span> </span>{
-        memo = <span class="hljs-keyword">new</span> Index[nums.length];
-        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; nums.length - <span class="hljs-number">1</span>; i++) {
-            memo[i] = Index.UNKNOWN;
+    <span class="hljs-function"><span class="hljs-keyword">public</span> ListNode <span class="hljs-title">FindKthToTail2</span><span class="hljs-params">(ListNode head, <span class="hljs-keyword">int</span> k)</span> </span>{
+        <span class="hljs-keyword">if</span> (head == <span class="hljs-keyword">null</span> || k &lt;= <span class="hljs-number">0</span>) {
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;
         }
-        memo[nums.length - <span class="hljs-number">1</span>] = Index.GOOD;
-        <span class="hljs-keyword">return</span> canJumpFromPosition2(nums, <span class="hljs-number">0</span>);
-    }
-
-    <span class="hljs-comment">// &#x4ECE;&#x524D;&#x5F80;&#x540E;&#x52A8;&#x6001;&#x89C4;&#x5212;</span>
-    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">canJumpFromPosition2</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] nums, <span class="hljs-keyword">int</span> startIndex)</span> </span>{
-        <span class="hljs-comment">// &#x7ED3;&#x675F;&#x6761;&#x4EF6;</span>
-        <span class="hljs-keyword">if</span> (memo[startIndex] != Index.UNKNOWN) {
-            <span class="hljs-keyword">return</span> memo[startIndex] == Index.GOOD;
-        }
-        <span class="hljs-comment">// &#x7B97;&#x51FA;&#x8FB9;&#x754C;&#x6761;&#x4EF6;</span>
-        <span class="hljs-keyword">int</span> nextMaxIndex = Math.min(startIndex + nums[startIndex], nums.length - <span class="hljs-number">1</span>);
-        <span class="hljs-comment">// &#x57FA;&#x4E8E;&#x5F53;&#x524D;&#x60C5;&#x51B5;&#x505A;&#x6DF1;&#x5EA6;&#x641C;&#x7D22;(&#x4E00;&#x6B65;&#x6B65;&#x8D70;&#x5230;&#x5E95;)</span>
-        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> nextIndex = startIndex + <span class="hljs-number">1</span>; nextIndex &lt;= nextMaxIndex; nextIndex++) {
-            <span class="hljs-keyword">if</span> (canJumpFromPosition2(nums, nextIndex)) {
-                memo[startIndex] = Index.GOOD;
-                <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;
+        ListNode pre = head, cur = head;
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">2</span>; i &lt;= k; i++) {
+            <span class="hljs-keyword">if</span> (pre.next != <span class="hljs-keyword">null</span>) {
+                pre = pre.next;
+                <span class="hljs-comment">// &#x5728;&#x4ECE;&#x7B2C;1&#x4E2A;&#x8D70;&#x5230;&#x7B2C;k&#x4E2A;&#x7684;&#x65F6;&#x5019;&#x5C31;&#x78B0;&#x5230;&#x4E86;null&#xFF0C;&#x8BF4;&#x660E;k&gt;n&#xFF0C;&#x5219;&#x76F4;&#x63A5;&#x8FD4;&#x56DE;null</span>
+            } <span class="hljs-keyword">else</span> {
+                <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;
             }
         }
-        memo[startIndex] = Index.BAD;
-        <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;
-    }
-
-    <span class="hljs-comment">/**
-     * Solution&#x533A;&#x65B9;&#x6CD5;3&#xFF1A;
-     * &#x4ECE;&#x540E;&#x5F80;&#x524D;&#x52A8;&#x6001;&#x89C4;&#x5212;&#xFF0C;&#x4ECE;&#x5DF2;&#x77E5;&#x7ED3;&#x679C;&#x7684;&#x4E00;&#x4FA7;&#x505A;&#x52A8;&#x6001;&#x89C4;&#x5212;&#x6548;&#x679C;&#x66F4;&#x597D;
-     * &#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;O(n&#xB2;)&#xFF0C;&#x7A7A;&#x95F4;&#x590D;&#x6742;&#x5EA6;O(n)
-     */</span>
-    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">canJump3</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] nums)</span> </span>{
-        memo = <span class="hljs-keyword">new</span> Index[nums.length];
-        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; nums.length - <span class="hljs-number">1</span>; i++) {
-            memo[i] = Index.UNKNOWN;
+        <span class="hljs-keyword">while</span> (pre.next != <span class="hljs-keyword">null</span>) {
+            pre = pre.next;
+            cur = cur.next;
         }
-        memo[nums.length - <span class="hljs-number">1</span>] = Index.GOOD;
-
-        <span class="hljs-comment">// &#x4ECE;&#x540E;&#x5F80;&#x524D;&#x52A8;&#x6001;&#x89C4;&#x5212;</span>
-        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> startIndex = nums.length - <span class="hljs-number">2</span>; startIndex &gt;= <span class="hljs-number">0</span>; startIndex--) {
-            <span class="hljs-keyword">int</span> nextMaxIndex = Math.min(startIndex + nums[startIndex], nums.length - <span class="hljs-number">1</span>);
-            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> nextIndex = startIndex + <span class="hljs-number">1</span>; nextIndex &lt;= nextMaxIndex; nextIndex++) {
-                <span class="hljs-keyword">if</span> (memo[nextIndex] == Index.GOOD) {
-                    memo[startIndex] = Index.GOOD;
-                    <span class="hljs-keyword">break</span>;
-                }
-            }
-        }
-        <span class="hljs-keyword">return</span> memo[<span class="hljs-number">0</span>] == Index.GOOD;
-    }
-
-    <span class="hljs-comment">/**
-     * Solution&#x533A;&#x65B9;&#x6CD5;4&#xFF1A;
-     * &#x4ECE;&#x540E;&#x5F80;&#x524D;&#x8D70;&#xFF0C;&#x76F4;&#x5230;&#x8D70;&#x5230;0&#x5219;&#x8FD4;&#x56DE;true&#xFF0C;&#x8D70;&#x4E0D;&#x5230;0&#x5219;&#x8FD4;&#x56DE;false
-     * &#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;O(n)&#xFF0C;&#x7A7A;&#x95F4;&#x590D;&#x6742;&#x5EA6;O(1)
-     */</span>
-    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">canJump4</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] nums)</span> </span>{
-        <span class="hljs-keyword">int</span> lastIndex = nums.length - <span class="hljs-number">1</span>;
-        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> startIndex = nums.length - <span class="hljs-number">1</span>; startIndex &gt;= <span class="hljs-number">0</span>; startIndex--) {
-            <span class="hljs-comment">// &#x4ECE;startIndex&#x5F00;&#x59CB;&#x53EF;&#x4EE5;&#x8D70;0 ~ nums[startIndex]&#x6B65;&#xFF0C;</span>
-            <span class="hljs-comment">// &#x505C;&#x6B62;&#x7684;&#x4F4D;&#x7F6E;&#x662F;startIndex ~ startIndex + nums[startIndex]&#xFF0C;</span>
-            <span class="hljs-comment">// &#x5982;&#x679C;&#x4E2D;&#x95F4;&#x5305;&#x542B;lastIndex&#x5219;&#x8868;&#x793A;&#x53EF;&#x4EE5;&#x4ECE;startIndex&#x8D70;&#x5230;lastIndex</span>
-            <span class="hljs-keyword">if</span> (startIndex + nums[startIndex] &gt;= lastIndex) {
-                lastIndex = startIndex;
-            }
-        }
-        <span class="hljs-keyword">return</span> lastIndex == <span class="hljs-number">0</span>;
+        <span class="hljs-keyword">return</span> cur;
     }
 }
 </code></pre>
@@ -1188,10 +1118,10 @@ Explanation: You will always arrive at index 3 no matter what. Its maximum
 
             
                 
-                
-                <a href="leetcode62.html" class="navigation navigation-next navigation-unique" aria-label="Next page: LeetCode62 Unique Paths">
-                    <i class="fa fa-angle-right"></i>
+                <a href="从尾到头打印链表.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 剑指offer 3.从尾到头打印链表">
+                    <i class="fa fa-angle-left"></i>
                 </a>
+                
                 
             
         
@@ -1200,7 +1130,7 @@ Explanation: You will always arrive at index 3 no matter what. Its maximum
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"LeetCode55 Jump Game","level":"1.8.1","depth":2,"next":{"title":"LeetCode62 Unique Paths","level":"1.8.2","depth":2,"path":"dp/leetcode62.md","ref":"dp/leetcode62.md","articles":[]},"previous":{"title":"dp","level":"1.8","depth":1,"ref":"","articles":[{"title":"LeetCode55 Jump Game","level":"1.8.1","depth":2,"path":"dp/leetcode55.md","ref":"dp/leetcode55.md","articles":[]},{"title":"LeetCode62 Unique Paths","level":"1.8.2","depth":2,"path":"dp/leetcode62.md","ref":"dp/leetcode62.md","articles":[]},{"title":"LeetCode621 Task Scheduler","level":"1.8.3","depth":2,"path":"dp/leetcode621.md","ref":"dp/leetcode621.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"dp/leetcode55.md","mtime":"2019-02-28T12:05:14.455Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-03T06:35:42.376Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"剑指offer 14.链表中倒数第k个结点","level":"1.4.2","depth":2,"next":{"title":"Stack/Queue","level":"1.5","depth":1,"ref":"","articles":[{"title":"栈和队列的转换/用数组实现栈和队列","level":"1.5.1","depth":2,"path":"Stack-Queue/栈和队列常用算法总结.md","ref":"Stack-Queue/栈和队列常用算法总结.md","articles":[]},{"title":"剑指offer 5.用两个栈实现队列","level":"1.5.2","depth":2,"path":"Stack-Queue/用两个栈实现队列.md","ref":"Stack-Queue/用两个栈实现队列.md","articles":[]}]},"previous":{"title":"剑指offer 3.从尾到头打印链表","level":"1.4.1","depth":2,"path":"LinkedList/从尾到头打印链表.md","ref":"LinkedList/从尾到头打印链表.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"LinkedList/链表中倒数第k个结点.md","mtime":"2019-03-03T06:34:33.518Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-03T06:35:42.376Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

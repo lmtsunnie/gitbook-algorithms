@@ -33,6 +33,7 @@
     - [剑指offer 2.替换空格](String/替换空格.md)
 * LinkedList
     - [剑指offer 3.从尾到头打印链表](LinkedList/从尾到头打印链表.md)
+    - [剑指offer 14.链表中倒数第k个结点](LinkedList/链表中倒数第k个结点.md)
 * Stack/Queue
     * [栈和队列的转换/用数组实现栈和队列](Stack-Queue/栈和队列常用算法总结.md)
     * [剑指offer 5.用两个栈实现队列](Stack-Queue/用两个栈实现队列.md)
