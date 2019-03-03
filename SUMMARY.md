@@ -42,6 +42,7 @@
 * Tree
     * [二叉树遍历算法总结](Tree/二叉树遍历算法总结.md)
     * [剑指offer 4.重建二叉树](Tree/重建二叉树.md)
+    * [剑指offer 17.树的子结构](Tree/树的子结构.md)
     * [LeetCode105 Construct Binary Tree from Preorder and Inorder Traversal](Tree/leetcode105.md)
 * bfs/dfs
     * [bfs/dfs总结](bfs-dfs/bfs-dfs总结.md)
