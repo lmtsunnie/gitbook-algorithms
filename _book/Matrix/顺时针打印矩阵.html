@@ -1111,7 +1111,7 @@
 <span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> &#x987A;&#x65F6;&#x9488;&#x6253;&#x5370;&#x77E9;&#x9635; </span>{
     <span class="hljs-comment">/**
      * &#x8BA8;&#x8BBA;&#x533A;&#xFF1A;
-     * &#x5206;&#x4E3A;&#x5DE6;-&gt;&#x53F3;&#xFF0C;&#x4E0A;-&gt;&#x4E0B;&#xFF0C;&#x53F3;-&gt;&#x5DE6;&#xFF0C;&#x4E0B;-&gt;&#x4E0A;&#x56DB;&#x4E2A;&#x8FC7;&#x7A0B;&#xFF0C;&#x6700;&#x540E;&#x76F8;&#x79BB;&#x53F3;&#x4E0B;&#x8FDB;&#x4E00;&#x683C;
+     * &#x5206;&#x4E3A;&#x5DE6;-&gt;&#x53F3;&#xFF0C;&#x4E0A;-&gt;&#x4E0B;&#xFF0C;&#x53F3;-&gt;&#x5DE6;&#xFF0C;&#x4E0B;-&gt;&#x4E0A;&#x56DB;&#x4E2A;&#x8FC7;&#x7A0B;&#xFF0C;&#x6BCF;&#x7ED3;&#x675F;&#x4E00;&#x8F6E;&#x6B63;&#x65B9;&#x5F62;&#x5411;&#x5185;&#x7F29;&#x5C0F;&#x4E00;&#x5708;
      * &#x6CE8;&#x610F;&#x52A0;&#x5165;&#x6761;&#x4EF6;&#x5224;&#x65AD;&#x9632;&#x6B62;&#x51FA;&#x73B0;&#x5355;&#x884C;&#x6216;&#x8005;&#x5355;&#x5217;&#x7684;&#x60C5;&#x51B5;&#x3002;
      * &#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;O(n&#xB2;)&#xFF0C;&#x7A7A;&#x95F4;&#x590D;&#x6742;&#x5EA6;O(1)
      */</span>
@@ -1121,36 +1121,34 @@
         }
         <span class="hljs-keyword">int</span> m = matrix.length;
         <span class="hljs-keyword">int</span> n = matrix[<span class="hljs-number">0</span>].length;
-
         ArrayList&lt;Integer&gt; res = <span class="hljs-keyword">new</span> ArrayList&lt;&gt;();
-
-        <span class="hljs-comment">// &#x5B9A;&#x4E49;&#x56DB;&#x4E2A;&#x5173;&#x952E;&#x53D8;&#x91CF;&#xFF0C;&#x8868;&#x793A;&#x5DE6;&#x4E0A;&#x548C;&#x53F3;&#x4E0B;&#x7684;&#x6253;&#x5370;&#x8303;&#x56F4;</span>
-        <span class="hljs-keyword">int</span> left = <span class="hljs-number">0</span>, top = <span class="hljs-number">0</span>, right = n - <span class="hljs-number">1</span>, bottom = m - <span class="hljs-number">1</span>;
-        <span class="hljs-keyword">while</span> (left &lt;= right &amp;&amp; top &lt;= bottom) {
-            <span class="hljs-comment">// left to right</span>
-            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = left; i &lt;= right; i++) {
-                res.add(matrix[top][i]);
+        <span class="hljs-keyword">int</span> rowStart = <span class="hljs-number">0</span>, rowEnd = m - <span class="hljs-number">1</span>, colStart = <span class="hljs-number">0</span>, colEnd = n - <span class="hljs-number">1</span>;
+        <span class="hljs-keyword">while</span> (rowStart &lt;= rowEnd &amp;&amp; colStart &lt;= colEnd) {
+            <span class="hljs-comment">// &#x5DE6;-&gt;&#x53F3;&#xFF08;&#x5171;n&#x4E2A;&#xFF09;</span>
+            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> col = colStart; col &lt;= colEnd; col++) {
+                res.add(matrix[rowStart][col]);
             }
-            <span class="hljs-comment">// top to bottom</span>
-            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = top + <span class="hljs-number">1</span>; i &lt;= bottom; i++) {
-                res.add(matrix[i][right]);
+            <span class="hljs-comment">// &#x4E0A;-&gt;&#x4E0B;&#xFF08;&#x5171;n-1&#x4E2A;&#xFF09;</span>
+            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> row = rowStart + <span class="hljs-number">1</span>; row &lt;= rowEnd; row++) {
+                res.add(matrix[row][colEnd]);
             }
-            <span class="hljs-comment">// right to left</span>
-            <span class="hljs-keyword">if</span> (top != bottom) {
-                <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = right - <span class="hljs-number">1</span>; i &gt;= left; i--) {
-                    res.add(matrix[bottom][i]);
+            <span class="hljs-comment">// &#x53F3;-&gt;&#x5DE6;&#xFF08;&#x5171;n-1&#x4E2A;&#xFF09;&#xFF0C;&#x53BB;&#x9664;&#x5355;&#x5217;</span>
+            <span class="hljs-keyword">if</span> (rowStart != rowEnd) {
+                <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> col = colEnd - <span class="hljs-number">1</span>; col &gt;= colStart; col--) {
+                    res.add(matrix[rowEnd][col]);
                 }
             }
-            <span class="hljs-comment">// bottom to top</span>
-            <span class="hljs-keyword">if</span> (left != right) {
-                <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = bottom - <span class="hljs-number">1</span>; i &gt; top; i--) {
-                    res.add(matrix[i][left]);
+            <span class="hljs-comment">// &#x4E0B;-&gt;&#x4E0A;</span>
+            <span class="hljs-keyword">if</span> (colStart != colEnd) {
+                <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> row = rowEnd - <span class="hljs-number">1</span>; row &gt;= rowStart + <span class="hljs-number">1</span>; row--) {
+                    res.add(matrix[row][colStart]);
                 }
             }
-            left++;
-            top++;
-            right--;
-            bottom--;
+            <span class="hljs-comment">// &#x6BCF;&#x7ED3;&#x675F;&#x4E00;&#x8F6E;&#x6B63;&#x65B9;&#x5F62;&#x5411;&#x5185;&#x7F29;&#x5C0F;&#x4E00;&#x5708;</span>
+            colStart ++;
+            colEnd --;
+            rowStart ++;
+            rowEnd --;
         }
         <span class="hljs-keyword">return</span> res;
     }
@@ -1195,7 +1193,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"剑指offer 19.顺时针打印矩阵","level":"1.10.3","depth":2,"next":{"title":"Sort","level":"1.11","depth":1,"ref":"","articles":[{"title":"排序算法总结","level":"1.11.1","depth":2,"path":"Sort/排序算法总结.md","ref":"Sort/排序算法总结.md","articles":[]}]},"previous":{"title":"剑指offer 1.二维数组中的查找","level":"1.10.2","depth":2,"path":"Matrix/二维数组中的查找.md","ref":"Matrix/二维数组中的查找.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Matrix/顺时针打印矩阵.md","mtime":"2019-03-03T16:24:50.819Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-03T16:24:53.108Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"剑指offer 19.顺时针打印矩阵","level":"1.10.3","depth":2,"next":{"title":"Sort","level":"1.11","depth":1,"ref":"","articles":[{"title":"排序算法总结","level":"1.11.1","depth":2,"path":"Sort/排序算法总结.md","ref":"Sort/排序算法总结.md","articles":[]}]},"previous":{"title":"剑指offer 1.二维数组中的查找","level":"1.10.2","depth":2,"path":"Matrix/二维数组中的查找.md","ref":"Matrix/二维数组中的查找.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Matrix/顺时针打印矩阵.md","mtime":"2019-03-04T06:45:54.133Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-04T06:45:58.500Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
