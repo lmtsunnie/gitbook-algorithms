@@ -7,6 +7,7 @@ import java.util.Stack;
 
 public class 包含min函数的栈 {
     /**
+     * 自想1：
      * 常规的栈两个，一个data栈用来push/pop常规的数据，
      * 一个min栈用来记录当前最小的数据，min栈的个数始终与min栈的个数保持一致
      * 你push我也push，你pop我也pop
