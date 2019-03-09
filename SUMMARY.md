@@ -46,6 +46,7 @@
     * [剑指offer 4.重建二叉树](Tree/重建二叉树.md)
     * [剑指offer 17.树的子结构](Tree/树的子结构.md)
     * [剑指offer 18.二叉树的镜像](Tree/二叉树的镜像.md)
+    * [剑指offer 22.从上往下打印二叉树](Tree/从上往下打印二叉树.md)
     * [LeetCode105 Construct Binary Tree from Preorder and Inorder Traversal](Tree/leetcode105.md)
 * bfs/dfs
     * [bfs/dfs总结](bfs-dfs/bfs-dfs总结.md)
