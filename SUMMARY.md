@@ -50,6 +50,7 @@
     * [剑指offer 22.从上往下打印二叉树](Tree/从上往下打印二叉树.md)
     * [⭐️剑指offer 23.二叉搜索树的后序遍历序列](Tree/二叉搜索树的后序遍历序列.md)
     * [LeetCode105 Construct Binary Tree from Preorder and Inorder Traversal](Tree/leetcode105.md)
+    * [⭐️剑指offer 26.二叉搜索树与双向链表](Tree/二叉搜索树与双向链表.md)
 * bfs/dfs
     * [bfs/dfs总结](bfs-dfs/bfs-dfs总结.md)
     * [LeetCode40 Combination Sum II](bfs-dfs/leetcode40.md)
