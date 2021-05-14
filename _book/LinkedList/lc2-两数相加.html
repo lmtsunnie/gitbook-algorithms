@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>LeetCode62 Unique Paths · GitBook</title>
+        <title>leetcode2 两数相加(go) · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,8 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="leetcode621.html" />
     
-    
-    <link rel="prev" href="leetcode55.html" />
+    <link rel="prev" href="复杂链表的复制.html" />
     
 
     </head>
@@ -531,9 +529,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.4.1" data-path="../LinkedList/从尾到头打印链表.html">
+        <li class="chapter " data-level="1.4.1" data-path="从尾到头打印链表.html">
             
-                <a href="../LinkedList/从尾到头打印链表.html">
+                <a href="从尾到头打印链表.html">
             
                     
                     剑指offer 3.从尾到头打印链表
@@ -544,9 +542,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.2" data-path="../LinkedList/链表中倒数第k个结点.html">
+        <li class="chapter " data-level="1.4.2" data-path="链表中倒数第k个结点.html">
             
-                <a href="../LinkedList/链表中倒数第k个结点.html">
+                <a href="链表中倒数第k个结点.html">
             
                     
                     剑指offer 14.链表中倒数第k个结点
@@ -557,9 +555,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.3" data-path="../LinkedList/反转链表.html">
+        <li class="chapter " data-level="1.4.3" data-path="反转链表.html">
             
-                <a href="../LinkedList/反转链表.html">
+                <a href="反转链表.html">
             
                     
                     剑指offer 15.反转链表
@@ -570,9 +568,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.4" data-path="../LinkedList/合并两个排序的链表.html">
+        <li class="chapter " data-level="1.4.4" data-path="合并两个排序的链表.html">
             
-                <a href="../LinkedList/合并两个排序的链表.html">
+                <a href="合并两个排序的链表.html">
             
                     
                     ⭐️剑指offer 16.合并两个排序的链表
@@ -583,9 +581,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.5" data-path="../LinkedList/复杂链表的复制.html">
+        <li class="chapter " data-level="1.4.5" data-path="复杂链表的复制.html">
             
-                <a href="../LinkedList/复杂链表的复制.html">
+                <a href="复杂链表的复制.html">
             
                     
                     ⭐️剑指offer 25.复杂链表的复制
@@ -596,9 +594,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.6" data-path="../LinkedList/lc2-两数相加.html">
+        <li class="chapter active" data-level="1.4.6" data-path="lc2-两数相加.html">
             
-                <a href="../LinkedList/lc2-两数相加.html">
+                <a href="lc2-两数相加.html">
             
                     
                     leetcode2 两数相加(go)
@@ -945,9 +943,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.8.1" data-path="leetcode55.html">
+        <li class="chapter " data-level="1.8.1" data-path="../dp/leetcode55.html">
             
-                <a href="leetcode55.html">
+                <a href="../dp/leetcode55.html">
             
                     
                     LeetCode55 Jump Game
@@ -958,9 +956,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.8.2" data-path="leetcode62.html">
+        <li class="chapter " data-level="1.8.2" data-path="../dp/leetcode62.html">
             
-                <a href="leetcode62.html">
+                <a href="../dp/leetcode62.html">
             
                     
                     LeetCode62 Unique Paths
@@ -971,9 +969,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.8.3" data-path="leetcode621.html">
+        <li class="chapter " data-level="1.8.3" data-path="../dp/leetcode621.html">
             
-                <a href="leetcode621.html">
+                <a href="../dp/leetcode621.html">
             
                     
                     LeetCode621 Task Scheduler
@@ -1199,7 +1197,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >LeetCode62 Unique Paths</a>
+        <a href=".." >leetcode2 两数相加(go)</a>
     </h1>
 </div>
 
@@ -1214,84 +1212,55 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <blockquote>
-<p>A robot is located at the top-left corner of a m x n grid (marked &apos;Start&apos; in the diagram below).</p>
-<p>The robot can only move either down or right at any point in time.</p>
-<p>The robot is trying to reach the bottom-right corner of the grid(marked &apos;Finish&apos; in the diagram below).</p>
-<p>How many possible unique paths are there?</p>
-</blockquote>
-<!-- more -->
-<p><img src="http://qiniu.limengting.site/leetcode62.png" alt=""></p>
-<blockquote>
-<p>Above is a 7 x 3 grid. How many possible unique paths are there?</p>
-<p>Note: m and n will be at most 100.</p>
-<p>Example 1:
-Input: m = 3, n = 2
-Output: 3</p>
-<p>Explanation:
-From the top-left corner, there are a total of 3 ways to reach the bottom-right corner:</p>
-<ol>
-<li>Right -&gt; Right -&gt; Down</li>
-<li>Right -&gt; Down -&gt; Right</li>
-<li>Down -&gt; Right -&gt; Right
-Example 2:
-Input: m = 7, n = 3
-Output: 28</li>
-</ol>
-</blockquote>
-<pre><code class="lang-java"><span class="hljs-keyword">package</span> array;
-
-<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">leetcode62UniquePaths</span> </span>{
-<span class="hljs-comment">/*=====================================================================================*/</span>
-    <span class="hljs-comment">/*&#x81EA;&#x60F3;1&#xFF1A;
-    * dp&#x95EE;&#x9898;&#xFF1A;
-    * &#x7528;int[n][m]&#x77E9;&#x9635;&#x8BB0;&#x5F55;&#x5230;&#x8FBE;&#x5750;&#x6807;&#x4E3A;(i,j)&#x7684;paths&#x6570;&#x91CF;
-    * &#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;O(n&#xB2;)&#xFF0C;&#x7A7A;&#x95F4;&#x590D;&#x6742;&#x5EA6;O(m*n)
-    * */</span>
-    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> <span class="hljs-title">uniquePaths</span><span class="hljs-params">(<span class="hljs-keyword">int</span> m, <span class="hljs-keyword">int</span> n)</span> </span>{
-        <span class="hljs-keyword">int</span>[][] paths = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[n][m];
-        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = <span class="hljs-number">0</span>; j &lt; m; j ++) {
-            paths[<span class="hljs-number">0</span>][j] = <span class="hljs-number">1</span>;
+                                <h4 id="2-&#x4E24;&#x6570;&#x76F8;&#x52A0;"><a href="https://leetcode-cn.com/problems/add-two-numbers/" target="_blank">2. &#x4E24;&#x6570;&#x76F8;&#x52A0;</a></h4>
+<p>&#x3010;&#x96BE;&#x5EA6;&#x4E2D;&#x7B49;&#x3011;</p>
+<p>&#x7ED9;&#x4F60;&#x4E24;&#x4E2A; <strong>&#x975E;&#x7A7A;</strong> &#x7684;&#x94FE;&#x8868;&#xFF0C;&#x8868;&#x793A;&#x4E24;&#x4E2A;&#x975E;&#x8D1F;&#x7684;&#x6574;&#x6570;&#x3002;&#x5B83;&#x4EEC;&#x6BCF;&#x4F4D;&#x6570;&#x5B57;&#x90FD;&#x662F;&#x6309;&#x7167; <strong>&#x9006;&#x5E8F;</strong> &#x7684;&#x65B9;&#x5F0F;&#x5B58;&#x50A8;&#x7684;&#xFF0C;&#x5E76;&#x4E14;&#x6BCF;&#x4E2A;&#x8282;&#x70B9;&#x53EA;&#x80FD;&#x5B58;&#x50A8; <strong>&#x4E00;&#x4F4D;</strong> &#x6570;&#x5B57;&#x3002;</p>
+<p>&#x8BF7;&#x4F60;&#x5C06;&#x4E24;&#x4E2A;&#x6570;&#x76F8;&#x52A0;&#xFF0C;&#x5E76;&#x4EE5;&#x76F8;&#x540C;&#x5F62;&#x5F0F;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x8868;&#x793A;&#x548C;&#x7684;&#x94FE;&#x8868;&#x3002;</p>
+<p>&#x4F60;&#x53EF;&#x4EE5;&#x5047;&#x8BBE;&#x9664;&#x4E86;&#x6570;&#x5B57; 0 &#x4E4B;&#x5916;&#xFF0C;&#x8FD9;&#x4E24;&#x4E2A;&#x6570;&#x90FD;&#x4E0D;&#x4F1A;&#x4EE5; 0 &#x5F00;&#x5934;&#x3002;</p>
+<p><strong>&#x793A;&#x4F8B; 1&#xFF1A;</strong></p>
+<p><img src="https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2021/01/02/addtwonumber1.jpg" alt="img"></p>
+<pre><code>&#x8F93;&#x5165;&#xFF1A;l1 = [2,4,3], l2 = [5,6,4]
+&#x8F93;&#x51FA;&#xFF1A;[7,0,8]
+&#x89E3;&#x91CA;&#xFF1A;342 + 465 = 807.
+</code></pre><p><strong>&#x793A;&#x4F8B; 2&#xFF1A;</strong></p>
+<pre><code>&#x8F93;&#x5165;&#xFF1A;l1 = [0], l2 = [0]
+&#x8F93;&#x51FA;&#xFF1A;[0]
+</code></pre><p><strong>&#x793A;&#x4F8B; 3&#xFF1A;</strong></p>
+<pre><code>&#x8F93;&#x5165;&#xFF1A;l1 = [9,9,9,9,9,9,9], l2 = [9,9,9,9]
+&#x8F93;&#x51FA;&#xFF1A;[8,9,9,9,0,0,0,1]
+</code></pre><p><strong>&#x63D0;&#x793A;&#xFF1A;</strong></p>
+<ul>
+<li>&#x6BCF;&#x4E2A;&#x94FE;&#x8868;&#x4E2D;&#x7684;&#x8282;&#x70B9;&#x6570;&#x5728;&#x8303;&#x56F4; <code>[1, 100]</code> &#x5185;</li>
+<li><code>0 &lt;= Node.val &lt;= 9</code></li>
+<li>&#x9898;&#x76EE;&#x6570;&#x636E;&#x4FDD;&#x8BC1;&#x5217;&#x8868;&#x8868;&#x793A;&#x7684;&#x6570;&#x5B57;&#x4E0D;&#x542B;&#x524D;&#x5BFC;&#x96F6;</li>
+</ul>
+<p>go&#x89E3;&#x6CD5;&#xFF1A;</p>
+<pre><code class="lang-go"><span class="hljs-comment">/**
+ * Definition for singly-linked list.
+ * type ListNode struct {
+ *     Val int
+ *     Next *ListNode
+ * }
+ */</span>
+<span class="hljs-keyword">func</span> addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
+    res := <span class="hljs-built_in">new</span>(ListNode)
+    cur := res
+    carry := <span class="hljs-number">0</span> <span class="hljs-comment">// &#x8FDB;&#x4F4D;</span>
+    <span class="hljs-keyword">for</span> l1 != <span class="hljs-literal">nil</span> || l2 != <span class="hljs-literal">nil</span> || carry &gt; <span class="hljs-number">0</span> {
+        cur.Next = <span class="hljs-built_in">new</span>(ListNode)
+        cur = cur.Next
+        <span class="hljs-keyword">if</span> l1 != <span class="hljs-literal">nil</span> {
+            carry += l1.Val
+            l1 = l1.Next
         }
-        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i ++) {
-            paths[i][<span class="hljs-number">0</span>] = <span class="hljs-number">1</span>;
+        <span class="hljs-keyword">if</span> l2 != <span class="hljs-literal">nil</span> {
+            carry += l2.Val
+            l2 = l2.Next
         }
-        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt; n; i ++) {
-            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = <span class="hljs-number">1</span>; j &lt; m; j ++) {
-                paths[i][j] = paths[i - <span class="hljs-number">1</span>][j] + paths[i][j - <span class="hljs-number">1</span>];
-            }
-        }
-        <span class="hljs-keyword">return</span> paths[n - <span class="hljs-number">1</span>][m - <span class="hljs-number">1</span>];
+        cur.Val = carry % <span class="hljs-number">10</span>
+        carry /= <span class="hljs-number">10</span>
     }
-    <span class="hljs-comment">/*=====================================================================================*/</span>
-    <span class="hljs-comment">/*&#x8BA8;&#x8BBA;&#x533A;&#xFF1A;
-    * &#x6BCF;&#x6B21;&#x53EA;&#x66F4;&#x65B0;paths[i][j]&#xFF0C;&#x53EA;&#x9700;&#x8981;&#x7528;&#x5230;paths[i-1][j]&#xFF08;&#x7B2C;j&#x5217;&#xFF0C;&#x5373;&#x5F53;&#x524D;&#x5217;&#xFF09;&#x548C;paths[i][j-1]&#xFF08;&#x7B2C;j-1&#x5217;&#xFF0C;&#x5373;&#x4E0A;&#x4E00;&#x5217;&#xFF09;
-    * &#x53EA;&#x4FDD;&#x7559;&#x5F53;&#x524D;&#x5217;&#x548C;&#x4E0A;&#x4E00;&#x5217;&#x7684;&#x503C;&#xFF0C;&#x7528;&#x4E24;&#x4E2A;int[n]&#x6765;&#x8868;&#x793A;&#x4E24;&#x5217;
-    * curCol[i][j]&#x4E0A;&#x9762;&#x7684;&#x6570;&#x662F;curCol[i-1][j]&#xFF0C;&#x5DE6;&#x8FB9;&#x7684;&#x6570;&#x662F;preCol[i][j-1]
-    * preCol&#x5176;&#x5B9E;&#x5C31;&#x662F;&#x672A;&#x88AB;&#x8986;&#x76D6;&#x7684;curCol&#x7684;&#x503C;&#xFF0C;&#x6240;&#x4EE5;&#x53EA;&#x8981;&#x4FDD;&#x7559;&#x4E00;&#x5217;&#x7684;&#x503C;&#x5C31;&#x53EF;&#x4EE5;&#x4E86;
-    * &#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;O(n&#xB2;)&#xFF0C;&#x7A7A;&#x95F4;&#x590D;&#x6742;&#x5EA6;O(n)
-    * */</span>
-    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> <span class="hljs-title">uniquePaths2</span><span class="hljs-params">(<span class="hljs-keyword">int</span> m, <span class="hljs-keyword">int</span> n)</span> </span>{
-        <span class="hljs-keyword">int</span>[] curCol = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[n];
-        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i ++) {
-            curCol[i] = <span class="hljs-number">1</span>;
-        }
-        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = <span class="hljs-number">1</span>; j &lt; m; j ++) {
-            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt; n; i++) {
-                curCol[i] += curCol[i - <span class="hljs-number">1</span>];
-            }
-        }
-        <span class="hljs-keyword">return</span> curCol[n - <span class="hljs-number">1</span>];
-    }
-    <span class="hljs-comment">/*=====================================================================================*/</span>
-    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
-        System.out.println(uniquePaths(<span class="hljs-number">3</span>, <span class="hljs-number">2</span>));
-        System.out.println(uniquePaths(<span class="hljs-number">7</span>, <span class="hljs-number">3</span>));
-
-        System.out.println(uniquePaths2(<span class="hljs-number">3</span>,<span class="hljs-number">2</span>));
-        System.out.println(uniquePaths2(<span class="hljs-number">7</span>,<span class="hljs-number">3</span>));
-    }
-}
+    <span class="hljs-keyword">return</span> res.Next
 </code></pre>
 
                                 
@@ -1320,14 +1289,10 @@ Output: 28</li>
 
             
                 
-                <a href="leetcode55.html" class="navigation navigation-prev " aria-label="Previous page: LeetCode55 Jump Game">
+                <a href="复杂链表的复制.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: ⭐️剑指offer 25.复杂链表的复制">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
-                
-                <a href="leetcode621.html" class="navigation navigation-next " aria-label="Next page: LeetCode621 Task Scheduler">
-                    <i class="fa fa-angle-right"></i>
-                </a>
                 
             
         
@@ -1336,7 +1301,7 @@ Output: 28</li>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"LeetCode62 Unique Paths","date":"2018-10-17T22:22:15.000Z","categories":"算法","tags":["LeetCode","Top 100 Liked Questions","Array","Medium","Java","dp动态规划","matrix","背包问题","algorithms"],"level":"1.8.2","depth":2,"next":{"title":"LeetCode621 Task Scheduler","level":"1.8.3","depth":2,"path":"dp/leetcode621.md","ref":"dp/leetcode621.md","articles":[]},"previous":{"title":"LeetCode55 Jump Game","level":"1.8.1","depth":2,"path":"dp/leetcode55.md","ref":"dp/leetcode55.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"dp/leetcode62.md","mtime":"2020-01-21T03:38:16.912Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-05-14T13:12:39.914Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"leetcode2 两数相加(go)","level":"1.4.6","depth":2,"next":{"title":"Stack/Queue","level":"1.5","depth":1,"ref":"","articles":[{"title":"栈和队列的转换/用数组实现栈和队列","level":"1.5.1","depth":2,"path":"Stack-Queue/栈和队列常用算法总结.md","ref":"Stack-Queue/栈和队列常用算法总结.md","articles":[]},{"title":"剑指offer 5.用两个栈实现队列","level":"1.5.2","depth":2,"path":"Stack-Queue/用两个栈实现队列.md","ref":"Stack-Queue/用两个栈实现队列.md","articles":[]},{"title":"剑指offer 20.包含min函数的栈","level":"1.5.3","depth":2,"path":"Stack-Queue/包含min函数的栈.md","ref":"Stack-Queue/包含min函数的栈.md","articles":[]},{"title":"⭐️剑指offer 21.栈的弹入弹出序列","level":"1.5.4","depth":2,"path":"Stack-Queue/栈的弹入弹出序列.md","ref":"Stack-Queue/栈的弹入弹出序列.md","articles":[]}]},"previous":{"title":"⭐️剑指offer 25.复杂链表的复制","level":"1.4.5","depth":2,"path":"LinkedList/复杂链表的复制.md","ref":"LinkedList/复杂链表的复制.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"LinkedList/lc2-两数相加.md","mtime":"2021-05-14T13:07:21.283Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-05-14T13:12:39.914Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
