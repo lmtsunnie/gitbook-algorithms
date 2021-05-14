@@ -8,6 +8,6 @@ cd /var/www/gitbook-algorithms
 git pull origin master
 exit
 remotessh
-cd ../../limengting
+cd ../limengting.site
 hexo g && hexo d
 
